@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "enquirer": "^2.3.6",
+    "figlet": "^1.5.2",
     "pkg": "^5.8.0",
     "zx": "^7.0.8"
   }
