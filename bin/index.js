@@ -7,10 +7,13 @@ import {
 import * as operations from '../lib/operations/index.js'
 
 import { checkIsGitDirectory } from '../lib/git.js'
+import { getConfig } from '../lib/config.js'
 
 $.verbose = argv.verbose ?? false
 
 async function main() {
+  const config = await getConfig()
+  console.log('@@@@', config, config?.trunk_branch_name)
 
   const isGitDirectory = await checkIsGitDirectory()
   if (isGitDirectory === false) {
