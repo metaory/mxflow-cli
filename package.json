@@ -1,0 +1,23 @@
+{
+  "name": "jgit",
+  "version": "1.0.0",
+  "description": "a git workflow cli tool",
+  "main": "./lib/index.js",
+  "type": "module",
+  "bin": {
+    "jgit": "./bin/index.js"
+  },
+  "scripts": {
+    "start": "node bin",
+    "build": "pkg index.js --out-dir ./exec/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "metaory <metaory@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "enquirer": "^2.3.6",
+    "pkg": "^5.8.0",
+    "zx": "^7.0.8"
+  }
+}
