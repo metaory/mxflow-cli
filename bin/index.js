@@ -9,7 +9,7 @@ import { getConfig } from '../lib/config.js'
 import { catchNoGit } from '../lib/git.js'
 import header from '../lib/header.js'
 
-process.on('uncaughtException', (err) => chalk.red(console.error('', err)))
+process.on('uncaughtException', (err) => console.error('', err))
 
 $.verbose = argv.verbose ?? false
 
