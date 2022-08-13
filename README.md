@@ -1,12 +1,12 @@
-# jgit
+# hgit
 a git workflow cli tool
 
 ## Installation
 
-    npm i -g jgit
-    
-    
+    npm i -g hgit
+
+
 ## Usage
 
-    jgit --verbose
+    hgit --verbose
 
