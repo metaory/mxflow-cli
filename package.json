@@ -1,11 +1,11 @@
 {
-  "name": "jgit",
+  "name": "hgit",
   "version": "0.0.1",
   "description": "a git workflow cli tool",
   "main": "./lib/index.js",
   "type": "module",
   "bin": {
-    "jgit": "./bin/index.js"
+    "hgit": "./bin/index.js"
   },
   "scripts": {
     "start": "node bin",
