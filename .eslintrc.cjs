@@ -11,7 +11,9 @@ module.exports = {
     fs: 'readonly',
     os: 'readonly',
     cd: 'readonly',
-    chalk: 'readonly'
+    chalk: 'readonly',
+    fillLine: 'readonly',
+    spinner: 'readonly'
   },
   extends: 'standard',
   overrides: [
@@ -21,5 +23,7 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
+    // 'space-before-function-parentheses': 'never'
+    'space-before-function-paren': ["error", "never"]
   }
 }
