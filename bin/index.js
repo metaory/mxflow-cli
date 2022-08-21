@@ -15,8 +15,8 @@ $.verbose = argv.verbose ?? false
 await header()
 
 const config = await getConfig()
-
 global.cfg = config
+$.verbose && console.info({ config })
 
 await catchNoGit()
 
