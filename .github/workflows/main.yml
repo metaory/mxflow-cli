@@ -1,16 +1,9 @@
-name: HGit Node.js Package
+name: HGit npm Package
 
 on:
   push:
     tags:
       - '*'
-# on:
-#   release:
-#     types: [created]
-  # push:
-  #   branches:
-  #     - 'master'
-
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
