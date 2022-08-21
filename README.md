@@ -13,6 +13,7 @@ Features
 ========
 - check for conflict between multiple remote branch
 - start new workflow
+- git commands are read from the config file `~/.config/hgit/config.json`
 
 ---
 
