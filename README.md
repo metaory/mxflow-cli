@@ -1,12 +1,18 @@
 # hgit
 a git workflow cli tool
 
-## Installation
+<p align="center">
+  <img src="./assets/hgit.png">
+</p>
 
+Installation
+============
     npm i -g hgit
 
+Usage
+=====
+    hgit
 
-## Usage
-
-    hgit --verbose
-
+Options
+=======
+    --verbose               | verbose logs
