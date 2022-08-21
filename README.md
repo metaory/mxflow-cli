@@ -2,7 +2,7 @@
 a git workflow cli tool
 
 <p align="center">
-  <img width="50%" src="./assets/hgit.png">
+  <img width="50%" src="https://raw.githubusercontent.com/metaory/hgit-cli/master/assets/hgit.png">
 </p>
 
 ---
