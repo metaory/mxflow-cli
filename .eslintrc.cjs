@@ -24,6 +24,7 @@ module.exports = {
   },
   rules: {
     // 'space-before-function-parentheses': 'never'
-    'space-before-function-paren': ["error", "never"]
+    'space-before-function-paren': ['error', 'never'],
+    camelcase: ['error', { properties: 'never', ignoreDestructuring: true }]
   }
 }
