@@ -17,7 +17,7 @@ await header()
 
 const config = await getConfig()
 global.cfg = config
-$.verbose && console.info({ config })
+info({ config })
 
 await catchNoGit()
 
