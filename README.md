@@ -2,8 +2,17 @@
 a git workflow cli tool
 
 <p align="center">
-  <img src="./assets/hgit.png">
+  <img width="50%" src="./assets/hgit.png">
 </p>
+
+---
+
+Features
+========
+- check for conflict between multiple remote branch
+- start new workflow
+
+---
 
 Installation
 ============
@@ -16,3 +25,4 @@ Usage
 Options
 =======
     --verbose               | verbose logs
+
