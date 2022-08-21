@@ -7,6 +7,8 @@ a git workflow cli tool
 
 ---
 
+![hgit 0.0.4-5](https://github.com/metaory/hgit-cli/wiki/asset/gifcast_220821121507.gif)
+
 Features
 ========
 - check for conflict between multiple remote branch
