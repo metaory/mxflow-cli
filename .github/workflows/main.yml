@@ -1,9 +1,11 @@
 name: HGit Node.js Package
 
 on:
-  push:
-    branches:
-      - 'master'
+  release:
+    types: [created]
+  # push:
+  #   branches:
+  #     - 'master'
 
 jobs:
   publish-npm:
