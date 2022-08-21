@@ -9,6 +9,7 @@ import header from '../lib/header.js'
 import '../lib/helper.js'
 
 process.on('uncaughtException', (err) => console.error('', err))
+process.on('unhandledRejection', (err) => console.error('', err))
 
 $.verbose = argv.verbose ?? false
 
