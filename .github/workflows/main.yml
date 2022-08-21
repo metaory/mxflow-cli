@@ -1,8 +1,12 @@
 name: HGit Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - '*'
+# on:
+#   release:
+#     types: [created]
   # push:
   #   branches:
   #     - 'master'
