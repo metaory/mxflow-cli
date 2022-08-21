@@ -7,7 +7,7 @@ a git workflow cli tool
 
 ---
 
-![hgit 0.0.4-5](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220821123502.gif)
+![hgit 0.0.4-5](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220821123955.gif)
 
 Features
 ========
