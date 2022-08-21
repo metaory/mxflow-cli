@@ -1,6 +1,6 @@
 {
   "name": "hgit",
-  "version": "0.0.4-4",
+  "version": "0.0.4-5",
   "description": "a git workflow cli tool",
   "main": "./lib/index.js",
   "type": "module",
