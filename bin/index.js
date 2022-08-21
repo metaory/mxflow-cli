@@ -15,9 +15,7 @@ $.verbose = argv.verbose ?? false
 
 await header()
 
-const config = await getConfig()
-global.cfg = config
-info({ config })
+global.cfg = await getConfig()
 
 await catchNoGit()
 
@@ -25,4 +23,4 @@ await catchDirtyGit()
 
 const { operation } = await listInput('operation', operations.list)
 
-await operations[operation](config)
+await operations[operation]()
