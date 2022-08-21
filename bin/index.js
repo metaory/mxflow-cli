@@ -13,9 +13,9 @@ process.on('unhandledRejection', (err) => console.error('', err))
 
 $.verbose = argv.verbose ?? false
 
-await header()
-
 global.cfg = await getConfig()
+
+await header()
 
 await catchNoGit()
 
