@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'zx/globals'
 
-import { listInput } from '../lib/prompts.js'
+import { autocompleteInput } from '../lib/prompts.js'
 import * as operations from '../lib/operations/index.js'
 import { getConfig } from '../lib/config.js'
 import { catchNoGit, catchDirtyGit } from '../lib/catch.js'
@@ -21,6 +21,6 @@ await catchNoGit()
 
 await catchDirtyGit()
 
-const { operation } = await listInput('operation', operations.list)
+const { operation } = await autocompleteInput('operation', operations.list)
 
 await operations[operation]()
