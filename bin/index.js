@@ -8,8 +8,8 @@ import { catchNoGit, catchDirtyGit } from '../lib/catch.js'
 import '../lib/helper.js'
 import '../lib/header.js'
 
-process.on('uncaughtException', console.error)
-process.on('unhandledRejection', console.error)
+process.on('uncaughtException', () => {})
+process.on('unhandledRejection', () => {})
 
 $.verbose = argv.verbose ?? false
 
