@@ -22,7 +22,9 @@
   "dependencies": {
     "boxen": "^7.0.0",
     "enquirer": "^2.3.6",
+    "figlet": "^1.5.2",
     "figures": "^5.0.0",
+    "gradient-string": "^2.0.1",
     "zx": "^7.0.8"
   },
   "devDependencies": {

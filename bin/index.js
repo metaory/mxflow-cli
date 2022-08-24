@@ -5,17 +5,15 @@ import { autocompleteInput } from '../lib/prompts.js'
 import * as operations from '../lib/operations/index.js'
 import { getConfig } from '../lib/config.js'
 import { catchNoGit, catchDirtyGit } from '../lib/catch.js'
-import header from '../lib/header.js'
 import '../lib/helper.js'
+import '../lib/header.js'
 
-process.on('uncaughtException', (err) => console.error('', err))
-process.on('unhandledRejection', (err) => console.error('', err))
+process.on('uncaughtException', console.error)
+process.on('unhandledRejection', console.error)
 
 $.verbose = argv.verbose ?? false
 
 global.cfg = await getConfig()
-
-await header()
 
 await catchNoGit()
 

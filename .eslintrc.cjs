@@ -14,6 +14,11 @@ module.exports = {
     info: 'readonly',
     chalk: 'readonly',
     fillLine: 'readonly',
+    PKG_PATH: 'readonly',
+    PKG_NAME: 'readonly',
+    PKG_VERSION: 'readonly',
+    CONFIG_DIR: 'readonly',
+    CONFIG_PATH: 'readonly',
     spinner: 'readonly'
   },
   extends: 'standard',
