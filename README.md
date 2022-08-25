@@ -17,6 +17,10 @@ Features
 
 ---
 
+npx
+===
+    npx hgit
+
 Installation
 ============
     npm i -g hgit
