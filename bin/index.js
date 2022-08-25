@@ -8,10 +8,10 @@ import * as operations from '../lib/operations/index.js'
 import { getConfig } from '../lib/config.js'
 import { catchNoGit, catchDirtyGit } from '../lib/catch.js'
 
-process.on('uncaughtException', () => {})
-process.on('unhandledRejection', () => {})
-
 $.verbose = argv.verbose ?? false
+
+process.on('uncaughtException', $.verbose ? console.error : () => { })
+process.on('unhandledRejection', $.verbose ? console.error : () => { })
 
 global.cfg = await getConfig()
 
