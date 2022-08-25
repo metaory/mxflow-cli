@@ -16,7 +16,15 @@
     "type": "git",
     "url": "https://github.com/metaory/hgit-cli.git"
   },
-  "keywords": [],
+  "keywords": [
+    "hgit",
+    "cli",
+    "tui",
+    "terminal",
+    "term",
+    "command-line",
+    "console"
+  ],
   "author": "metaory <metaory@gmail.com>",
   "license": "MIT",
   "dependencies": {
