@@ -17,6 +17,7 @@ module.exports = {
     fillFrom: 'readonly',
     PKG_PATH: 'readonly',
     PKG_NAME: 'readonly',
+    runCommands: 'readonly',
     PKG_VERSION: 'readonly',
     CONFIG_DIR: 'readonly',
     CONFIG_PATH: 'readonly',
