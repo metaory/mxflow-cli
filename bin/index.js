@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import 'zx/globals'
-import '../lib/helper.js'
+import '../lib/globals.js'
 import '../lib/header.js'
 
 import { autocompleteInput } from '../lib/prompts.js'
