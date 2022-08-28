@@ -7,7 +7,7 @@ a git workflow cli tool
 
 ---
 
-![hgit 0.8.1-4](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220825123109.gif)
+![hgit 0.17.0](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220828185239.gif)
 
 Goal
 ====
