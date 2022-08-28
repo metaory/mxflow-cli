@@ -4,6 +4,13 @@
   "description": "a git workflow cli tool",
   "main": "./lib/index.js",
   "type": "module",
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "engines": {
+    "node": ">=0.16.5"
+  },
   "bin": {
     "hgit": "./bin/index.js"
   },
