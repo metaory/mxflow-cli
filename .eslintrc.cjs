@@ -12,6 +12,7 @@ module.exports = {
     os: 'readonly',
     cd: 'readonly',
     info: 'readonly',
+    icons: 'readonly',
     chalk: 'readonly',
     fillLine: 'readonly',
     fillFrom: 'readonly',
