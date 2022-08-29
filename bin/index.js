@@ -11,6 +11,7 @@ $.verbose = argv.verbose ?? false
 
 process.on('uncaughtException', $.verbose ? console.error : () => { })
 process.on('unhandledRejection', $.verbose ? console.error : () => { })
+process.on('SIGINT', process.exit)
 
 global.cfg = await getConfig()
 
