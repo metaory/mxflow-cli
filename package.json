@@ -1,11 +1,10 @@
 {
   "name": "hgit",
   "version": "0.18.1-10",
-  "description": "a git workflow cli tool",
-  "main": "./lib/index.js",
+  "description": "Streamline and Simplify complex git processes",
+  "main": "./bin/index.js",
   "type": "module",
   "os": [
-    "darwin",
     "linux"
   ],
   "engines": {
