@@ -9,8 +9,8 @@ import { catchNoGit, catchDirtyGit } from '../lib/catch.js'
 import updateNotifier from 'update-notifier'
 
 updateNotifier({
-  pkg: { name: PKG_NAME, version: PKG_VERSION }
-  // updateCheckInterval: 0
+  pkg: { name: PKG_NAME, version: PKG_VERSION },
+  updateCheckInterval: 0
 }).notify({ isGlobal: true })
 
 $.verbose = argv.verbose ?? false
