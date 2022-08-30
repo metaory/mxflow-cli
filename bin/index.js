@@ -6,6 +6,9 @@ import { autocompleteInput } from '../lib/prompts.js'
 import * as operations from '../lib/operations/index.js'
 import { getConfig } from '../lib/config.js'
 import { catchNoGit, catchDirtyGit } from '../lib/catch.js'
+import updateNotifier from 'update-notifier'
+
+updateNotifier({ pkg: { name: PKG_NAME, version: PKG_VERSION } }).notify()
 
 $.verbose = argv.verbose ?? false
 

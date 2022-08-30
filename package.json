@@ -41,6 +41,8 @@
     "figures": "^5.0.0",
     "gradient-string": "^2.0.1",
     "ora": "^6.1.2",
+    "update-notifier": "^6.0.2",
+    "xdg-basedir": "^5.1.0",
     "zx": "^7.0.8"
   },
   "devDependencies": {
