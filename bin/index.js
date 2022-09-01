@@ -26,5 +26,6 @@ await catchNoGit()
 await catchDirtyGit()
 
 const { operation } = await autocompleteInput('operation', operations.list)
+const { options } = operations.list().find(x => x.name === operation)
 
-await operations[operation]()
+await operations[operation](options)
