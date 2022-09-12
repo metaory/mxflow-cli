@@ -20,6 +20,7 @@ Features
 - start new workflow with `__pre` and `__post` commands are read from config file
 - \*all git commands are read from the config file `~/.config/hgit/config.json`
 - dynamic branch checkout in workflows with command: `git_pick_{pattern}`
+- branchNamePattern from config
 
 ---
 
