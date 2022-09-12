@@ -14,6 +14,7 @@ module.exports = {
     info: 'readonly',
     icons: 'readonly',
     chalk: 'readonly',
+    sleep: 'readonly',
     fillLine: 'readonly',
     fillFrom: 'readonly',
     PKG_PATH: 'readonly',
