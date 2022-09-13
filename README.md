@@ -20,7 +20,7 @@ TL;DR
 | ---     | ---         | ---             | ---                              |
 | flight  | master      | master, flights | `flight-{description}`           |
 | hotfix  | master      | master          | `hotfix/{taskId}-{description}`  |
-| feature | flight      | -               | `feature/{taskId}-{description}` |
+| feature | flight      | same flight     | `feature/{taskId}-{description}` |
 | bugfix  | flight      | -               | `bugfix/{taskId}-{description}`  |
 | other   | flight      | -               | `other/{taskId}-{description}`   |
 
