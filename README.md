@@ -24,6 +24,7 @@ TL;DR
 | bugfix  | flight      | -               | `bugfix/{taskId}-{description}`  |
 | other   | flight      | -               | `other/{taskId}-{description}`   |
 
+
 **Hotfix branch:**
 
 - Can only be created from `master`
