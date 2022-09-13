@@ -27,9 +27,9 @@ TL;DR
 - Can sync from `master`
 - Cannot sync from `dev`
 
-**Task/bugfix in Flight (Child branch -> Flight branch):**
+**feature/bugfix/other in Flight (Child branch -> Flight branch):**
 
-- Task branch should be created from the `Flight` branch
+- Task branches (feature/bugfix/other) should be created from the `Flight` branch
 - Cannot take pull from any branch but `Flight` branch
 - Can take pull from a sibling branch of the **same flight** if it depends on it
 
