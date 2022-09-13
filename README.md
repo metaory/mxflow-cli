@@ -11,6 +11,16 @@ a git workflow cli tool
 
 ![hgit 0.19.1](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220902160438.gif)
 
+---
+
+Features
+========
+- check for `conflict` between multiple remote branch
+- start new workflow with `__pre` and `__post` config
+- \*all git commands are read from the config file `~/.config/hgit/config.json`
+- `dynamic branch checkout` in workflows with command: `git_pick_{pattern}`
+- `branchNamePattern` from config: `{branchName}__branch_pattern`
+
 TL;DR
 =====
 
@@ -57,16 +67,6 @@ TL;DR
 
 ### Hotfix
 - **hotfix** is dedicated to fixes regarding **critical issues** in the production environment.
-
----
-
-Features
-========
-- check for `conflict` between multiple remote branch
-- start new workflow with `__pre` and `__post` config
-- \*all git commands are read from the config file `~/.config/hgit/config.json`
-- `dynamic branch checkout` in workflows with command: `git_pick_{pattern}`
-- `branchNamePattern` from config: `{branchName}__branch_pattern`
 
 ---
 
