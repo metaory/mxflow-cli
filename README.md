@@ -14,13 +14,15 @@ a git workflow cli tool
 TL;DR
 =====
 
-| branch  | create from | can sync from   | branch name                    |
-| ---     | ---         | ---             | ---                            |
-| flight  | master      | master, flights | flight-{description}           |
-| hotfix  | master      | master          | hotfix/{taskId}-{description}  |
-| feature | flight      | -               | feature/{taskId}-{description} |
-| bugfix  | flight      | -               | bugfix/{taskId}-{description}  |
-| other   | flight      | -               | other/{taskId}-{description}   |
+## The Default configs
+
+| branch  | create from | can sync from   | branch name                      |
+| ---     | ---         | ---             | ---                              |
+| flight  | master      | master, flights | `flight-{description}`           |
+| hotfix  | master      | master          | `hotfix/{taskId}-{description}`  |
+| feature | flight      | -               | `feature/{taskId}-{description}` |
+| bugfix  | flight      | -               | `bugfix/{taskId}-{description}`  |
+| other   | flight      | -               | `other/{taskId}-{description}`   |
 
 **Hotfix branch:**
 
