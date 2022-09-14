@@ -16,9 +16,9 @@ a git workflow cli tool
 Features
 ========
 - check for `conflict` between multiple remote branch
-- start new workflow with `__pre` and `__post` config
+- start new workflow with commands read config
 - \*all git commands are read from the config file `~/.config/hgit/config.json`
-- `dynamic branch checkout` in workflows with command: `git_pick_{pattern}`
+- `dynamic branch checkout` in workflows with command: `go_pick_{pattern}`
 - `branchNamePattern` from config: `{branchName}__branch_pattern`
 
 TL;DR
