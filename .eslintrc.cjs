@@ -23,7 +23,6 @@ module.exports = {
     PKG_VERSION: 'readonly',
     CONFIG_DIR: 'readonly',
     CONFIG_PATH: 'readonly',
-    spinner: 'readonly'
   },
   extends: 'standard',
   overrides: [
