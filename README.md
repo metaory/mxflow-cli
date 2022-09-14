@@ -26,13 +26,13 @@ TL;DR
 
 ## The Default configs
 
-| branch  | create from | can sync from   | branch name                      |
-| ---     | ---         | ---             | ---                              |
-| flight  | master      | master, flights | `flight-{description}`           |
-| hotfix  | master      | master          | `hotfix/{taskId}-{description}`  |
-| feature | flight      | same flight     | `feature/{taskId}-{description}` |
-| bugfix  | flight      | -               | `bugfix/{taskId}-{description}`  |
-| other   | flight      | -               | `other/{taskId}-{description}`   |
+| branch  | create from | can sync from | branch name                      |
+| ---     | ---         | ---           | ---                              |
+| flight  | master      | master        | `flight/{description}`           |
+| hotfix  | master      | master        | `hotfix/{taskId}-{description}`  |
+| feature | flight      | parent flight | `feature/{taskId}-{description}` |
+| bugfix  | flight      | parent flight | `bugfix/{taskId}-{description}`  |
+| other   | flight      | parent flight | `other/{taskId}-{description}`   |
 
 
 **Hotfix branch:**
