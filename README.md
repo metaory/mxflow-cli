@@ -20,7 +20,7 @@ Features
 - check for `conflict` between multiple remote branch
 - start new workflows from a `config` file 
 - **ALL** commands are read from the config file in `~/.config/hgit/config.json`
-- `dynamic branch checkout` in workflows with command: `go_pick_{pattern}`
+- `dynamic branch checkout` in workflows with command: `prompt_checkout_{pattern}`
 - `branchNamePattern` from config: `{branchName}__branch_pattern`
 
 TL;DR
