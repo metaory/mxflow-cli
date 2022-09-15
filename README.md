@@ -1,5 +1,5 @@
 # hgit
-a git workflow cli tool
+### a git workflow cli tool
 
 # Streamline and Simplify complex git processes
 
