@@ -23,6 +23,26 @@ Features
 - `dynamic branch checkout` in workflows with command: `prompt_checkout_{pattern}`
 - `branchNamePattern` from config: `{branchName}__branch_pattern`
 
+---
+
+npx
+===
+    npx hgit
+
+Installation
+============
+    npm i -g hgit
+
+Usage
+=====
+    hgit
+
+Options
+=======
+    --verbose               | verbose logs
+
+---
+
 TL;DR
 =====
 
@@ -69,22 +89,3 @@ TL;DR
 
 ### Hotfix
 - **hotfix** is dedicated to fixes regarding **critical issues** in the production environment.
-
----
-
-npx
-===
-    npx hgit
-
-Installation
-============
-    npm i -g hgit
-
-Usage
-=====
-    hgit
-
-Options
-=======
-    --verbose               | verbose logs
-
