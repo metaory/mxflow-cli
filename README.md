@@ -1,5 +1,5 @@
 # hgit
-### a git workflow cli tool
+### :rocket: a git workflow cli tool
 
 # Streamline and Simplify complex git processes
 
@@ -21,7 +21,7 @@ Features
 - start new workflows from a `config` file 
 - **ALL** commands are read from the config file in `~/.config/hgit/config.json`
 - `dynamic branch checkout` in workflows with command: `prompt_checkout_{pattern}`
-- `branchNamePattern` from config: `{branchName}__branch_pattern`
+- `branchNamePattern` from config: `{branchType}__branch_pattern`
 
 ---
 
