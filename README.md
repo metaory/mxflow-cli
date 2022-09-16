@@ -1,5 +1,5 @@
-# hgit-cli (:poop:human-friendly)
-### :rocket: a git workflow cli tool
+# hgit-cli
+### :rocket: an unopinionated git workflow cli tool
 
 # Streamline and Simplify complex git processes
 
