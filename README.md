@@ -19,17 +19,12 @@
 
   <h5><a href="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/sample-generated-config.json">sample</a></h5>
 
+
   ```json
   {
-    "config_version": "0.32.5-0",
-    "branch_types": [
-      "feature",
-      "bugfix",
-      "other",
-      "hotfix"
-    ],
+    "config_version": "0.33.3",
     "trunk_branch_name": "flight",
-    "sleep_between_commands": 3000,
+    "sleep_between_commands": 2000,
     "graph_git_log_limit": 40,
     "bug_tracker_path": "https://metaory.atlassian.net/browse/{taskId}",
     "commands": {
@@ -54,7 +49,14 @@
       "git_checkout_branch",
       "git_status"
     ],
+    "branch_types": [
+      "feature",
+      "bugfix",
+      "other",
+      "hotfix"
+    ],
     "start_workflow": {
+      "flight__branch_pattern": "flight/{description}",
       "flight": [
         "git_fetch_origin",
         "git_checkout_master",
@@ -62,7 +64,7 @@
         "git_create_branch",
         "git_status"
       ],
-      "flight__branch_pattern": "flight/{description}",
+      "feature__branch_pattern": "{branchType}/{taskId}-{description}",
       "feature": [
         "git_fetch_origin",
         "git_checkout_master",
@@ -71,7 +73,7 @@
         "git_create_branch",
         "git_status"
       ],
-      "feature__branch_pattern": "{branchType}/{taskId}-{description}",
+      "bugfix__branch_pattern": "{branchType}/{taskId}-{description}",
       "bugfix": [
         "git_fetch_origin",
         "git_checkout_master",
@@ -80,25 +82,26 @@
         "git_create_branch",
         "git_status"
       ],
-      "bugfix__branch_pattern": "{branchType}/{taskId}-{description}",
+      "other__branch_pattern": "{branchType}/{taskId}-{description}",
       "other": [
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
+        "prompt_checkout_flight",
         "git_create_branch",
         "git_status"
       ],
-      "other__branch_pattern": "{branchType}/{taskId}-{description}",
+      "hotfix__branch_pattern": "{branchType}/{taskId}-{description}",
       "hotfix": [
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
         "git_create_branch",
         "git_status"
-      ],
-      "hotfix__branch_pattern": "{branchType}/{taskId}-{description}"
+      ]
     }
   }
+
   ```
 </details>
 
