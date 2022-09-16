@@ -16,6 +16,7 @@ module.exports = {
     C: 'readonly',
     chalk: 'readonly',
     sleep: 'readonly',
+    spinner: 'readonly',
     fillLine: 'readonly',
     fillFrom: 'readonly',
     CWD: 'readonly',
