@@ -5,7 +5,6 @@
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/2022-09-16-130744_587x534_scrot.png">
-  <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/hgit.png">
 </p>
 
 ---
