@@ -14,7 +14,94 @@
 
 # Sample Config
 
-[sample-generated-config-file](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/sample-generated-config.json)
+<details>
+  <summary>sample-generated-config-file</summary>
+
+  <h5><a href="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/sample-generated-config.json">sample</a></h5>
+
+  ```json
+  {
+    "config_version": "0.32.5-0",
+    "branch_types": [
+      "feature",
+      "bugfix",
+      "other",
+      "hotfix"
+    ],
+    "trunk_branch_name": "flight",
+    "sleep_between_commands": 3000,
+    "graph_git_log_limit": 40,
+    "bug_tracker_path": "https://metaory.atlassian.net/browse/{taskId}",
+    "commands": {
+      "git_push_origin": "git push --set-upstream origin {branchName}",
+      "git_checkout_branch": "git checkout {branchName}",
+      "git_create_branch": "git checkout -b {branchName}",
+      "git_fetch_origin": "git fetch origin || true",
+      "git_checkout_dev": "git checkout dev",
+      "git_merge_dev": "git merge origin/dev",
+      "git_checkout_master": "git checkout master",
+      "git_merge_master": "git merge origin/master",
+      "git_is_inside_worktree": "git rev-parse --is-inside-work-tree",
+      "git_prune": "git gc --prune=now && git remote prune origin",
+      "git_reset_master": "git reset --hard master",
+      "git_reset_head": "git reset --hard HEAD~1",
+      "git_merge_abort": "git merge --abort || true",
+      "git_is_dirty": "git status --short",
+      "git_status": "git status"
+    },
+    "checkout": [
+      "git_fetch_origin",
+      "git_checkout_branch",
+      "git_status"
+    ],
+    "start_workflow": {
+      "flight": [
+        "git_fetch_origin",
+        "git_checkout_master",
+        "git_merge_master",
+        "git_create_branch",
+        "git_status"
+      ],
+      "flight__branch_pattern": "flight/{description}",
+      "feature": [
+        "git_fetch_origin",
+        "git_checkout_master",
+        "git_merge_master",
+        "prompt_checkout_flight",
+        "git_create_branch",
+        "git_status"
+      ],
+      "feature__branch_pattern": "{branchType}/{taskId}-{description}",
+      "bugfix": [
+        "git_fetch_origin",
+        "git_checkout_master",
+        "git_merge_master",
+        "prompt_checkout_flight",
+        "git_create_branch",
+        "git_status"
+      ],
+      "bugfix__branch_pattern": "{branchType}/{taskId}-{description}",
+      "other": [
+        "git_fetch_origin",
+        "git_checkout_master",
+        "git_merge_master",
+        "git_create_branch",
+        "git_status"
+      ],
+      "other__branch_pattern": "{branchType}/{taskId}-{description}",
+      "hotfix": [
+        "git_fetch_origin",
+        "git_checkout_master",
+        "git_merge_master",
+        "git_create_branch",
+        "git_status"
+      ],
+      "hotfix__branch_pattern": "{branchType}/{taskId}-{description}"
+    }
+  }
+  ```
+</details>
+
 ---
 
 Features
