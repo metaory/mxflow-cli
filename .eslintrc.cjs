@@ -26,6 +26,7 @@ module.exports = {
     PKG_VERSION: 'readonly',
     CONFIG_DIR: 'readonly',
     CONFIG_PATH: 'readonly',
+    REL_CONFIG_PATH: 'readonly'
   },
   extends: 'standard',
   overrides: [
