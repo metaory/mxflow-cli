@@ -14,7 +14,7 @@
 
 # Sample Generated Config file
 
-[generated-config-file](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/sample-generated-config.json)
+[sample-generated-config-file](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/sample-generated-config.json)
 ---
 
 Features
