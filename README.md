@@ -17,7 +17,7 @@
 <details>
   <summary>sample-generated-config-file</summary>
 
-  <h5><a href="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/sample-generated-config.json">sample</a></h5>
+  <h5><a target="_blank" href="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/sample-generated-config.json">sample</a></h5>
 
   ```json
   {
