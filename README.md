@@ -49,12 +49,6 @@
       "git_checkout_branch",
       "git_status"
     ],
-    "branch_types": [
-      "feature",
-      "bugfix",
-      "other",
-      "hotfix"
-    ],
     "start_workflow": {
       "flight__branch_pattern": "flight/{description}",
       "flight": [
