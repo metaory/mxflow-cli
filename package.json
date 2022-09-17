@@ -1,6 +1,6 @@
 {
   "name": "hgit",
-  "version": "0.36.9",
+  "version": "0.36.10-0",
   "description": "Streamline and Simplify complex git processes",
   "main": "./bin/index.js",
   "type": "module",
