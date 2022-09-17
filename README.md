@@ -1,4 +1,4 @@
-# hgit-cli
+# hgit
 ### :rocket: an unopinionated git workflow cli tool
 
 # Streamline and Simplify complex git processes
@@ -76,8 +76,8 @@
         "git_create_branch",
         "git_status"
       ],
-      "other__branch_pattern": "{branchType}/{taskId}-{description}",
-      "other": [
+      "foobar__branch_pattern": "{branchType}/{taskId}-{description}",
+      "foobar": [
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
