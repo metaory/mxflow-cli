@@ -40,6 +40,7 @@
     "figlet": "^1.5.2",
     "gradient-string": "^2.0.1",
     "ora": "^6.1.2",
+    "prettycli": "^1.4.3",
     "update-notifier": "^6.0.2",
     "xdg-basedir": "^5.1.0",
     "zx": "^7.0.8"
