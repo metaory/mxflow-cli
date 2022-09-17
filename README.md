@@ -31,7 +31,7 @@
       "git_push_origin": "git push --set-upstream origin {branchName}",
       "git_checkout_branch": "git checkout {branchName}",
       "git_create_branch": "git checkout -b {branchName}",
-      "git_fetch_origin": "git fetch origin || true",
+      "git_fetch_origin": "git fetch origin",
       "git_checkout_dev": "git checkout dev",
       "git_merge_dev": "git merge origin/dev",
       "git_checkout_master": "git checkout master",
@@ -76,12 +76,12 @@
         "git_create_branch",
         "git_status"
       ],
-      "foobar__branch_pattern": "{branchType}/{taskId}-{description}",
+      "foobar__branch_pattern": "org__{taskId}-{description}",
       "foobar": [
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
-        "prompt_checkout_flight",
+        "prompt_checkout_xorg",
         "git_create_branch",
         "git_status"
       ],
