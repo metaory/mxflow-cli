@@ -25,6 +25,11 @@
   },
   "keywords": [
     "hgit",
+    "git",
+    "workflow",
+    "workflow-automation",
+    "workflow-engine",
+    "workflow",
     "cli",
     "tui",
     "terminal",
