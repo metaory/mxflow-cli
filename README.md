@@ -65,7 +65,7 @@
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
-        "prompt_checkout_flight",
+        "prompt_checkout__flight",
         "git_create_branch",
         "git_status"
       ],
@@ -74,7 +74,7 @@
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
-        "prompt_checkout_flight",
+        "prompt_checkout__flight",
         "git_create_branch",
         "git_status"
       ],
@@ -83,7 +83,7 @@
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
-        "prompt_checkout_xorg",
+        "prompt_checkout__xorg",
         "git_create_branch",
         "git_status"
       ],
@@ -108,7 +108,7 @@ Features
 - check for `conflict` between multiple remote branch
 - start new workflows from a `config` file 
 - **ALL** commands are read from the config file in `~/.config/hgit/config.json`
-- `dynamic branch checkout` in workflows with command: `prompt_checkout_{pattern}`
+- `dynamic branch checkout` in workflows with command: `prompt_checkout__{pattern}`
 - `branchNamePattern` from config: `{branchType}__branch_pattern`
 
 ---
