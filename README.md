@@ -58,6 +58,7 @@
     "start_workflow": {
       "xorg__branch_pattern": "xorg/{description}",
       "xorg": [
+        "ls-list",
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
@@ -66,6 +67,7 @@
       ],
       "feature__branch_pattern": "{branchType}/{taskId}-{description}",
       "feature": [
+        "ls-count",
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
