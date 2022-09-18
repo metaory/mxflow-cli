@@ -30,6 +30,8 @@
     "graph_git_log_limit": 40,
     "bug_tracker_path": "https://metaory.atlassian.net/browse/{taskId}",
     "commands": {
+      "ls-list": "ls -l",
+      "ls-count": "ls -l | wc -l",
       "git_push_origin": "git push --set-upstream origin {branchName}",
       "git_checkout_branch": "git checkout {branchName}",
       "git_create_branch": "git checkout -b {branchName}",
