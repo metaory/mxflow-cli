@@ -62,8 +62,9 @@
         "git_checkout_master",
         "git_merge_master",
         "git_create_branch",
+        "confirm__git_push_origin",
         "git_status",
-        "confirm__git_push_origin"
+        "list-latest-logs"
       ],
       "feature__branch_pattern": "{branchType}/{taskId}-{description}",
       "feature": [
@@ -73,8 +74,9 @@
         "git_merge_master",
         "prompt_checkout__xorg",
         "git_create_branch",
+        "confirm__git_push_origin",
         "git_status",
-        "confirm__git_push_origin"
+        "list-latest-logs"
       ],
       "foo__branch_pattern": "{branchType}/{taskId}-{description}",
       "foo": [
@@ -83,22 +85,33 @@
         "git_merge_master",
         "prompt_checkout__xorg",
         "git_create_branch",
+        "confirm__git_push_origin",
         "git_status",
-        "confirm__git_push_origin"
+        "list-latest-logs"
       ],
       "bar__branch_pattern": "{branchType}/{taskId}-{description}",
       "bar": [
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
+        "confirm__git_push_origin",
         "git_status",
-        "confirm__git_push_origin"
+        "list-latest-logs"
       ]
     }
   }
 
   ```
 </details>
+
+---
+Config Behaviours
+=================
+
+### Special commands:
+- `list-latest-logs` _list last n pretty graph log_
+- `prompt_checkout__{pattern}` _prompt checkout the pattern branch_
+- `confirm__{commandName}` _adds confirmation step to command_
 
 ---
 
