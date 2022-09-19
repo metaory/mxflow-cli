@@ -63,7 +63,8 @@
         "git_checkout_master",
         "git_merge_master",
         "git_create_branch",
-        "git_status"
+        "git_status",
+        "confirm__git_push_origin"
       ],
       "feature__branch_pattern": "{branchType}/{taskId}-{description}",
       "feature": [
@@ -73,7 +74,8 @@
         "git_merge_master",
         "prompt_checkout__xorg",
         "git_create_branch",
-        "git_status"
+        "git_status",
+        "confirm__git_push_origin"
       ],
       "foo__branch_pattern": "{branchType}/{taskId}-{description}",
       "foo": [
@@ -82,15 +84,16 @@
         "git_merge_master",
         "prompt_checkout__xorg",
         "git_create_branch",
-        "git_status"
+        "git_status",
+        "confirm__git_push_origin"
       ],
       "bar__branch_pattern": "{branchType}/{taskId}-{description}",
       "bar": [
         "git_fetch_origin",
         "git_checkout_master",
         "git_merge_master",
-        "git_create_branch",
-        "git_status"
+        "git_status",
+        "confirm__git_push_origin"
       ]
     }
   }
@@ -107,6 +110,7 @@ Features
 - **ALL** commands are read from the config file in `~/.config/hgit/config.json`
 - `dynamic branch checkout` in workflows with command: `prompt_checkout__{pattern}`
 - `branchNamePattern` from config: `{branchType}__branch_pattern`
+- add `confirm__` to commands for a confirmation prompt before the command 
 
 ---
 
