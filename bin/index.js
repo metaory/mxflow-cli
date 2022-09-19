@@ -13,8 +13,6 @@ updateNotifier({
   updateCheckInterval: 0
 }).notify({ isGlobal: true })
 
-$.verbose = argv.verbose ?? false
-
 process.env.HUSKY = 0
 process.on('uncaughtException', $.verbose ? console.error : () => { })
 process.on('unhandledRejection', $.verbose ? console.error : () => { })
