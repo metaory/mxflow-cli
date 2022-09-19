@@ -4,7 +4,7 @@
 # Streamline and Simplify complex git processes
 
 <p align="center">
-  <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/2022-09-18-162341_911x967_scrot.png">
+  <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/2022-09-20-003715_1026x1000_scrot.png">
 </p>
 
 ---
