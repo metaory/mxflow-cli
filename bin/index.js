@@ -4,7 +4,7 @@ import '../lib/header.js'
 
 import { autocompleteInput } from '../lib/prompts.js'
 import * as operations from '../lib/operations/index.js'
-import { getConfig } from '../lib/config.js'
+import { getConfig, logSleepBetweenConfig } from '../lib/config.js'
 import { catchNoGit, catchDirtyGit } from '../lib/catch.js'
 import updateNotifier from 'update-notifier'
 
@@ -28,5 +28,7 @@ await catchDirtyGit()
 
 const { operation } = await autocompleteInput('operation', operations.list)
 const { options } = operations.list().find(x => x.name === operation)
+
+logSleepBetweenConfig()
 
 await operations[operation](options)
