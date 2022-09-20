@@ -1,6 +1,5 @@
 # hgit
 ### :rocket: a beautiful unopinionated config based workflow **engine**
-
 # Streamline and Simplify complex git processes
 
 <p align="center">
@@ -191,7 +190,21 @@ TL;DR
 ### Hotfix
 - **hotfix** is dedicated to fixes regarding **critical issues** in the production environment.
 
-<!-- --- -->
+***
+
+            ___           ___
+           /__/\         /  /\        ___           ___
+           \  \:\       /  /:/_      /  /\         /  /\
+            \__\:\     /  /:/ /\    /  /:/        /  /:/
+        ___ /  /::\   /  /:/_/::\  /__/::\       /  /:/
+       /__/\  /:/\:\ /__/:/__\/\:\ \__\/\:\__   /  /::\
+       \  \:\/:/__\/ \  \:\ /~~/:/    \  \:\/\ /__/:/\:\
+        \  \::/       \  \:\  /:/      \__\::/ \__\/  \:\
+         \  \:\        \  \:\/:/       /__/:/       \  \:\
+          \  \:\        \  \::/        \__\/         \__\/
+           \__\/         \__\/
+
+
 <!---->
 <!-- ![hgit v0.30.1-1](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220914224723.gif) -->
 <!-- --- -->
