@@ -87,9 +87,9 @@ Config Behaviours
 =================
 
 ### Special commands:
-- `list-latest-logs` _list last n pretty graph log_
-- `prompt_checkout__{pattern}` _prompt checkout the pattern branch_
-- `confirm__{commandName}` _adds confirmation step to command_
+- `list logs` _list last n pretty graph log_
+- `autocomplete checkout {pattern}` _prompt checkout the pattern branch_
+- `confirm {commandName}` _adds confirmation step to command_
 
 ---
 
