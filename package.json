@@ -32,6 +32,8 @@
     "workflow",
     "cli",
     "tui",
+    "task-runner",
+    "pipeline",
     "terminal",
     "term",
     "command-line",
