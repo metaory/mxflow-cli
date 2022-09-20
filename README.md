@@ -18,88 +18,83 @@
 <details>
   <summary>sample-generated-config-file</summary>
 
-  <h5><a href="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/sample-generated-config.json">sample</a></h5>
 
-
-  ```json
-  {
-    "config_version": "0.37.1",
-    "trunk_branch_name": "xorg",
-    "sleep_between_commands": 3000,
-    "graph_git_log_limit": 40,
-    "bug_tracker_path": "https://metaory.atlassian.net/browse/{taskId}",
-    "commands": {
-      "ls-list": "ls -l",
-      "ls-count": "ls -l | wc -l",
-      "git_push_origin": "git push --set-upstream origin {branchName}",
-      "git_checkout_branch": "git checkout {branchName}",
-      "git_create_branch": "git checkout -b {branchName}",
-      "git_current_branch": "git rev-parse --abbrev-ref HEAD",
-      "git_fetch_origin": "git fetch origin",
-      "git_checkout_master": "git checkout master",
-      "git_merge_master": "git merge origin/master",
-      "git_is_inside_worktree": "git rev-parse --is-inside-work-tree",
-      "git_prune": "git gc --prune=now && git remote prune origin",
-      "git_reset_master": "git reset --hard master",
-      "git_reset_head": "git reset --hard HEAD~1",
-      "git_merge_abort": "git merge --abort || true",
-      "git_is_dirty": "git status --short",
-      "git_status": "git status",
-      "git_workflow_add": "git worktree add -b {branchName} {path} {origin}",
-      "git_workflow_list": "git worktree list"
-    },
-    "checkout": [
-      "git_fetch_origin",
-      "git_checkout_branch",
-      "git_status"
-    ],
-    "start_workflow": {
-      "xorg__branch_pattern": "xorg/{description}",
-      "xorg": [
-        "ls-list",
-        "git_fetch_origin",
-        "git_checkout_master",
-        "git_merge_master",
-        "git_create_branch",
-        "confirm__git_push_origin",
-        "git_status",
-        "list-latest-logs"
-      ],
-      "feature__branch_pattern": "{branchType}/{taskId}-{description}",
-      "feature": [
-        "ls-count",
-        "git_fetch_origin",
-        "git_checkout_master",
-        "git_merge_master",
-        "prompt_checkout__xorg",
-        "git_create_branch",
-        "confirm__git_push_origin",
-        "git_status",
-        "list-latest-logs"
-      ],
-      "foo__branch_pattern": "{branchType}/{taskId}-{description}",
-      "foo": [
-        "git_fetch_origin",
-        "git_checkout_master",
-        "git_merge_master",
-        "prompt_checkout__xorg",
-        "git_create_branch",
-        "confirm__git_push_origin",
-        "git_status",
-        "list-latest-logs"
-      ],
-      "bar__branch_pattern": "{branchType}/{taskId}-{description}",
-      "bar": [
-        "git_fetch_origin",
-        "git_checkout_master",
-        "git_merge_master",
-        "confirm__git_push_origin",
-        "git_status",
-        "list-latest-logs"
-      ]
-    }
-  }
-
+  ```yaml
+  config_version: 0.40.6-10
+  trunk_branch_name: flight
+  sleep_between_commands: 3000
+  graph_git_log_limit: 40
+  bug_tracker_path: https://app.clickup.com/t/14288054/{taskId}
+  commands:
+    git_push_origin: git push --set-upstream origin {branchName}
+    git_checkout_branch: git checkout {branchName}
+    git_create_branch: git checkout -b {branchName}
+    git_current_branch: git rev-parse --abbrev-ref HEAD
+    git_fetch_origin: git fetch origin
+    git_checkout_master: git checkout master
+    git_merge_master: git merge origin/master
+    git_is_inside_worktree: git rev-parse --is-inside-work-tree
+    git_prune: git gc --prune=now && git remote prune origin
+    git_reset_master: git reset --hard master
+    git_reset_head: git reset --hard HEAD~1
+    git_merge_abort: git merge --abort || true
+    git_is_dirty: git status --short
+    git_status: git status
+    git_workflow_add: git worktree add -b {branchName} {path} {origin}
+    git_workflow_list: git worktree list
+  checkout:
+    - git_fetch_origin
+    - git_checkout_branch
+    - git_status
+  start_workflow:
+    flight__branch_pattern: flight/{description}
+    flight:
+      - git_fetch_origin
+      - git_checkout_master
+      - git_merge_master
+      - git_create_branch
+      - confirm__git_push_origin
+      - git_status
+      - list-latest-logs
+    feature__branch_pattern: '{branchType}/{taskId}-{description}'
+    feature:
+      - git_fetch_origin
+      - git_checkout_master
+      - git_merge_master
+      - prompt_checkout__flight
+      - git_create_branch
+      - confirm__git_push_origin
+      - git_status
+      - list-latest-logs
+    bugfix__branch_pattern: '{branchType}/{taskId}-{description}'
+    bugfix:
+      - git_fetch_origin
+      - git_checkout_master
+      - git_merge_master
+      - prompt_checkout__flight
+      - git_create_branch
+      - confirm__git_push_origin
+      - git_status
+      - list-latest-logs
+    other__branch_pattern: '{branchType}/{taskId}-{description}'
+    other:
+      - git_fetch_origin
+      - git_checkout_master
+      - git_merge_master
+      - prompt_checkout__flight
+      - git_create_branch
+      - confirm__git_push_origin
+      - git_status
+      - list-latest-logs
+    hotfix__branch_pattern: '{branchType}/{taskId}-{description}'
+    hotfix:
+      - git_fetch_origin
+      - git_checkout_master
+      - git_merge_master
+      - git_create_branch
+      - confirm__git_push_origin
+      - git_status
+      - list-latest-logs
   ```
 </details>
 
