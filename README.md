@@ -8,7 +8,7 @@
 
 ---
 
-![hgit v0.40.3](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220920013700.gif)
+![hgit v0.42.1-2](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220920203311.gif)
 
 <!-- ![hgit v0.32.5-0](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220916124849.gif) -->
 <!-- ![hgit v0.32.3](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220916123031.gif) -->
