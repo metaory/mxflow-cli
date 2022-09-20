@@ -32,10 +32,13 @@
     "workflow",
     "cli",
     "tui",
+    "task",
     "task-runner",
+    "script-runner",
     "pipeline",
     "terminal",
     "term",
+    "shell",
     "command-line",
     "console"
   ],

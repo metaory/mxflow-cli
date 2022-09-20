@@ -1,5 +1,5 @@
 # hgit
-### :rocket: an unopinionated git workflow **engine**
+### :rocket: a beautiful unopinionated config based workflow **engine**
 
 # Streamline and Simplify complex git processes
 
