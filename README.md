@@ -20,7 +20,7 @@
 
 
   ```yaml
-  config_version: 0.44.3
+  config_version: 0.45.0
   graph_git_log_limit: 40
   issue_tracker_path: https://metaory.atlassian.net/browse/{taskId}
   sleep_between_commands: 1000
