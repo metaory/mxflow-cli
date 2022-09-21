@@ -78,8 +78,8 @@ Features
 - start new workflows from a `config` file 
 - **ALL** commands are read from the config file in `~/.config/hgit/config.yml`
 - `dynamic branch checkout` in workflows with command: `prompt_checkout__{pattern}`
-- `branchNamePattern` from config: `{branchType}__branch_pattern`
-- add `confirm__` to commands for a confirmation prompt before the command 
+- `branchNamePattern` from config: `{branchType}.branch_pattern`
+- add `confirm ` to commands for a confirmation prompt before the command
 
 ---
 
