@@ -25,7 +25,7 @@
   sleep_between_commands: 3000
   graph_git_log_limit: 40
   bug_tracker_path: https://app.clickup.com/t/14288054/{taskId}
-  start_workflow:
+  workflows:
     flight__branch_pattern: flight/{description}
     flight:
       - git fetch origin
