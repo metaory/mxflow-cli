@@ -20,65 +20,42 @@
 
 
   ```yaml
-  config_version: 0.42.0
-  trunk_branch_name: flight
-  sleep_between_commands: 3000
+  config_version: 0.44.3
   graph_git_log_limit: 40
-  bug_tracker_path: https://app.clickup.com/t/14288054/{taskId}
+  issue_tracker_path: https://metaory.atlassian.net/browse/{taskId}
+  sleep_between_commands: 1000
   workflows:
-    flight__branch_pattern: flight/{description}
-    flight:
-      - git fetch origin
-      - git checkout master
-      - git merge origin/master
-      - confirm git fetch --all
-      - git checkout -b {branchName}
-      - git status
-      - confirm git push --set-upstream origin {branchName}
-      - list logs
-    feature__branch_pattern: '{branchType}/{taskId}-{description}'
-    feature:
-      - git fetch origin
-      - git checkout master
-      - git merge origin/master
-      - confirm git fetch origin
-      - autocomplete checkout flight
-      - git checkout -b {branchName}
-      - git status
-      - confirm git push --set-upstream origin {branchName}
-      - list logs
-    bugfix__branch_pattern: '{branchType}/{taskId}-{description}'
-    bugfix:
-      - git fetch origin
-      - git checkout master
-      - git merge origin/master
-      - confirm git fetch origin
-      - autocomplete checkout flight
-      - git checkout -b {branchName}
-      - git status
-      - confirm git push --set-upstream origin {branchName}
-      - list logs
-    other__branch_pattern: '{branchType}/{taskId}-{description}'
-    other:
-      - git fetch origin
-      - git checkout master
-      - git merge origin/master
-      - confirm git fetch origin
-      - autocomplete checkout flight
-      - git checkout -b {branchName}
-      - git status
-      - confirm git push --set-upstream origin {branchName}
-      - list logs
-    hotfix__branch_pattern: '{branchType}/{taskId}-{description}'
-    hotfix:
-      - git fetch origin
-      - git checkout master
-      - git merge origin/master
-      - confirm git fetch --all
-      - git checkout -b {branchName}
-      - git status
-      - confirm git push --set-upstream origin {branchName}
-      - list logs
+    bar:
+      branch: '{branchType}/{taskId}-{description}'
+      steps:
+        - git fetch origin
+        - git checkout master
+        - git merge origin/master
+        - git checkout -b {branchName}
+        - git status
+        - confirm git push --set-upstream origin {branchName}
+        - list logs
+    foo:
+      branch: '{branchType}/{taskId}-{description}'
+      steps:
+        - git fetch origin
+        - git checkout master
+        - git merge origin/master
+        - autocomplete checkout xorg
+        - git checkout -b {branchName}
+        - git status
+        - confirm git push --set-upstream origin {branchName}
+        - list logs
+    xorg:
+      branch: xorg/{description}
+      steps:
+        - git fetch origin
+        - git checkout master
+        - git merge origin/master
+        - git checkout -b {branchName}
+        - git status
+        - confirm git push --set-upstream origin {branchName}
+        - list logs
   ```
 </details>
 
@@ -121,6 +98,12 @@ Usage
 Options
 =======
     --verbose               | verbose logs
+
+Roadmap
+- [ ] plugin system for dynamic lists
+- [ ] project based config file
+- [ ] aurgument mode 
+- [ ] argument autocomplete
 
 ***
 
