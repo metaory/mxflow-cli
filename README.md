@@ -100,6 +100,8 @@ Options
     --verbose               | verbose logs
 
 Roadmap
+=======
+
 - [ ] plugin system for dynamic lists
 - [ ] project based config file
 - [ ] aurgument mode 
