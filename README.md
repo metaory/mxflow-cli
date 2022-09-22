@@ -26,7 +26,7 @@
 
 
   ```yaml
-  config_version: 0.46.0
+  config_version: 0.47.0
   graph_git_log_limit: 40
   issue_tracker: jira
   issue_tracker_tenant: metaory
