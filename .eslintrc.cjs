@@ -16,6 +16,7 @@ module.exports = {
     icons: 'readonly',
     C: 'readonly',
     L: 'readonly',
+    logYaml: 'readonly',
     chalk: 'readonly',
     sleep: 'readonly',
     spinner: 'readonly',
