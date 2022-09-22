@@ -16,8 +16,8 @@
 <!-- ![hgit v0.32.3](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220916123031.gif) -->
 
 # Config Order
-- first the local config will be attempted at (`./.hgit/config.yml`)
-- and will fallback to system config at (`~/.config/hgit/config.yml`)
+- first the **local config** will be attempted at (`./.hgit/config.yml`)
+- fallback to **system config** at (`~/.config/hgit/config.yml`)
 
 # Sample Config
 
