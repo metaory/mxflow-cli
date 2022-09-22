@@ -32,33 +32,25 @@
   issue_tracker_tenant: metaory
   sleep_between_commands: 1000
   workflows:
-    bar:
-      branch: '{branchType}/{taskId}-{description}'
-      steps:
-        - git fetch origin
-        - git checkout master
-        - git merge origin/master
-        - git checkout -b {branchName}
-        - git status
-        - confirm git push --set-upstream origin {branchName}
-        - list logs
     foo:
-      branch: '{branchType}/{taskId}-{description}'
+      description: example placeholder
+      pattern: '{branchType}/TODO_CHANGE_ME__{taskId}-{description}'
       steps:
         - git fetch origin
         - git checkout master
         - git merge origin/master
-        - autocomplete checkout xorg
         - git checkout -b {branchName}
         - git status
         - confirm git push --set-upstream origin {branchName}
         - list logs
-    xorg:
+    bar:
+      description: example placeholder
       branch: xorg/{description}
       steps:
         - git fetch origin
         - git checkout master
         - git merge origin/master
+        - autocomplete checkout xorg
         - git checkout -b {branchName}
         - git status
         - confirm git push --set-upstream origin {branchName}
