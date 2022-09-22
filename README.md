@@ -1,6 +1,8 @@
 # hgit
 ### :rocket: a beautiful unopinionated config based workflow **engine**
-# Streamline and Simplify complex git processes
+# Streamline and Simplify complex processes
+
+## a CICD for local machines
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/2022-09-20-003715_1026x1000_scrot.png">
@@ -20,9 +22,10 @@
 
 
   ```yaml
-  config_version: 0.45.0
+  config_version: 0.46.0
   graph_git_log_limit: 40
-  issue_tracker_path: https://metaory.atlassian.net/browse/{taskId}
+  issue_tracker: jira
+  issue_tracker_tenant: metaory
   sleep_between_commands: 1000
   workflows:
     bar:
@@ -102,9 +105,9 @@ Options
 Roadmap
 =======
 
-- [ ] plugin system for dynamic lists
 - [ ] project based config file
-- [ ] aurgument mode 
+- [ ] plugin system for dynamic lists
+- [ ] aurgument mode
 - [ ] argument autocomplete
 
 ***
