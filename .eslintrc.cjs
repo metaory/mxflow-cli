@@ -24,6 +24,7 @@ module.exports = {
     fillTo: 'readonly',
     getModuleName: 'readonly',
     CWD: 'readonly',
+    YAML: 'readonly',
     PKG_PATH: 'readonly',
     PKG_NAME: 'readonly',
     runCommands: 'readonly',
