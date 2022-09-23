@@ -105,11 +105,12 @@ Installation
 Usage
 =====
     hgit
-    hgit --trigger <workflow-name>
+    hgit --trigger foobar
 
 Options
 =======
-    --verbose               | verbose logs
+    --verbose                 | verbose logs
+    --trigger <workflow-name> | non-interactive workflow trigger
 
 Roadmap
 =======
