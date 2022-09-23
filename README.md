@@ -105,6 +105,7 @@ Installation
 Usage
 =====
     hgit
+    hgit --trigger <workflow-name>
 
 Options
 =======

@@ -24,6 +24,11 @@ await catchNoGit()
 
 await catchDirtyGit()
 
+if (argv.trigger) {
+  await operations.workflows(argv.trigger)
+  process.exit()
+}
+
 const { operation } = await autocompleteInput('operation', operations.list)
 const { options } = operations.list().find(x => x.name === operation)
 
