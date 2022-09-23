@@ -40,7 +40,7 @@
   workflows:
     foo:
       description: example placeholder
-      pattern: '{branchType}/TODO_CHANGE_ME__{taskId}-{description}'
+      pattern: '{branchType}/{taskId}-{description}'
       steps:
         - git fetch origin
         - git checkout master
@@ -61,6 +61,12 @@
         - git status
         - confirm git push --set-upstream origin {branchName}
         - list logs
+    xorg:
+      description: example placeholder
+      steps:
+        - echo hello word
+        - echo goodbye cruel world
+        - confirm echo goodbye
   ```
 </details>
 
