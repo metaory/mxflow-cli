@@ -21,9 +21,9 @@
 <!-- ![hgit v0.32.5-0](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220916124849.gif) -->
 <!-- ![hgit v0.32.3](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220916123031.gif) -->
 
-# Config Order
-- first the **local config** will be attempted at (`./.hgit/config.yml`)
-- fallback to **system config** at (`~/.config/hgit/config.yml`)
+Requirements
+============
+- Node 16.x
 
 # Sample Config
 
