@@ -30,6 +30,7 @@
     "workflow-automation",
     "workflow-engine",
     "workflow",
+    "ci",
     "cli",
     "tui",
     "task",
