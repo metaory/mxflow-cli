@@ -5,6 +5,7 @@ module.exports = {
   },
   globals: {
     $: 'readonly',
+    $$: 'readonly',
     cfg: 'readonly',
     argv: 'readonly',
     log: 'readonly',
