@@ -13,7 +13,7 @@
 
 <!-- ![hgit v0.47.1](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220922214148.gif) -->
 
-![hgit v0.47.4](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220923114631.gif)
+![hgit v0.47.13](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220923175552.gif)
 
 
 <!-- ![hgit v0.42.1-2](https://raw.githubusercontent.com/wiki/metaory/hgit-cli/assets/gifcast_220920203311.gif) -->
