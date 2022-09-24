@@ -108,7 +108,7 @@ Installation
 
 Usage
 =====
-    mxflow
+    mxflow # or mxf
     mxflow --trigger foobar
 
 Options
