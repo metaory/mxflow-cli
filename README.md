@@ -4,7 +4,7 @@
 ### :rocket: a beautiful unopinionated config based workflow **engine**
 # Streamline and Simplify complex processes
 
-## a CICD for local machines
+## a CICD for internal processes and workflows on local machines
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/2022-09-22-213922_990x1046_scrot.png">
