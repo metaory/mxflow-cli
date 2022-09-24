@@ -1,4 +1,6 @@
 # mxflow
+# [[ formely [npm/hgit](https://www.npmjs.com/package/hgit) :pencil2:]]
+
 ### :rocket: a beautiful unopinionated config based workflow **engine**
 # Streamline and Simplify complex processes
 
