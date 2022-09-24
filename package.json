@@ -1,5 +1,5 @@
 {
-  "name": "hgit",
+  "name": "mxflow",
   "version": "0.47.17",
   "description": "Streamline and Simplify complex git processes",
   "main": "./bin/index.js",
@@ -12,7 +12,7 @@
     "node": ">=0.16.5"
   },
   "bin": {
-    "hgit": "./bin/index.js"
+    "mxflow": "./bin/index.js"
   },
   "scripts": {
     "start": "node bin",
@@ -21,10 +21,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/metaory/hgit-cli.git"
+    "url": "https://github.com/metaory/mxflow-cli.git"
   },
   "keywords": [
-    "hgit",
+    "mxflow",
     "git",
     "workflow",
     "workflow-automation",
