@@ -121,7 +121,7 @@ Roadmap
 
 - [X] project based config file
 - [ ] plugin system for dynamic lists
-- [ ] aurgument mode
+- [X] aurgument mode
 - [ ] argument autocomplete
 
 ***
