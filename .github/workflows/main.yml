@@ -1,4 +1,4 @@
-name: HGit npm Package
+name: MXFlow npm Package
 
 on:
   push:
