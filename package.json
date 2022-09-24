@@ -12,7 +12,8 @@
     "node": ">=0.16.5"
   },
   "bin": {
-    "mxflow": "./bin/index.js"
+    "mxflow": "./bin/index.js",
+    "mxf": "./bin/index.js"
   },
   "scripts": {
     "start": "node bin",
