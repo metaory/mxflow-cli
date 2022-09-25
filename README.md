@@ -33,7 +33,7 @@ Requirements
 # Sample Config
 
 <details>
-  <summary>sample-generated-config-file</summary>
+  <summary><h2>sample-generated-config-file</h2></summary>
 
 
   ```yaml
@@ -56,7 +56,7 @@ Requirements
         - list logs
     bar:
       description: example placeholder
-      branch: xorg/{description}
+      pattern: xorg/{description}
       steps:
         - git fetch origin
         - git checkout master
@@ -88,14 +88,14 @@ Config Behaviours
 
 ---
 
-Features
-========
-- check for `conflict` between multiple remote branch
-- start new workflows from a `config` file 
-- **ALL** commands are read from the config file in `~/.config/mxflow/config.yml`
-- `dynamic branch checkout` in workflows with command: `prompt_checkout__{pattern}`
-- `branchNamePattern` from config: `{branchType}.branch_pattern`
-- add `confirm ` to commands for a confirmation prompt before the command
+<!-- Features -->
+<!-- ======== -->
+<!-- - check for `conflict` between multiple remote branch -->
+<!-- - start new workflows from a `config` file  -->
+<!-- - **ALL** commands are read from the config file in `~/.config/mxflow/config.yml` -->
+<!-- - `dynamic branch checkout` in workflows with command: `prompt_checkout__{pattern}` -->
+<!-- - `branchNamePattern` from config: `{branchType}.branch_pattern` -->
+<!-- - add `confirm ` to commands for a confirmation prompt before the command -->
 
 ---
 
