@@ -111,6 +111,8 @@ Usage
 =====
     mxflow # or mxf
     mxflow --trigger foobar
+    mxflow --trigger feature --branch feat/xorg
+    mxflow --trigger hotfix --branch hotfix/zelda --verbose
 
 Options
 =======
