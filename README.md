@@ -49,7 +49,7 @@
 
 ---
 ##### :rocket: beautiful unopinionated config based workflow **engine**
-##### :twisted_rightwards_arrows: Streamline complex workflows across team 
+##### :card_file_box: Streamline complex workflows across team 
 ##### :bulb: Simplify complex commands
 
 <p align="center">
