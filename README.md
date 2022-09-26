@@ -48,7 +48,7 @@
 #### sample usecase: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
 ---
-##### :rocket: beautiful unopinionated config based workflow **engine**
+##### :rocket: Unopinionated config based workflow **engine**
 ##### :card_file_box: Streamline complex workflows across team 
 ##### :bulb: Simplify complex commands
 
