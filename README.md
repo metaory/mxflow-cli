@@ -52,20 +52,9 @@ Requirements
   issue_tracker_tenant: metaory
   sleep_between_commands: 1000
   workflows:
-    foo:
+    foobar:
       description: example placeholder
       pattern: '{branchType}/{taskId}-{description}'
-      steps:
-        - git fetch origin
-        - git checkout master
-        - git merge origin/master
-        - git checkout -b {branchName}
-        - git status
-        - confirm git push --set-upstream origin {branchName}
-        - list logs
-    bar:
-      description: example placeholder
-      pattern: xorg/{description}
       steps:
         - git fetch origin
         - git checkout master
