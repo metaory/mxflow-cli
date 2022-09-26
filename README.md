@@ -49,8 +49,8 @@
 
 ---
 ##### :rocket: beautiful unopinionated config based workflow **engine**
-##### Streamline complex workflows across team 
-##### Simplify complex commands
+##### :twisted_rightwards_arrows: Streamline complex workflows across team 
+##### :bulb: Simplify complex commands
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/2022-09-24-163039_980x1037_scrot.png">
