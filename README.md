@@ -1,10 +1,19 @@
 # mxflow
-# [[ formely [npm/hgit](https://www.npmjs.com/package/hgit) :pencil2:]]
 
-### :rocket: a beautiful unopinionated config based workflow **engine**
-# Streamline and Simplify complex processes
+#### [[ formely [npm/hgit](https://www.npmjs.com/package/hgit) :pencil2:]]
 
 ## a CICD for internal processes and workflows on local machines
+### group commands under a workflow, write steps, use special commands like `confirm`
+
+### Special commands
+- `confirm {commandName}` _adds confirmation step to command_
+- `autocomplete checkout {pattern}` _prompt checkout the pattern branch_
+- `list logs` _list last n pretty graph log_
+
+---
+##### :rocket: beautiful unopinionated config based workflow **engine**
+##### Streamline complex workflows across team 
+##### Simplify complex commands
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/2022-09-24-163039_980x1037_scrot.png">
@@ -78,15 +87,9 @@ Requirements
 [sample-git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
 ---
-Config Behaviours
-=================
+<!-- Config Behaviours -->
+<!-- ================= -->
 
-### Special commands:
-- `list logs` _list last n pretty graph log_
-- `autocomplete checkout {pattern}` _prompt checkout the pattern branch_
-- `confirm {commandName}` _adds confirmation step to command_
-
----
 
 <!-- Features -->
 <!-- ======== -->
