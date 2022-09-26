@@ -6,9 +6,46 @@
 ### group commands under a workflow, write steps, use special commands like `confirm`
 
 ### Special commands
-- `confirm {commandName}` _adds confirmation step to command_
+- `confirm {command}` _adds confirmation step to command_
 - `autocomplete checkout {pattern}` _prompt checkout the pattern branch_
 - `list logs` _list last n pretty graph log_
+
+### Config order
+- `./.mxflow/config.yml`
+- `~/.config/mxflow/config.yml`
+
+<details>
+  <summary>sample-generated-config-file</summary>
+
+  ```yaml
+  config_version: 0.47.0
+  graph_git_log_limit: 40
+  issue_tracker: jira
+  issue_tracker_tenant: metaory
+  sleep_between_commands: 1000
+  workflows:
+    foobar:
+      description: example placeholder
+      pattern: '{branchType}/{taskId}-{description}'
+      steps:
+        - git fetch origin
+        - git checkout master
+        - git merge origin/master
+        - autocomplete checkout xorg
+        - git checkout -b {branchName}
+        - git status
+        - confirm git push --set-upstream origin {branchName}
+        - list logs
+    xorg:
+      description: example placeholder
+      steps:
+        - echo hello word
+        - echo goodbye cruel world
+        - confirm echo goodbye
+  ```
+</details>
+
+#### sample usecase: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
 ---
 ##### :rocket: beautiful unopinionated config based workflow **engine**
@@ -39,41 +76,6 @@ Requirements
 ============
 - Node 16.x
 
-# Sample Config
-
-<details>
-  <summary><h2>sample-generated-config-file</h2></summary>
-
-
-  ```yaml
-  config_version: 0.47.0
-  graph_git_log_limit: 40
-  issue_tracker: jira
-  issue_tracker_tenant: metaory
-  sleep_between_commands: 1000
-  workflows:
-    foobar:
-      description: example placeholder
-      pattern: '{branchType}/{taskId}-{description}'
-      steps:
-        - git fetch origin
-        - git checkout master
-        - git merge origin/master
-        - autocomplete checkout xorg
-        - git checkout -b {branchName}
-        - git status
-        - confirm git push --set-upstream origin {branchName}
-        - list logs
-    xorg:
-      description: example placeholder
-      steps:
-        - echo hello word
-        - echo goodbye cruel world
-        - confirm echo goodbye
-  ```
-</details>
-
-[sample-git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
 ---
 <!-- Config Behaviours -->
