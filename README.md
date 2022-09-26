@@ -59,47 +59,19 @@
 
 ---
 
-
-![mxflow v0.47.21](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220925134654.gif)
-
-<!-- ![mxflow v0.47.1](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220922214148.gif) -->
-<!-- ![mxflow v0.47.14](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220923195037.gif) -->
-<!-- ![mxflow v0.47.13](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220923175552.gif) -->
-
-
-<!-- ![mxflow v0.42.1-2](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220920203311.gif) -->
-
-<!-- ![mxflow v0.32.5-0](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220916124849.gif) -->
-<!-- ![mxflow v0.32.3](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220916123031.gif) -->
-
 Requirements
 ============
 - Node 16.x
 
-
 ---
-<!-- Config Behaviours -->
-<!-- ================= -->
-
-
-<!-- Features -->
-<!-- ======== -->
-<!-- - check for `conflict` between multiple remote branch -->
-<!-- - start new workflows from a `config` file  -->
-<!-- - **ALL** commands are read from the config file in `~/.config/mxflow/config.yml` -->
-<!-- - `dynamic branch checkout` in workflows with command: `prompt_checkout__{pattern}` -->
-<!-- - `branchNamePattern` from config: `{branchType}.branch_pattern` -->
-<!-- - add `confirm ` to commands for a confirmation prompt before the command -->
-
----
-
-npx
-===
-    npx mxflow
 
 Installation
 ============
     npm i -g mxflow
+
+or
+
+    npx mxflow
 
 Usage
 =====
@@ -113,6 +85,8 @@ Options
     --verbose                 | verbose logs
     --trigger <workflow-name> | non-interactive workflow trigger
 
+---
+
 Roadmap
 =======
 
@@ -120,6 +94,20 @@ Roadmap
 - [ ] plugin system for dynamic lists
 - [X] aurgument mode
 - [ ] argument autocomplete
+
+---
+
+![mxflow v0.47.21](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220925134654.gif)
+
+<!-- ![mxflow v0.47.1](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220922214148.gif) -->
+<!-- ![mxflow v0.47.14](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220923195037.gif) -->
+<!-- ![mxflow v0.47.13](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220923175552.gif) -->
+
+
+<!-- ![mxflow v0.42.1-2](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220920203311.gif) -->
+
+<!-- ![mxflow v0.32.5-0](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220916124849.gif) -->
+<!-- ![mxflow v0.32.3](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220916123031.gif) -->
 
 ***
 
