@@ -15,7 +15,7 @@
 - `~/.config/mxflow/config.yml`
 
 <details>
-  <summary>sample-generated-config-file</summary>
+  <summary><h4>sample-config-file</h4></summary>
 
   ```yaml
   config_version: 0.47.0
