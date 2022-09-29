@@ -20,9 +20,10 @@ process.on('SIGINT', process.exit)
 
 global.cfg = await getConfig()
 
-await catchNoGit()
-
-await catchDirtyGit()
+if (argv['catch-git'] !== false) {
+  await catchNoGit()
+  await catchDirtyGit()
+}
 
 if (argv.trigger) {
   await operations.workflows(argv.trigger)

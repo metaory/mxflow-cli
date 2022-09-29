@@ -76,6 +76,7 @@ Usage
     mxflow --trigger foobar
     mxflow --trigger feature --branch feat/xorg
     mxflow --trigger hotfix --branch hotfix/zelda --verbose
+    mxflow --no-catch-git # to bypass initial git checks
 
 Options
 =======
