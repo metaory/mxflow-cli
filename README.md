@@ -1,7 +1,5 @@
 # mxflow
 
-#### [[ formely [npm/hgit](https://www.npmjs.com/package/hgit) :pencil2:]]
-
 ## a CICD for internal processes and workflows on local machines
 ##### group commands under a workflow, write steps, use special commands like `confirm`
 
@@ -107,6 +105,8 @@ Roadmap
 
 <!-- ![mxflow v0.32.5-0](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220916124849.gif) -->
 <!-- ![mxflow v0.32.3](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220916123031.gif) -->
+
+#### [[ formely [npm/hgit](https://www.npmjs.com/package/hgit) ]]
 
 ***
 
