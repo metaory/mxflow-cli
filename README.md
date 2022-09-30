@@ -3,6 +3,13 @@
 ## a CICD for internal processes and workflows on local machines for teams
 group commands under a workflow, write steps, use special commands like `confirm`
 
+---
+##### :boom: Unopinionated config based workflow **engine**
+##### :card_file_box: Streamline complex workflows across teams
+##### :bulb: Simplify complex commands
+
+---
+
 ### Special commands
 - `confirm {command}` _adds a confirmation step to any commands_
 - `autocomplete checkout {pattern}` _prompt checkout the pattern branch_
@@ -41,11 +48,6 @@ group commands under a workflow, write steps, use special commands like `confirm
 </details>
 
 #### sample usecase: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Use-case)
-
----
-##### :boom: Unopinionated config based workflow **engine**
-##### :card_file_box: Streamline complex workflows across teams
-##### :bulb: Simplify complex commands
 
 ---
 
