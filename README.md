@@ -6,9 +6,9 @@
 ##### group commands under a workflow, write steps, use special commands like `confirm`
 
 ### Special commands
-- `confirm {command}` _adds confirmation step to command_
+- `confirm {command}` _adds a confirmation step to any commands_
 - `autocomplete checkout {pattern}` _prompt checkout the pattern branch_
-- `list logs` _list last n pretty graph log_
+- `list logs` _list last n pretty git graph log_
 
 ### Config order
 - `./.mxflow/config.yml`
@@ -46,12 +46,11 @@
 
 ---
 ##### :rocket: Unopinionated config based workflow **engine**
-##### :card_file_box: Streamline complex workflows across team 
+##### :card_file_box: Streamline complex workflows across teams
 ##### :bulb: Simplify complex commands
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/2022-09-24-163039_980x1037_scrot.png">
-  <!-- <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/2022-09-20-003715_1026x1000_scrot.png"> -->
 </p>
 
 ---
@@ -82,7 +81,7 @@ Options
 =======
     --verbose                 | verbose logs
     --trigger <workflow-name> | non-interactive workflow trigger
-    --branch <branch-name>    | branch name for non-interactive
+    --branch <branch-name>    | branch name for non-interactive flow
     --no-catch-git            | bypass initial git checks
 
 ---
