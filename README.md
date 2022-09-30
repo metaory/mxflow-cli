@@ -43,7 +43,7 @@ group commands under a workflow, write steps, use special commands like `confirm
 #### sample usecase: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
 ---
-##### :rocket: Unopinionated config based workflow **engine**
+##### :boom: Unopinionated config based workflow **engine**
 ##### :card_file_box: Streamline complex workflows across teams
 ##### :bulb: Simplify complex commands
 
