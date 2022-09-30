@@ -1,4 +1,4 @@
-# mxflow
+# MXFlow
 
 ## a CICD for internal processes and workflows on local machines for teams
 group commands under a workflow, write steps, use special commands like `confirm`
