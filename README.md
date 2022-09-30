@@ -1,7 +1,7 @@
 # mxflow
 
 ## a CICD for internal processes and workflows on local machines
-##### group commands under a workflow, write steps, use special commands like `confirm`
+group commands under a workflow, write steps, use special commands like `confirm`
 
 ### Special commands
 - `confirm {command}` _adds a confirmation step to any commands_
