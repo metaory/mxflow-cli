@@ -82,6 +82,8 @@ Options
 =======
     --verbose                 | verbose logs
     --trigger <workflow-name> | non-interactive workflow trigger
+    --branch <branch-name>    | branch name for non-interactive
+    --no-catch-git            | bypass initial git checks
 
 ---
 
