@@ -47,6 +47,8 @@ group commands under a workflow, write steps, use special commands like `confirm
 ##### :card_file_box: Streamline complex workflows across teams
 ##### :bulb: Simplify complex commands
 
+---
+
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/2022-09-24-163039_980x1037_scrot.png">
 </p>
