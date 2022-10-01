@@ -1,6 +1,6 @@
 {
   "name": "mxflow",
-  "version": "0.47.31-6",
+  "version": "0.47.31-7",
   "description": "Streamline and Simplify complex git processes",
   "main": "./bin/index.js",
   "type": "module",
