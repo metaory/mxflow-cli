@@ -1,7 +1,7 @@
 {
   "name": "mxflow",
   "version": "0.47.32-0",
-  "description": "Streamline and Simplify complex git processes",
+  "description": "a local first CICD | Streamline and Simplify complex processes",
   "main": "./bin/index.js",
   "type": "module",
   "os": [
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "node bin",
-    "build": "pkg index.js --out-dir ./exec/",
+    "build": "pkg bin/index.js --out-dir ./exec/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
