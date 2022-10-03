@@ -112,6 +112,8 @@ Roadmap
 
 <!-- #### [[ formely [npm/hgit](https://www.npmjs.com/package/hgit) ]] -->
 
+:warning: MXFlow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
+
 ***
 
             ___           ___           ___
