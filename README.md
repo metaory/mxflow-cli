@@ -23,8 +23,7 @@ group commands under a workflow, write steps, use special commands like `confirm
   <summary>sample-config-file</summary>
 
   ```yaml
-  version: 0.47.0
-  sleep: 1000
+  version: 0.48.0
   workflows:
     foobar:
       description: example placeholder
