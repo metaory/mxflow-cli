@@ -33,6 +33,4 @@ if (argv.trigger) {
 const { operation } = await autocompleteInput('operation', operations.list)
 const { options } = operations.list().find(x => x.name === operation)
 
-// logSleepBetweenConfig()
-
 await operations[operation](options)

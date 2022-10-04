@@ -47,6 +47,7 @@
   "author": "metaory <metaory@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "ajv": "^8.11.0",
     "boxen": "^7.0.0",
     "cli-highlight": "^2.1.11",
     "clipboardy": "^3.0.0",
