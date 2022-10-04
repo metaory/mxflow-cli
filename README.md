@@ -17,7 +17,7 @@ group commands under a workflow, write steps, use special commands like `confirm
 
 ### Config order
 - `./.mxflow/config.yml`
-- `~/.config/mxflow/config.yml`
+- `~/.mxflow/config.yml`
 
 <details>
   <summary>sample-config-file</summary>
