@@ -12,8 +12,8 @@ group commands under a workflow, write steps, use special commands like `confirm
 
 ### Special commands
 - `confirm {command}` _adds a confirmation step to any commands_
-- `autocomplete checkout {pattern}` _prompt checkout the pattern branch_
-- `list logs` _list last n pretty git graph log_
+<!-- - `autocomplete checkout {pattern}` _prompt checkout the pattern branch_ -->
+<!-- - `list logs` _list last n pretty git graph log_ -->
 
 ### Config order
 - `./.mxflow/config.yml`
@@ -23,26 +23,32 @@ group commands under a workflow, write steps, use special commands like `confirm
   <summary>sample-config-file</summary>
 
   ```yaml
-  version: 0.48.0
-  workflows:
-    foobar:
-      description: example placeholder
-      pattern: '{branchType}/{taskId}-{description}'
-      steps:
-        - git fetch origin
-        - git checkout master
-        - git merge origin/master
-        - autocomplete checkout xorg
-        - git checkout -b {branchName}
-        - git status
-        - confirm git push --set-upstream origin {branchName}
-        - list logs
-    xorg:
-      description: example placeholder
-      steps:
-        - echo hello word
-        - echo goodbye cruel world
-        - confirm echo goodbye
+version: 0.50.0
+sleep: 1000
+workflows:
+  foobar:
+    description: example placeholder
+    steps:
+      - echo hello word
+      - echo goodbye cruel world
+      - confirm echo goodbye
+  feature:
+    description: feature example workflow
+    steps:
+      - git fetch origin
+      - git checkout master
+      - git merge origin/master
+      - git-checkout-branch:
+          base: flight
+      - git-create-branch:
+          pattern: "{branchType}/{taskId}-{description}"
+      - git status
+      - confirm git push --set-upstream origin {branchName}
+      - list logs
+      - log-bugtracker:
+          bugtracker: jira
+          tenant: metaory
+
   ```
 </details>
 
