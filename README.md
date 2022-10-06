@@ -38,9 +38,9 @@ workflows:
       - git fetch origin
       - git checkout master
       - git merge origin/master
-      - git-checkout-branch:
+      - checkout-branch:
           base: flight
-      - git-create-branch:
+      - create-branch:
           pattern: "{branchType}/{taskId}-{description}"
       - git status
       - confirm git push --set-upstream origin {branchName}
