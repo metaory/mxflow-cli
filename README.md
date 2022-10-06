@@ -24,7 +24,6 @@ group commands under a workflow, write steps, use special commands like `confirm
 
   ```yaml
 version: 0.50.0
-sleep: 1000
 workflows:
   foobar:
     description: example placeholder
