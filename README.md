@@ -43,7 +43,8 @@ workflows:
           pattern: "{branchType}/{taskId}-{description}"
       - git status
       - confirm git push --set-upstream origin {branchName}
-      - list logs
+      - list-logs:
+          limit: 100
       - log-bugtracker:
           bugtracker: jira
           tenant: metaory
