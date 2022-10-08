@@ -71,10 +71,12 @@ Requirements
 Installation
 ============
     npm i -g mxflow
+    mxflow --setup-completion
 
 or
 
     npx mxflow
+    mxflow --setup-completion
 
 Usage
 =====
