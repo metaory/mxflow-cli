@@ -93,9 +93,9 @@ Options
 ```bash
 --verbose                 | verbose logs
 --trigger <workflow-name> | non-interactive workflow trigger
---branch <branch-name>    | branch name in non-interactive flow
+--branch <branch-name>    | branch name, non-interactive flow
 --no-catch-git            | bypass initial git checks
---setup-completion        | setup tab completion in your shell
+--setup-completion        | setup tab completion, your shell
 --clean-completion        | cleanup tab completion
 ```
 
