@@ -10,7 +10,7 @@ group commands under a workflow, write steps, use special commands like `confirm
 
 ---
 
-### Special commands
+### Special command prefix
 - `confirm {command}` _adds a confirmation step to any commands_
 <!-- - `autocomplete checkout {pattern}` _prompt checkout the pattern branch_ -->
 <!-- - `list logs` _list last n pretty git graph log_ -->
@@ -78,18 +78,24 @@ or
 
 Usage
 =====
-    mxflow # or mxf
-    mxflow --trigger foobar
-    mxflow --trigger feature --branch feat/xorg
-    mxflow --trigger hotfix --branch hotfix/zelda --verbose
-    mxflow --no-catch-git # to bypass initial git checks
+```bash
+mxflow # or mxf
+mxflow --trigger foobar
+mxflow --trigger feature --branch feat/xorg
+mxflow --trigger hotfix --branch hotfix/zelda --verbose
+mxflow --no-catch-git # to bypass initial git checks
+```
 
 Options
 =======
-    --verbose                 | verbose logs
-    --trigger <workflow-name> | non-interactive workflow trigger
-    --branch <branch-name>    | branch name for non-interactive flow
-    --no-catch-git            | bypass initial git checks
+```bash
+--verbose                 | verbose logs
+--trigger <workflow-name> | non-interactive workflow trigger
+--branch <branch-name>    | branch name for non-interactive flow
+--no-catch-git            | bypass initial git checks
+--setup-completion        | setup tab completion for your shell
+--clean-completion        | cleanup tab completion
+```
 
 ---
 
@@ -99,7 +105,7 @@ Roadmap
 - [X] project based config file
 - [ ] plugin system for dynamic lists
 - [X] aurgument mode
-- [ ] argument autocomplete
+- [X] argument autocomplete
 
 ---
 

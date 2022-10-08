@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import '../lib/globals.js'
 import '../lib/header.js'
+import '../lib/completion.js'
 
 import { autocompleteInput } from '../lib/steps/prompts.js'
 import * as operations from '../lib/operations/index.js'
