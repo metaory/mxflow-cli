@@ -25,30 +25,29 @@ group commands under a workflow, write steps, use special commands like `confirm
   ```yaml
 version: 0.50.0
 workflows:
-  foobar:
-    description: example placeholder
-    steps:
-      - echo hello word
-      - echo goodbye cruel world
-      - confirm echo goodbye
-  feature:
-    description: feature example workflow
-    steps:
-      - git fetch origin
-      - git checkout master
-      - git merge origin/master
-      - checkout-branch:
-          base: flight
-      - create-branch:
-          pattern: "{branchType}/{taskId}-{description}"
-      - git status
-      - confirm git push --set-upstream origin {branchName}
-      - list-logs:
-          limit: 100
-      - log-bugtracker:
-          bugtracker: jira
-          tenant: metaory
-
+    foobar:
+      description: example placeholder
+      steps:
+        - echo hello word
+        - echo goodbye cruel world
+        - confirm echo goodbye
+    feature:
+      description: feature example workflow
+      steps:
+        - git fetch origin
+        - git checkout master
+        - git merge origin/master
+        - checkout-branch:
+            base: flight
+        - create-branch:
+            pattern: "{branchType}/{taskId}-{description}"
+        - git status
+        - confirm git push --set-upstream origin {branchName}
+        - list-logs:
+            limit: 100
+        - log-bugtracker:
+            bugtracker: jira
+            tenant: metaory
   ```
 </details>
 
@@ -76,7 +75,7 @@ Installation
 or
 
     npx mxflow
-    mxflow --setup-completion
+    npx mxflow --setup-completion
 
 Usage
 =====
@@ -97,6 +96,7 @@ Options
 --no-catch-git            | bypass initial git checks
 --setup-completion        | setup tab completion, your shell
 --clean-completion        | cleanup tab completion
+--help                    | help menu
 ```
 
 ---
