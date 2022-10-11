@@ -23,26 +23,36 @@ group commands under a workflow, write steps, use special commands like `confirm
   <summary>sample-config-file</summary>
 
   ```yaml
-version: 0.50.0
+version: 0.60.0
+sleep: 1000
 workflows:
-    foobar:
-      description: example placeholder
-      steps:
-        - echo hello word
-        - echo goodbye cruel world
-        - confirm echo goodbye
     feature:
       description: feature example workflow
+      args:
+        - name: taskId
+          type: stringInput
+          export: taskId
+        - name: description
+          type: stringInput
+          export: description
+        - name: MXF_BUG_TRACKER_NAME
+          type: env
+          default: jira
+          export: bugTrackerName
+        - name: MXF_BUG_TRACKER_TENANT
+          type: env
+          default: metaory
+          export: bugTrackerTenant
       steps:
         - git fetch origin
         - git checkout master
         - git merge origin/master
         - checkout-branch:
             base: flight
-        - create-branch:
-            pattern: "{branchType}/{taskId}-{description}"
+        - git checkout -b {workflow}/{taskId}-{description}
         - git status
-        - confirm git push --set-upstream origin {branchName}
+        - confirm git push --set-upstream origin
+          {workflow}/{taskId}-{description}
         - list-logs:
             limit: 100
         - log-bugtracker:
@@ -60,6 +70,13 @@ workflows:
 </p>
 
 ---
+
+Arg Types
+---------
+- stringInput
+- numberInput
+- toggleInput
+- env
 
 Requirements
 ============
@@ -90,6 +107,7 @@ mxflow --no-catch-git # to bypass initial git checks
 Options
 =======
 ```bash
+--init                    | init sample configuration
 --verbose                 | verbose logs
 --trigger <workflow-name> | non-interactive workflow trigger
 --branch <branch-name>    | branch name, non-interactive flow
