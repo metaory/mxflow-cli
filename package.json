@@ -1,6 +1,6 @@
 {
   "name": "mxflow",
-  "version": "0.51.0",
+  "version": "0.51.1",
   "description": "a local first CICD | Streamline and Simplify complex processes",
   "main": "./bin/index.js",
   "type": "module",
