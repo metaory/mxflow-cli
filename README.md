@@ -56,8 +56,8 @@ workflows:
         - list-logs:
             limit: 100
         - log-bugtracker:
-            bugtracker: jira
-            tenant: metaory
+            bugtracker: "{bugTrackerName}"
+            tenant: "{bugTrackerTenant}"
   ```
 </details>
 
