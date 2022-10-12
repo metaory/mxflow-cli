@@ -1,5 +1,32 @@
 # MXFlow
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset= "https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/mxflow.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/mxflow-2.png">
+    <img width="40%" alt="Bar chart with benchmark results" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/mxflow.png">
+  </picture>
+  <br>
+  <a href="#why">Why</a> |
+  <a href="#config-order">Config</a> |
+  <a href="#installation">Installation</a> |
+  <a href="#usage">Usage</a> |
+  <a href="#options">Options</a>
+</p>
+
+## Why?
+
+Internal processes can get complicated or too repetitive
+
+The main goal of the mxflow project is to streamline and simplify complex processes
+
+Major features:
+
+* Interactive first
+* Local first
+* Extensive
+* Shell completion
+
 ## a CICD for internal processes and workflows on local machines for teams
 group commands under a workflow, write steps, use special commands like `confirm`
 
