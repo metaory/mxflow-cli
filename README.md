@@ -30,10 +30,10 @@ workflows:
       description: feature example workflow
       args:
         - name: taskId
-          type: stringInput
+          type: string
           export: taskId
         - name: description
-          type: stringInput
+          type: string
           export: description
         - name: MXF_BUG_TRACKER_NAME
           type: env
@@ -73,9 +73,8 @@ workflows:
 
 Arg Types
 ---------
-- stringInput
-- numberInput
-- toggleInput
+- string
+- number
 - env
 
 Requirements
