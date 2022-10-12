@@ -26,8 +26,9 @@ if (argv['catch-git'] !== false) {
   await catchDirtyGit()
 }
 
-if (argv.trigger) {
-  await operations.workflows(argv.trigger)
+if (argv._.includes('trigger')) {
+  const [, workflow] = argv._
+  await operations.workflows(workflow)
   process.exit()
 }
 
