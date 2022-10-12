@@ -108,6 +108,7 @@ Options
 ```bash
 --init                    | init sample configuration
 --verbose                 | verbose logs
+--version                 | show version
 --trigger <workflow-name> | non-interactive workflow trigger
 --branch <branch-name>    | branch name, non-interactive flow
 --no-catch-git            | bypass initial git checks
