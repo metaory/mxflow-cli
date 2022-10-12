@@ -106,15 +106,14 @@ mxflow --no-catch-git # to bypass initial git checks
 Options
 =======
 ```bash
---init                    | init sample configuration
---verbose                 | verbose logs
---version                 | show version
---trigger <workflow-name> | non-interactive workflow trigger
---branch <branch-name>    | branch name, non-interactive flow
---no-catch-git            | bypass initial git checks
---setup-completion        | setup tab completion, your shell
---clean-completion        | cleanup tab completion
---help                    | help menu
+init                    | init sample configuration
+trigger <workflow-name> | non-interactive workflow trigger
+verbose                 | verbose logs
+version                 | show version
+--help                  | help menu
+--no-catch-git          | bypass initial git checks
+--setup-completion      | setup tab completion, your shell
+--clean-completion      | cleanup tab completion
 ```
 
 ---
