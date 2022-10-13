@@ -2,7 +2,6 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset= "https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/mxflow.png">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/mxflow-2.png">
-    <img width="40%" alt="Bar chart with benchmark results" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/mxflow.png">
   </picture>
   <br>
   <a href="#why">Why</a> |
