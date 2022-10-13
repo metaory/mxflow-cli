@@ -1,5 +1,3 @@
-# MXFlow
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset= "https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/mxflow.png">
@@ -24,7 +22,7 @@ Major features:
 
 * Interactive first
 * Local first
-* Extensive
+* Extensive config
 * Shell completion
 
 ## a CICD for internal processes and workflows on local machines for teams
@@ -124,9 +122,8 @@ Usage
 =====
 ```bash
 mxflow # or mxf
-mxflow --trigger foobar
-mxflow --trigger feature --branch feat/xorg
-mxflow --trigger hotfix --branch hotfix/zelda --verbose
+mxflow trigger foobar --verbose
+mxflow trigger feature --taskId xorg --description zelda
 mxflow --no-catch-git # to bypass initial git checks
 ```
 
