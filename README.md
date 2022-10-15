@@ -89,7 +89,7 @@ workflows:
 ---
 
 <p align="center">
-  <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/2022-09-24-163039_980x1037_scrot.png">
+  <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/screenshot.png">
 </p>
 
 ---
@@ -150,6 +150,6 @@ Roadmap
 
 ---
 
-![mxflow v0.47.21](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220925134654.gif)
+![mxflow v0.47.21](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast.gif)
 
 :warning: MXFlow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
