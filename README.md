@@ -37,15 +37,13 @@ group commands under a workflow, write steps, use special commands like `confirm
 
 ### Special command prefix
 - `confirm {command}` _adds a confirmation step to any commands_
-<!-- - `autocomplete checkout {pattern}` _prompt checkout the pattern branch_ -->
-<!-- - `list logs` _list last n pretty git graph log_ -->
 
 ### Config order
 - `./.mxflow/config.yml`
 - `~/.mxflow/config.yml`
 
 <details>
-  <summary>sample-config-file</summary>
+  <summary><h4>sample-config-file</h4></summary>
 
   ```yaml
 version: 0.60.0
@@ -154,38 +152,4 @@ Roadmap
 
 ![mxflow v0.47.21](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220925134654.gif)
 
-<!-- ![mxflow v0.47.1](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220922214148.gif) -->
-<!-- ![mxflow v0.47.14](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220923195037.gif) -->
-<!-- ![mxflow v0.47.13](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220923175552.gif) -->
-
-
-<!-- ![mxflow v0.42.1-2](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220920203311.gif) -->
-
-<!-- ![mxflow v0.32.5-0](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220916124849.gif) -->
-<!-- ![mxflow v0.32.3](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220916123031.gif) -->
-
-<!-- #### [[ formely [npm/hgit](https://www.npmjs.com/package/hgit) ]] -->
-
 :warning: MXFlow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
-
-***
-
-            ___           ___           ___
-           /__/\         /__/|         /  /\
-          |  |::\       |  |:|        /  /:/_
-          |  |:|:\      |  |:|       /  /:/ /\
-        __|__|:|\:\   __|__|:|      /  /:/ /:/
-       /__/::::| \:\ /__/::::\____ /__/:/ /:/
-       \  \:\~~\__\/    ~\~~\::::/ \  \:\/:/
-        \  \:\           |~~|:|~~   \  \::/
-         \  \:\          |  |:|      \  \:\
-          \  \:\         |  |:|       \  \:\
-           \__\/         |__|/         \__\/
-
-
-<!---->
-<!-- ![mxflow v0.30.1-1](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220914224723.gif) -->
-<!-- --- -->
-<!-- ![mxflow v0.30.1-1](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220914223020.gif) -->
-<!-- --- -->
-<!-- ![mxflow v0.27.2](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_220913235153.gif) -->
