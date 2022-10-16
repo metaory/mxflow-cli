@@ -57,7 +57,7 @@ Major features:
 
 ---
 
-> `mxflow trigger foobar --foo f --bar b --xor x`
+> `mxflow trigger foobar --foo fval --bar bval`
   ```yaml
 version: 0.60.0
 sleep: 1000
