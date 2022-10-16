@@ -58,7 +58,8 @@ Major features:
 ---
 
 > `mxflow trigger foobar --foo fval --bar bval`
-  ```yaml
+
+```yaml
 version: 0.60.0
 sleep: 1000
 workflows:
@@ -83,6 +84,7 @@ workflows:
         - confirm echo {bugTrackerName} goodbye
 
   ```
+
 ---
 
 ### Special command prefix
