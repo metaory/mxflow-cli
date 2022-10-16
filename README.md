@@ -63,25 +63,25 @@ Major features:
 version: 0.60.0
 sleep: 1000
 workflows:
-    foobar:
-      description: example placeholder
-      args:
-        - name: foo
-          type: string
-          default: fdef
-          export: foox
-        - name: bar
-          type: number
-          default: 123
-          export: barx
-        - name: MXF_BUG_TRACKER_NAME
-          type: env
-          default: jira
-          export: bugTrackerName
-      steps:
-        - echo {foox} world
-        - echo goodbye {barx} cruel world
-        - confirm echo {bugTrackerName} goodbye
+  foobar:
+    description: example placeholder
+    args:
+      - name: foo
+        type: string
+        default: fdef
+        export: foox
+      - name: bar
+        type: number
+        default: 123
+        export: barx
+      - name: MXF_BUG_TRACKER_NAME
+        type: env
+        default: jira
+        export: bugTrackerName
+    steps:
+      - echo {foox} world
+      - echo goodbye {barx} cruel world
+      - confirm echo {bugTrackerName} goodbye
   ```
 
 ---
