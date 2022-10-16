@@ -140,7 +140,7 @@ init                    | init sample configuration
 trigger <workflow-name> | non-interactive workflow trigger
 verbose                 | verbose logs
 version                 | show version
---help                  | help menu
+help                    | help menu
 --no-catch-git          | bypass initial git checks
 --setup-completion      | setup tab completion, your shell
 --clean-completion      | cleanup tab completion
