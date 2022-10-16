@@ -34,6 +34,8 @@
 
 Internal processes can get complicated or too repetitive
 
+---
+
 Group commands under a workflow, write steps, use special commands like `confirm`
 
 <!-- The main goal of the mxflow project is to streamline and simplify complex processes -->
