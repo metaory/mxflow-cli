@@ -67,17 +67,21 @@ workflows:
       args:
         - name: foo
           type: string
-          export: bar
+          default: fdef
+          export: foox
         - name: bar
           type: string
-          export: bar
-        - name: xor
-          type: string
-          export: bar
+          default: bdef
+          export: barx
+        - name: MXF_BUG_TRACKER_NAME
+          type: env
+          default: jira
+          export: bugTrackerName
       steps:
-        - echo {bar} word
-        - echo goodbye cruel world
-        - confirm echo goodbye
+        - echo {foox} world
+        - echo goodbye {barx} cruel world
+        - confirm echo {bugTrackerName} goodbye
+
   ```
 ---
 
