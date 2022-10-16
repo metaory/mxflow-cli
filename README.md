@@ -57,7 +57,7 @@ Major features:
 
 ---
 
-> `mxflow trigger foobar --foo fval --bar bval`
+> `mxflow trigger foobar --foo fval --bar 222`
 
 ```yaml
 version: 0.60.0
@@ -71,8 +71,8 @@ workflows:
           default: fdef
           export: foox
         - name: bar
-          type: string
-          default: bdef
+          type: number
+          default: 123
           export: barx
         - name: MXF_BUG_TRACKER_NAME
           type: env
