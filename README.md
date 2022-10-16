@@ -82,7 +82,6 @@ workflows:
         - echo {foox} world
         - echo goodbye {barx} cruel world
         - confirm echo {bugTrackerName} goodbye
-
   ```
 
 ---
@@ -96,8 +95,6 @@ workflows:
 - `~/.mxflow/config.yml`
 
 #### Sample use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
-
----
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/screenshot.png">
