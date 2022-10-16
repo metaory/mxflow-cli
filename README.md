@@ -6,7 +6,7 @@
   </picture>
   <br>
   <a href="#why">Why</a> |
-  <a href="#config-order">Config</a> |
+  <a href="#config">Config</a> |
   <a href="#installation">Installation</a> |
   <a href="#usage">Usage</a> |
   <a href="#options">Options</a>
@@ -26,81 +26,68 @@
 </div>
 
 
+### :zap: A modern, general purpose CLI task runner with human readable yaml config file
+
 `mxflow` is a CLI task runner which is defined by a yaml config file. It searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up which it then parses for commands and arguments
 
 ## Why?
 
 Internal processes can get complicated or too repetitive
 
-The main goal of the mxflow project is to streamline and simplify complex processes
+Group commands under a workflow, write steps, use special commands like `confirm`
+
+<!-- The main goal of the mxflow project is to streamline and simplify complex processes -->
 
 Major features:
 
 * Interactive first
-* Local first
 * Extensive config
 * Shell completion
+* Confirmation step
 
-## a CICD for internal processes and workflows on local machines for teams
-group commands under a workflow, write steps, use special commands like `confirm`
+<!-- ## a CICD for internal processes and workflows on local machines for teams -->
 
 ---
 ##### :boom: Unopinionated config based workflow **engine**
+##### :poop: Human readable yaml config
 ##### :card_file_box: Streamline complex workflows across teams
 ##### :bulb: Simplify complex commands
 
 ---
 
-### Special command prefix
-- `confirm {command}` _adds a confirmation step to any commands_
-
-### Config order
-- `./.mxflow/config.yml`
-- `~/.mxflow/config.yml`
-
-<details>
-  <summary><h4>sample-config-file</h4></summary>
-
+> `mxflow trigger foobar --foo f --bar b --xor x`
   ```yaml
 version: 0.60.0
 sleep: 1000
 workflows:
-    feature:
-      description: feature example workflow
+    foobar:
+      description: example placeholder
       args:
-        - name: taskId
+        - name: foo
           type: string
-          export: taskId
-        - name: description
+          export: bar
+        - name: bar
           type: string
-          export: description
-        - name: MXF_BUG_TRACKER_NAME
-          type: env
-          default: jira
-          export: bugTrackerName
-        - name: MXF_BUG_TRACKER_TENANT
-          type: env
-          default: metaory
-          export: bugTrackerTenant
+          export: bar
+        - name: xor
+          type: string
+          export: bar
       steps:
-        - git fetch origin
-        - git checkout master
-        - git merge origin/master
-        - checkout-branch:
-            base: flight
-        - git checkout -b {workflow}/{taskId}-{description}
-        - git status
-        - confirm git push --set-upstream origin
-          {workflow}/{taskId}-{description}
-        - list-logs:
-            limit: 100
-        - log-bugtracker:
-            bugtracker: "{bugTrackerName}"
-            tenant: "{bugTrackerTenant}"
+        - echo {bar} word
+        - echo goodbye cruel world
+        - confirm echo goodbye
   ```
-</details>
+---
 
-#### sample usecase: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Use-case)
+### Special command prefix
+- `confirm {command}` _adds a confirmation step to any commands_
+
+### Config
+- `./.mxflow/config.yml`
+- `...`
+- `~/.mxflow/config.yml`
+
+#### Sample use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
 ---
 
