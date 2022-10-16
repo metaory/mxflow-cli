@@ -12,6 +12,22 @@
   <a href="#options">Options</a>
 </p>
 
+
+<div align="center">
+  <a href="https://npmjs.org/package/mxflow">
+    <img src="https://img.shields.io/github/package-json/v/metaory/mxflow-cli" alt="NPM Version"/>
+  </a>
+  <a href="https://npmjs.org/package/mxflow">
+    <img src="https://img.shields.io/npm/dw/mxflow" alt="NPM Downloads"/>
+  </a>
+  <a href="https://github.com/metaory/mxflow-cli/actions/workflows/main.yml">
+    <img src="https://img.shields.io/github/workflow/status/metaory/mxflow-cli/MXFlow%20npm%20Package" alt="GH Status"/>
+  </a>
+</div>
+
+
+`mxflow` is a CLI task runner which is defined by a yaml config file. It searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up which it then parses for commands and arguments
+
 ## Why?
 
 Internal processes can get complicated or too repetitive
