@@ -26,41 +26,43 @@
 </div>
 
 
-### :zap: A modern, general purpose CLI task runner with human readable yaml config file
+### :zap: A Modern, General purpose CLI task runner with human readable YAML config file
 
-`mxflow` is a CLI task runner which is defined by a yaml config file. It searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up which it then parses for commands and arguments
+`mxflow` is a CLI task runner which is defined by a YAML config file. It searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up which it then parses for commands and arguments
 
 ## Why?
 
-Internal processes can get complicated or too repetitive
+- Internal processes can get complicated or too repetitive
+
+- Existing task-runners are too focused on a specific use case / environment or have complicated config files
+
+- It's hard to streamline workflows across teams
 
 ---
-
-Group commands under a workflow, write steps, use special commands like `confirm`
+<!-- Group commands under a workflow, write steps, use special commands like `confirm` -->
 
 <!-- The main goal of the mxflow project is to streamline and simplify complex processes -->
 
-Major features:
+#### Major features:
 
-* Interactive first
-* Extensive config
-* Shell completion
-* Confirmation step
+* **Interactive first** - works with/without arguments; prompt missing args
+* **Extensive config** - group commands under a workflows, use arguments export value in commands
+* **Shell completion** - dynamic shell completion based on the closest config file
+* **Confirmation step** - add the `confirm` prefix to any **_step_** to add a confirmation prompt
+* **Project / System config** - searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up
 
 <!-- ## a CICD for internal processes and workflows on local machines for teams -->
 
----
-##### :boom: Unopinionated config based workflow **engine**
-##### :poop: Human readable yaml config
-##### :card_file_box: Streamline complex workflows across teams
-##### :bulb: Simplify complex commands
+<!-- --- -->
+<!-- ##### :boom: Unopinionated config based workflow **engine** -->
+<!-- ##### :poop: Human readable yaml config -->
+<!-- ##### :card_file_box: Streamline complex workflows across teams -->
+<!-- ##### :bulb: Simplify complex commands -->
 
 ---
 
 ### Config
-- `./.mxflow/config.yml`
-- `...`
-- `~/.mxflow/config.yml`
+`.mxflow/config.yml`
 
 > `mxflow trigger foobar --foo fval --bar 222`
 
@@ -91,8 +93,8 @@ workflows:
 
 ---
 
-### Special command prefix
-- `confirm {command}` _adds a confirmation step to any commands_
+<!-- ### Special command prefix -->
+<!-- - `confirm {command}` _adds a confirmation step to any commands_ -->
 
 #### Sample use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
@@ -104,9 +106,9 @@ workflows:
 
 Arg Types
 ---------
-- string
-- number
-- env
+- string - text input
+- number - integer input
+- env - environment variable
 
 Requirements
 ============
@@ -138,9 +140,9 @@ Options
 ```bash
 init                    | init sample configuration
 trigger <workflow-name> | non-interactive workflow trigger
-verbose                 | verbose logs
 version                 | show version
 help                    | help menu
+--verbose               | verbose logs
 --no-catch-git          | bypass initial git checks
 --setup-completion      | setup tab completion, your shell
 --clean-completion      | cleanup tab completion
