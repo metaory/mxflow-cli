@@ -34,16 +34,16 @@
 
 - Internal processes can get complicated or too repetitive
 
-- Existing task-runners are too focused on a specific use case / environment or have complicated config files
+- It's hard to streamline complex workflows across teams
 
-- It's hard to streamline workflows across teams
+- Existing task-runners are too focused on a specific use case / environment or have complicated config files
 
 ---
 <!-- Group commands under a workflow, write steps, use special commands like `confirm` -->
 
 <!-- The main goal of the mxflow project is to streamline and simplify complex processes -->
 
-#### Major features:
+## Major features
 
 * **Interactive first** - works with/without arguments; prompt missing args
 * **Extensive config** - group commands under a workflows, use arguments export value in commands
@@ -68,7 +68,6 @@
 
 ```yaml
 version: 0.60.0
-sleep: 1000
 workflows:
   foobar:
     description: example placeholder
