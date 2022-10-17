@@ -57,6 +57,11 @@ Major features:
 
 ---
 
+### Config
+- `./.mxflow/config.yml`
+- `...`
+- `~/.mxflow/config.yml`
+
 > `mxflow trigger foobar --foo fval --bar 222`
 
 ```yaml
@@ -88,11 +93,6 @@ workflows:
 
 ### Special command prefix
 - `confirm {command}` _adds a confirmation step to any commands_
-
-### Config
-- `./.mxflow/config.yml`
-- `...`
-- `~/.mxflow/config.yml`
 
 #### Sample use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
