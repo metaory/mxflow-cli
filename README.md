@@ -26,17 +26,17 @@
 </div>
 
 
-### :zap: A Modern, General purpose CLI task runner with human readable YAML config file
+### :zap: A Friendly, General purpose CLI task runner defined by a simple YAML file
 
 `mxflow` is a CLI task runner which is defined by a YAML config file. It searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up which it then parses for commands and arguments
 
 ## Why?
 
-- Internal processes can get complicated or too repetitive
+- Internal processes can get complicated or too repetitive.
 
-- It's hard to streamline complex workflows across teams
+- It's hard to streamline complex workflows across teams.
 
-- Existing task-runners are too focused on a specific use case / environment or have complicated config files
+- Existing task-runners are too focused on a specific use case / environment or have complicated config files or are just not friendly.
 
 ---
 <!-- Group commands under a workflow, write steps, use special commands like `confirm` -->
