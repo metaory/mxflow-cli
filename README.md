@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset= "https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
-    <img width="40%" alt="mxflow" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
+    <img width="70%" alt="mxflow" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
   </picture>
   <br>
   <a href="#why">Why</a> |
