@@ -28,6 +28,10 @@
 
 ### :zap: A Friendly, General purpose CLI task runner defined by a simple YAML file
 
+<p align="center">
+  <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/screenshot.png">
+</p>
+
 `mxflow` is a CLI task runner which is defined by a YAML config file. It searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up which it then parses for commands and arguments
 
 ## Why?
@@ -97,10 +101,6 @@ workflows:
 
 #### Sample use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
-<p align="center">
-  <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/screenshot.png">
-</p>
-
 ---
 
 Arg Types
@@ -128,10 +128,7 @@ or
 Usage
 =====
 ```bash
-mxflow # or mxf
-mxflow trigger foobar --verbose
-mxflow trigger feature --taskId xorg --description zelda
-mxflow --no-catch-git # to bypass initial git checks
+mxflow <action> [<args>]
 ```
 
 Options
@@ -145,6 +142,15 @@ help                    | help menu
 --no-catch-git          | bypass initial git checks
 --setup-completion      | setup tab completion, your shell
 --clean-completion      | cleanup tab completion
+```
+
+Example
+=======
+```bash
+mxflow # or mxf
+mxflow trigger foobar --verbose
+mxflow trigger feature --taskId xorg --description zelda
+mxflow --no-catch-git # to bypass initial git checks
 ```
 
 ---
