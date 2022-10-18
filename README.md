@@ -26,7 +26,7 @@
 </div>
 
 
-### :zap: A Friendly, General purpose CLI task runner defined by a simple YAML file
+### :zap: A Friendly, General purpose CLI task runner; configurable via YAML file
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/screenshot.png">
@@ -50,7 +50,7 @@
 ## Major features
 
 * **Interactive first** - works with/without arguments; prompt missing args
-* **Extensive config** - group commands under a workflows, use arguments export value in commands
+* **Extensive config** - group commands under a workflow, use arguments export value in commands
 * **Shell completion** - dynamic shell completion based on the closest config file
 * **Confirmation step** - add the `confirm` prefix to any **_step_** to add a confirmation prompt
 * **Project / System config** - searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up
