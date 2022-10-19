@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset= "https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
-    <img width="70%" alt="mxflow" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
+    <img width="80%" alt="mxflow" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
   </picture>
   <br>
   <a href="#why">Why</a> |
@@ -52,7 +52,7 @@
 * **Interactive first** - works with/without arguments; prompt missing args
 * **Extensive config** - group commands under a workflow, use arguments export value in commands
 * **Shell completion** - dynamic shell completion based on the closest config file
-* **Confirmation step** - add the `confirm` prefix to any **_step_** to add a confirmation prompt
+* **Confirmation** - add `confirm` prefix to any **_step command_** to add confirmation
 * **Project / System config** - searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up
 
 <!-- ## a CICD for internal processes and workflows on local machines for teams -->
@@ -65,7 +65,9 @@
 
 ---
 
-### Config
+Config
+======
+
 `.mxflow/config.yml`
 
 > `mxflow trigger foobar --foo fval --bar 222`
@@ -97,18 +99,41 @@ workflows:
 
 ---
 
-<!-- ### Special command prefix -->
-<!-- - `confirm {command}` _adds a confirmation step to any commands_ -->
+Config reference
+----------------
+`version` - config version
 
-#### Sample use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
+`exit_on_error` - should exit on any command with non-zero exit code, default is `false`
+
+`sleep` - adds a delay between each command, default is `1000`
+
+`workflows` - object with workflows
+
+Workflow reference
+------------------
+
+`description` - workflow description
+
+`args` - list of arguments
+
+`args[*].name` - name is what user inputs as argument
+
+`args[*].type` - the type the argument should be validated; `string | number | env`
+
+`args[*].export` - the name of exported variable, default is `name`
+
+`args[*].default` - the argument default value, if any
+
+`steps` - list of commands to run
 
 ---
 
-Arg Types
----------
-- string - text input
-- number - integer input
-- env - environment variable
+<!-- ### Special command prefix -->
+<!-- - `confirm {command}` _adds a confirmation step to any commands_ -->
+
+#### Real-world Use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
+
+---
 
 Requirements
 ============
