@@ -1,6 +1,6 @@
 {
   "name": "mxflow",
-  "version": "0.62.18",
+  "version": "0.62.19-0",
   "description": "A Friendly, General purpose CLI task runner defined by a simple YAML file",
   "main": "./bin/index.js",
   "type": "module",
