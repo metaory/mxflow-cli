@@ -15,7 +15,7 @@
 
 <div align="center">
   <a href="https://npmjs.org/package/mxflow">
-    <img src="https://img.shields.io/github/package-json/v/metaory/mxflow-cli" alt="NPM Version"/>
+    <img src="https://img.shields.io/npm/v/mxflow" alt="NPM Version"/>
   </a>
   <a href="https://npmjs.org/package/mxflow">
     <img src="https://img.shields.io/npm/dm/mxflow" alt="NPM Downloads"/>
