@@ -26,7 +26,7 @@
 </div>
 
 
-### :zap: A Friendly, General purpose CLI task runner; configurable via YAML file
+### :zap: A Friendly, General purpose CLI task runner
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/screenshot.png">
