@@ -126,7 +126,7 @@ Workflow reference
 
 `args[*].type` - validation type; `string | number | env`
 
-`args[*].export` - (optional) the exported variable, default is `name`
+`args[*].export` - (optional) the exported variable, default is `args[*].name`
 
 `args[*].default` - (optional) the default value, if any
 
