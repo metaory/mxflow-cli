@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/github/package-json/v/metaory/mxflow-cli" alt="NPM Version"/>
   </a>
   <a href="https://npmjs.org/package/mxflow">
-    <img src="https://img.shields.io/npm/dw/mxflow" alt="NPM Downloads"/>
+    <img src="https://img.shields.io/npm/dm/mxflow" alt="NPM Downloads"/>
   </a>
   <a href="https://github.com/metaory/mxflow-cli/actions/workflows/main.yml">
     <img src="https://img.shields.io/github/workflow/status/metaory/mxflow-cli/MXFlow%20npm%20Package" alt="GH Status"/>
