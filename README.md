@@ -23,6 +23,9 @@
   <a href="https://github.com/metaory/mxflow-cli/actions/workflows/main.yml">
     <img src="https://img.shields.io/github/workflow/status/metaory/mxflow-cli/MXFlow%20npm%20Package" alt="GH Status"/>
   </a>
+  <a href="https://github.com/metaory/mxflow-cli">
+    <img src="https://img.shields.io/github/languages/code-size/metaory/mxflow-cli" alt="code size"/>
+  </a>
 </div>
 
 
