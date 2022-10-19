@@ -1,4 +1,4 @@
-name: MXFlow npm Package
+name: npm-package
 
 on:
   push:
