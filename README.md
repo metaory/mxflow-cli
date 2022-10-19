@@ -116,15 +116,17 @@ Workflow reference
 
 `args` - list of arguments
 
-`args[*].name` - name is what user inputs as argument
+`args[*].name` - what user inputs as argument
 
-`args[*].type` - the type the argument should be validated; `string | number | env`
+`args[*].type` - validation type; `string | number | env`
 
-`args[*].export` - the name of exported variable, default is `name`
+`args[*].export` - (optional) the exported variable, default is `name`
 
-`args[*].default` - the argument default value, if any
+`args[*].default` - (optional) the default value, if any
 
 `steps` - list of commands to run
+
+`steps[*]` - the command to run
 
 ---
 
