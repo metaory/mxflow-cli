@@ -72,6 +72,7 @@
 
 ```yaml
 version: 0.60.0
+exit_on_error: true # default is false
 workflows:
   foobar:
     description: example placeholder
@@ -123,7 +124,6 @@ Installation
 or
 
     npx mxflow
-    npx mxflow --setup-completion
 
 Usage
 =====
@@ -138,9 +138,10 @@ init                    | init sample configuration
 trigger <workflow-name> | non-interactive workflow trigger
 version                 | show version
 help                    | help menu
---verbose               | verbose logs
+-v, --verbose           | verbose logs
+-F, --force             | force bypass confirmation prompts
 --no-catch-git          | bypass initial git checks
---setup-completion      | setup tab completion, your shell
+--setup-completion      | setup shell tab completion
 --clean-completion      | cleanup tab completion
 ```
 
