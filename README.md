@@ -108,7 +108,7 @@ Config reference
 ----------------
 `version` - config version
 
-`exit_on_error` - should exit on any command with non-zero exit code, default is `false`
+`exit_on_error` - should exit on any command with a non-zero exit code, default is `false`
 
 `sleep` - adds a delay between each command, default is `1000`
 
