@@ -58,7 +58,7 @@
 * **Interactive first** - works with/without arguments; prompt missing args
 * **Extensive config** - group commands under a workflow, use arguments export value in commands
 * **Shell completion** - dynamic shell completion based on the closest config file
-* **Confirmation** - add `confirm` prefix to any **_step command_** to add confirmation
+* **Confirmation** - add `confirm` prefix to any **_step command_** to add confirmation prompt
 * **Project / System config** - searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up
 
 <!-- ## a CICD for internal processes and workflows on local machines for teams -->
@@ -133,6 +133,12 @@ Workflow reference
 
 `steps[*]` - the command to run
 
+> note: you can write a `cd` pre-step to change `cwd` of the following command
+
+> note: you can add a `confirm` prefix to add confirmation prompt
+
+> note: currently there are few special git commands: `checkout-branch, list-logs, log-bugtracker`. check [wiki](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample) for usage example
+
 ---
 
 <!-- ### Special command prefix -->
@@ -195,9 +201,15 @@ Roadmap
 - [ ] plugin system for dynamic lists
 - [X] aurgument mode
 - [X] argument autocomplete
+- [ ] support `.env` file import
 
 ---
 
 ![mxflow](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast.gif)
 
 :warning: MXFlow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
+
+License
+-------
+
+[MIT](LICENSE)
