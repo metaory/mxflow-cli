@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset= "https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
-    <img width="80%" alt="mxflow" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
+    <img width="90%" alt="mxflow" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/card.png">
   </picture>
   <br>
   <a href="#why">Why</a> |
@@ -24,7 +24,7 @@
     <img src="https://img.shields.io/github/workflow/status/metaory/mxflow-cli/MXFlow%20npm%20Package" alt="GH Status"/>
   </a>
   <a href="https://github.com/metaory/mxflow-cli">
-    <img src="https://img.shields.io/github/languages/code-size/metaory/mxflow-cli" alt="code size"/>
+    <img src="https://img.shields.io/github/languages/code-size/metaory/mxflow-cli" alt="Code Size"/>
   </a>
 </div>
 
@@ -80,7 +80,6 @@ Config
 
 ```yaml
 version: 0.60.0
-exit_on_error: true # default is false
 workflows:
   foobar:
     description: example placeholder
@@ -145,7 +144,7 @@ Workflow reference
 
 Requirements
 ============
-- Node 16.x
+- Node 16+
 
 ---
 
@@ -199,6 +198,6 @@ Roadmap
 
 ---
 
-![mxflow v0.47.21](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast.gif)
+![mxflow](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast.gif)
 
 :warning: MXFlow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
