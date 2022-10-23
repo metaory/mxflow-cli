@@ -108,9 +108,9 @@ Config reference
 ----------------
 `version` - config version
 
-`exit_on_error` - should exit on any command with a non-zero exit code, default is `false`
+`exit_on_error` - (optional) should exit on any command with a non-zero exit code, default is `false`
 
-`sleep` - adds a delay between each command, default is `1000`
+`sleep` - (optional) adds a delay between each command, default is `1000`
 
 `workflows` - object with workflows
 
@@ -166,7 +166,7 @@ or
 Usage
 =====
 ```bash
-mxflow <action> [<args>]
+mxflow [<action>] [<args>]
 ```
 
 Options
