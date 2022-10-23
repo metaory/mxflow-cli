@@ -137,7 +137,7 @@ Workflow reference
 
 Config Variables
 ----------------
-`echo foo {variable} bar`:
+example: `echo foo {variable} bar`
 
 - `args` - `export` or `name`
 - `environment` - system environment variables
