@@ -92,14 +92,12 @@ workflows:
         type: number
         default: 123
         export: barx
-      - name: MXF_BUG_TRACKER_NAME
-        type: env
-        default: jira
-        export: bugTrackerName
+      - name: xorg
+        type: string
     steps:
       - echo {foox} world
       - echo goodbye {barx} cruel world
-      - confirm echo {bugTrackerName} goodbye
+      - confirm echo {xorg} goodbye
   ```
 
 ---
@@ -123,7 +121,7 @@ Workflow reference
 
 `args[*].name` - what user inputs as argument
 
-`args[*].type` - validation type; `string | number | env`
+`args[*].type` - validation type; `string | number`
 
 `args[*].export` - (optional) the exported variable, default is `args[*].name`
 
@@ -138,6 +136,12 @@ Workflow reference
 > note: you can add a `confirm` prefix to add confirmation prompt
 
 > note: currently there are few special git commands: `checkout-branch, list-logs, log-bugtracker`. check [wiki](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample) for usage example
+
+Config Variables
+----------------
+- `args` - `export` or `name`
+- `environment` - system environment variables
+- `.env` - variables defined in the `.env` file
 
 ---
 
@@ -201,7 +205,7 @@ Roadmap
 - [ ] plugin system for dynamic lists
 - [X] aurgument mode
 - [X] argument autocomplete
-- [ ] support `.env` file import
+- [X] support `.env` file import
 
 ---
 
