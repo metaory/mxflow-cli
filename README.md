@@ -86,18 +86,16 @@ workflows:
     args:
       - name: foo
         type: string
-        default: fdef
-        export: foox
       - name: bar
         type: number
         default: 123
         export: barx
-      - name: xorg
-        type: string
     steps:
-      - echo {foox} world
-      - echo goodbye {barx} cruel world
-      - confirm echo {xorg} goodbye
+      - echo {foo} world
+      - echo goodbye {foo} {barx} cruel world
+      - confirm echo {barx} goodbye
+      - echo AWS_PROFILE $AWS_PROFILE
+      - echo AWS_PROFILE {AWS_PROFILE}
   ```
 
 ---
@@ -139,6 +137,8 @@ Workflow reference
 
 Config Variables
 ----------------
+`echo foo {variable} bar`:
+
 - `args` - `export` or `name`
 - `environment` - system environment variables
 - `.env` - variables defined in the `.env` file
