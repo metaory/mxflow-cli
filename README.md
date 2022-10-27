@@ -55,7 +55,7 @@ It searches for a `.mxflow/config.yml` in the current directory and parent direc
 
 <!-- The main goal of the mxflow project is to streamline and simplify complex processes -->
 
-## Major features
+## Major Features
 
 * **Interactive first** - works with/without arguments; prompt missing args
 * **Extensive config** - group commands under a workflow, use arguments export value in commands
@@ -78,7 +78,7 @@ Config
 
 `.mxflow/config.yml`
 
-> `mxflow trigger foobar --foo fval --bar 222`
+> `mxflow trigger foobar --foo fval --bar bar-xorg`
 
 ```yaml
 version: 0.60.0
