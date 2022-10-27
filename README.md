@@ -38,7 +38,7 @@
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/screenshot.png">
 </p>
 
-`mxflow` is a CLI task runner which is defined by a YAML config file. It searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up which it then parses for commands and arguments
+`mxflow` is a CLI task runner which is configured via a YAML config file. It searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up which it then parses for commands and arguments
 
 ## Why?
 
