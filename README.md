@@ -87,8 +87,8 @@ workflows:
       - name: foo
         type: string
       - name: bar
-        type: number
-        default: 123
+        regex: ^bar+\w
+        default: barxorg
         export: barx
     steps:
       - echo {foo} world
@@ -125,6 +125,8 @@ Workflow reference
 
 `args[*].default` - (optional) the default value, if any
 
+`args[*].regex` - (optional) validation pattern
+
 `steps` - list of commands to run
 
 `steps[*]` - the command to run
@@ -142,6 +144,8 @@ example: `echo foo {variable} bar`
 - `args` - `export` or `name`
 - `environment` - system environment variables
 - `.env` - variables defined in the `.env` file
+- `{current-branch}` - current active branch
+- `{workflow}` - current active workflow
 
 ---
 
