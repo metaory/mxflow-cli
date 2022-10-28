@@ -9,7 +9,8 @@
   <a href="#config">Config</a> |
   <a href="#installation">Installation</a> |
   <a href="#usage">Usage</a> |
-  <a href="#options">Options</a>
+  <a href="#options">Options</a> |
+  <a href="#videos">Videos</a>
 </p>
 
 
@@ -205,7 +206,8 @@ help                    | help menu
 --clean-completion      | cleanup tab completion
 ```
 
-# ****Examples****
+Examples
+========
 
 for a fully interactive experience;
 
@@ -255,11 +257,13 @@ Roadmap
 - [X] support `.env` file import
 
 ---
-# Videos
+
+Videos
+======
 
 ### Installation
 
--![gifcast_221027184725.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027184725.gif)
+![gifcast_221027184725.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027184725.gif)
 
 
 ### Interactive Usage
