@@ -215,12 +215,6 @@ for a fully interactive experience;
 mxflow # or mxf
 ```
 
-to interactively select a workflow to trigger;
-
-```bash
-mxflow trigger
-```
-
 to bypass `git` checks;
 
 ```bash
@@ -231,6 +225,12 @@ to bypass *confirmation* prompts;
 
 ```bash
 mxflow --force
+```
+
+to interactively select a workflow to trigger;
+
+```bash
+mxflow trigger
 ```
 
 to trigger a particular workflow interactively;
