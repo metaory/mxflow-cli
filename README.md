@@ -90,6 +90,7 @@ workflows:
       - name: foo
         type: string
       - name: bar
+        type: string
         regex: ^bar+\w
         default: barxorg
         export: barx
