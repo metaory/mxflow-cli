@@ -44,11 +44,11 @@ It searches for a `.mxflow/config.yml` in the current directory and parent direc
 
 ## Why?
 
-- Internal processes can get complicated or too repetitive.
+- Internal processes can get **complicated** or too **repetitive**.
 
-- It's hard to streamline complex workflows across teams.
+- It's hard to **streamline** complex workflows across **teams**.
 
-- Existing task-runners are too focused on a specific use case / environment or have complicated config files or are just not friendly.
+- Existing task-runners are too focused on a specific **use-case/environment** or have **complicated config** files or are just **not friendly**!
 
 ---
 <!-- Group commands under a workflow, write steps, use special commands like `confirm` -->
@@ -102,17 +102,17 @@ workflows:
 
 ---
 
-Config reference
+Config Reference
 ----------------
 `version` - config version
 
-`exit_on_error` - (optional) should exit on any command with a non-zero exit code, default is `false`
+`exit_on_error` - _(optional)_ should exit on any command with a non-zero exit code, default is `false`
 
-`sleep` - (optional) adds a delay between each command, default is `1000`
+`sleep` - _(optional)_ adds a delay between each command, default is `1000`
 
 `workflows` - object with workflows
 
-Workflow reference
+Workflow Reference
 ------------------
 
 `description` - workflow description
@@ -123,15 +123,15 @@ Workflow reference
 
 `args[*].type` - validation type; `string | number`
 
-`args[*].export` - (optional) the exported variable, default is `args[*].name`
+`args[*].export` - _(optional)_ the exported variable, default is `args[*].name`
 
-`args[*].default` - (optional) the default value, if any
+`args[*].default` - _(optional)_ the default value, if any
 
-`args[*].regex` - (optional) validation pattern
+`args[*].regex` - _(optional)_ validation pattern
 
 `steps` - list of commands to run
 
-`steps[*]` - the command to run
+`steps[*]` - the command to run, any shell command string, few specials commands
 
 > note: you can write a `cd` pre-step to change `cwd` of the following command
 
@@ -143,11 +143,14 @@ Config Variables
 ----------------
 example: `echo foo {variable} bar`
 
-- `args` - `export` or `name`
-- `environment` - system environment variables
-- `.env` - variables defined in the `.env` file
-- `{current-branch}` - current active branch
-- `{workflow}` - current active workflow
+- Argument variables
+    - `args` - `export` or `name`
+- Environment variables
+    - `environment` - system environment variables
+    - `.env` - variables defined in the `.env` file
+- Special variables
+    - `{current-branch}` - current active branch
+    - `{workflow}` - current active workflow
 
 ---
 
@@ -166,40 +169,78 @@ Requirements
 
 Installation
 ============
-    npm i -g mxflow
-    mxflow --setup-completion
+Install the package, globally:
 
-or
+```bash
+sudo npm i -g mxflow
+```
 
-    npx mxflow
+Setup shell tab completion:
+
+```bash
+mxflow --setup-completion
+```
+
+> make sure to run this command **once**, in case you have ran this multiple times, you can run the `mxflow --clean-completion` to clean and run setup again once.
 
 Usage
 =====
+
 ```bash
-mxflow [<action>] [<args>]
+**mxflow** [<**action**>] [<**args**>]
 ```
 
-Options
-=======
-```bash
+CLI Options
+===========
+
+```markdown
 init                    | init sample configuration
 trigger <workflow-name> | non-interactive workflow trigger
 version                 | show version
 help                    | help menu
 -v, --verbose           | verbose logs
--F, --force             | force bypass confirmation prompts
+-F, --force             | bypass confirmation prompts
 --no-catch-git          | bypass initial git checks
 --setup-completion      | setup shell tab completion
 --clean-completion      | cleanup tab completion
 ```
 
-Example
-=======
+# ****Examples****
+
+for a fully interactive experience;
+
 ```bash
-mxflow # or mxf
-mxflow trigger foobar --verbose
-mxflow trigger feature --taskId xorg --description zelda
-mxflow --no-catch-git # to bypass initial git checks
+**mxflow** # or mxf
+```
+
+to interactively select a workflow to trigger;
+
+```bash
+**mxflow** trigger
+```
+
+to bypass `git` checks;
+
+```bash
+**mxflow** --no-catch-git
+```
+
+to bypass *confirmation* prompts;
+
+```bash
+**mxflow** --force
+```
+
+to trigger a particular workflow interactively;
+
+```bash
+**mxflow** trigger create-flight
+```
+
+to trigger a particular workflow with arguments;
+
+```bash
+**mxflow** trigger create-flight --taskId my-tsk --description my-desc --force
 ```
 
 ---
@@ -214,10 +255,21 @@ Roadmap
 - [X] support `.env` file import
 
 ---
+# Videos
 
-![mxflow](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast.gif)
+### Installation
 
-:warning: MXFlow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
+![gifcast_221027184725.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8dae994d-cbaa-4de2-915d-876b1ff1903d/gifcast_221027184725.gif)
+
+### Interactive Usage
+
+![gifcast_221027185051.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/073a41f8-9eec-45f5-a2d2-887ff6b014bf/gifcast_221027185051.gif)
+
+### Argument Usage
+
+![gifcast_221027200734.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23c40c51-88b7-4975-a8b9-c034e8e7c070/gifcast_221027200734.gif)
+
+:warning: MXflow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
 
 License
 -------
