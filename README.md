@@ -158,7 +158,7 @@ example: `echo foo {variable} bar`
 <!-- ### Special command prefix -->
 <!-- - `confirm {command}` _adds a confirmation step to any commands_ -->
 
-#### Real-world Use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
+#### :globe_with_meridians: Real-world Use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
 ---
 
