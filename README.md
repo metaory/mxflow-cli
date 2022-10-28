@@ -210,37 +210,37 @@ help                    | help menu
 for a fully interactive experience;
 
 ```bash
-**mxflow** # or mxf
+mxflow # or mxf
 ```
 
 to interactively select a workflow to trigger;
 
 ```bash
-**mxflow** trigger
+mxflow trigger
 ```
 
 to bypass `git` checks;
 
 ```bash
-**mxflow** --no-catch-git
+mxflow --no-catch-git
 ```
 
 to bypass *confirmation* prompts;
 
 ```bash
-**mxflow** --force
+mxflow --force
 ```
 
 to trigger a particular workflow interactively;
 
 ```bash
-**mxflow** trigger create-flight
+mxflow trigger create-flight
 ```
 
 to trigger a particular workflow with arguments;
 
 ```bash
-**mxflow** trigger create-flight --taskId my-tsk --description my-desc --force
+mxflow trigger create-flight --taskId my-tsk --description my-desc --force
 ```
 
 ---
@@ -259,15 +259,18 @@ Roadmap
 
 ### Installation
 
-![gifcast_221027184725.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8dae994d-cbaa-4de2-915d-876b1ff1903d/gifcast_221027184725.gif)
+-![gifcast_221027184725.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027184725.gif)
+
 
 ### Interactive Usage
 
-![gifcast_221027185051.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/073a41f8-9eec-45f5-a2d2-887ff6b014bf/gifcast_221027185051.gif)
+![gifcast_221027185051.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027185051.gif)
 
 ### Argument Usage
 
-![gifcast_221027200734.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23c40c51-88b7-4975-a8b9-c034e8e7c070/gifcast_221027200734.gif)
+![gifcast_221027200734.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027200734.gif)
+
+---
 
 :warning: MXflow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
 
