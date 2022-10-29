@@ -177,10 +177,6 @@ Real-world Use-cases
 
 ---
 
-<a href="#config"> 🔼 back to top </a>
-
----
-
 Requirements
 ============
 - Node 16+
@@ -294,7 +290,6 @@ Roadmap
 ![gifcast_221027200734.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027200734.gif)
 
 </details>
-<a href="#config"> 🔼 back to top </a>
 
 ---
 
