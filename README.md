@@ -74,8 +74,8 @@ It searches for a `.mxflow/config.yml` in the current directory and parent direc
 
 ---
 
-Config
-======
+<details>
+  <summary><h1>Config</h1></summary>
 
 `.mxflow/config.yml`
 
@@ -104,8 +104,9 @@ workflows:
 
 ---
 
-Config Reference
-----------------
+<details>
+  <summary><h2>Config Reference</h2></summary>
+
 `version` - config version
 
 `exit_on_error` - _(optional)_ should exit on any command with a non-zero exit code, default is `false`
@@ -114,8 +115,10 @@ Config Reference
 
 `workflows` - object with workflows
 
-Workflow Reference
-------------------
+</details>
+
+<details>
+  <summary><h2>Workflow Reference</h2></summary>
 
 `description` - workflow description
 
@@ -141,8 +144,11 @@ Workflow Reference
 
 > note: currently there are few special git commands: `checkout-branch, list-logs, log-bugtracker`. check [wiki](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample) for usage example
 
-Config Variables
-----------------
+</details>
+
+<details>
+  <summary><h2>Config Variables</h2></summary>
+
 example: `echo foo {variable} bar`
 
 - Argument variables
@@ -154,12 +160,24 @@ example: `echo foo {variable} bar`
     - `{current-branch}` - current active branch
     - `{workflow}` - current active workflow
 
+</details>
+
 ---
 
 <!-- ### Special command prefix -->
 <!-- - `confirm {command}` _adds a confirmation step to any commands_ -->
 
-#### :globe_with_meridians: Real-world Use case: [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
+</details>
+
+
+Real-world Use-cases
+--------------------
+
+- [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
+
+---
+
+<a href="#config"> 🔼 back to top </a>
 
 ---
 
@@ -198,8 +216,8 @@ CLI Options
 ```markdown
 init                    | init sample configuration
 trigger <workflow-name> | non-interactive workflow trigger
-version                 | show version
-help                    | help menu
+version, --version      | show version
+help, --help            | help menu
 -v, --verbose           | verbose logs
 -F, --force             | bypass confirmation prompts
 --no-catch-git          | bypass initial git checks
@@ -259,8 +277,8 @@ Roadmap
 
 ---
 
-Videos
-======
+<details>
+  <summary><h1>Videos</h1></summary>
 
 ### Installation
 
@@ -274,6 +292,9 @@ Videos
 ### Argument Usage
 
 ![gifcast_221027200734.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027200734.gif)
+
+</details>
+<a href="#config"> 🔼 back to top </a>
 
 ---
 
