@@ -166,14 +166,14 @@ example: `echo foo {variable} bar`
 
 <!-- ### Special command prefix -->
 <!-- - `confirm {command}` _adds a confirmation step to any commands_ -->
+<details>
+  <summary><h2>Real-world Use-cases</h2></summary>
+
+- [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
 
 </details>
 
-
-Real-world Use-cases
---------------------
-
-- [git-workflow](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample)
+</details>
 
 ---
 
