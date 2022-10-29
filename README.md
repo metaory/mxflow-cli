@@ -162,8 +162,6 @@ example: `echo foo {variable} bar`
 
 </details>
 
----
-
 <!-- ### Special command prefix -->
 <!-- - `confirm {command}` _adds a confirmation step to any commands_ -->
 <details>
