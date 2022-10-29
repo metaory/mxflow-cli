@@ -203,7 +203,7 @@ Usage
 =====
 
 ```bash
-mxflow [<action>] [<args>]
+mxflow [<action>] [<args>] [<flags>]
 ```
 
 CLI Options
