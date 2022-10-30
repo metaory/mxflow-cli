@@ -6,10 +6,10 @@
   </picture>
   <br>
   <a href="#why">Why</a> |
-  <a href="#config">Config</a> |
   <a href="#installation">Installation</a> |
   <a href="#usage">Usage</a> |
   <a href="#options">Options</a> |
+  <a href="#config">Config</a> |
   <a href="#videos">Videos</a>
 </p>
 
@@ -71,6 +71,91 @@ It searches for a `.mxflow/config.yml` in the current directory and parent direc
 <!-- ##### :poop: Human readable yaml config -->
 <!-- ##### :card_file_box: Streamline complex workflows across teams -->
 <!-- ##### :bulb: Simplify complex commands -->
+
+---
+
+Requirements
+============
+- Node 16+
+
+---
+
+Installation
+============
+Install the package, globally:
+
+```bash
+sudo npm i -g mxflow
+```
+
+Setup shell tab completion:
+
+```bash
+mxflow --setup-completion
+```
+
+> make sure to run this command **once**, in case you have ran this multiple times, you can run the `mxflow --clean-completion` to clean and run setup again once.
+
+Usage
+=====
+
+```bash
+mxflow [<action>] [<args>] [<flags>]
+```
+
+CLI Options
+===========
+
+```markdown
+init                    | init sample configuration
+trigger <workflow-name> | non-interactive workflow trigger
+version, --version      | show version
+help, --help            | help menu
+-v, --verbose           | verbose logs
+-F, --force             | bypass confirmation prompts
+--no-catch-git          | bypass initial git checks
+--setup-completion      | setup shell tab completion
+--clean-completion      | cleanup tab completion
+```
+
+Examples
+========
+
+for a fully interactive experience;
+
+```bash
+mxflow # or mxf
+```
+
+to bypass `git` checks;
+
+```bash
+mxflow --no-catch-git
+```
+
+to bypass *confirmation* prompts;
+
+```bash
+mxflow --force
+```
+
+to interactively select a workflow to trigger;
+
+```bash
+mxflow trigger
+```
+
+to trigger a particular workflow interactively;
+
+```bash
+mxflow trigger create-flight
+```
+
+to trigger a particular workflow with arguments;
+
+```bash
+mxflow trigger create-flight --taskId my-tsk --description my-desc --force
+```
 
 ---
 
@@ -172,91 +257,6 @@ example: `echo foo {variable} bar`
 </details>
 
 </details>
-
----
-
-Requirements
-============
-- Node 16+
-
----
-
-Installation
-============
-Install the package, globally:
-
-```bash
-sudo npm i -g mxflow
-```
-
-Setup shell tab completion:
-
-```bash
-mxflow --setup-completion
-```
-
-> make sure to run this command **once**, in case you have ran this multiple times, you can run the `mxflow --clean-completion` to clean and run setup again once.
-
-Usage
-=====
-
-```bash
-mxflow [<action>] [<args>] [<flags>]
-```
-
-CLI Options
-===========
-
-```markdown
-init                    | init sample configuration
-trigger <workflow-name> | non-interactive workflow trigger
-version, --version      | show version
-help, --help            | help menu
--v, --verbose           | verbose logs
--F, --force             | bypass confirmation prompts
---no-catch-git          | bypass initial git checks
---setup-completion      | setup shell tab completion
---clean-completion      | cleanup tab completion
-```
-
-Examples
-========
-
-for a fully interactive experience;
-
-```bash
-mxflow # or mxf
-```
-
-to bypass `git` checks;
-
-```bash
-mxflow --no-catch-git
-```
-
-to bypass *confirmation* prompts;
-
-```bash
-mxflow --force
-```
-
-to interactively select a workflow to trigger;
-
-```bash
-mxflow trigger
-```
-
-to trigger a particular workflow interactively;
-
-```bash
-mxflow trigger create-flight
-```
-
-to trigger a particular workflow with arguments;
-
-```bash
-mxflow trigger create-flight --taskId my-tsk --description my-desc --force
-```
 
 ---
 
