@@ -281,11 +281,11 @@ Roadmap
 
 ### Interactive Usage
 
-![gifcast_221027185051.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027185051.gif)
+![gifcast_221102001023.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221102001023.gif)
 
 ### Argument Usage
 
-![gifcast_221027200734.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027200734.gif)
+![gifcast_221102000851.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221102000851.gif)
 
 </details>
 
