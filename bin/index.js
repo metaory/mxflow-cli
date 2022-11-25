@@ -5,7 +5,6 @@ import '../lib/header.js'
 
 import { autocompleteInput } from '../lib/steps/prompts.js'
 import * as operations from '../lib/operations/index.js'
-import { getConfig } from '../lib/config.js'
 import { catchNoGit, catchDirtyGit } from '../lib/catch.js'
 import updateNotifier from 'update-notifier'
 
@@ -14,12 +13,11 @@ updateNotifier({
   updateCheckInterval: 0
 }).notify({ isGlobal: true })
 
+const noop = () => {}
 process.env.HUSKY = 0
-process.on('uncaughtException', $.verbose ? console.error : () => { })
-process.on('unhandledRejection', $.verbose ? console.error : () => { })
+process.on('uncaughtException', $.verbose ? console.error : noop)
+process.on('unhandledRejection', $.verbose ? console.error : noop)
 process.on('SIGINT', process.exit)
-
-global.cfg = await getConfig()
 
 if (argv['catch-git'] !== false) {
   await catchNoGit()
