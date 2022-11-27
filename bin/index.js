@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import '../lib/globals.js'
 import '../lib/completion.js'
 import '../lib/header.js'
