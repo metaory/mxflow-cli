@@ -179,17 +179,17 @@ workflows:
         export: barx
     # Steps are list of commands to execute
     steps:
-      # Variable name or its export can be used with braces
+        # Variable name or its export can be used with braces
       - echo {foo} world
-      # Variable export
+        # Variable export
       - echo goodbye {foo} {barx} cruel world
-      # the `current-branch` is a special variable; always available
+        # the `current-branch` is a special variable; always available
       - echo git branch is {current-branch}
-      # Appending `confirm` will add a confirmation step before the following command
+        # Appending `confirm` will add a confirmation step before the following command
       - confirm shutdown -h now
-      # Its possible to use system environment variable; resolved at runtime
+        # Its possible to use system environment variable; resolved at runtime
       - echo AWS_PROFILE $AWS_PROFILE
-      # Or use braces syntax; it will resolve before execution
+        # Or use braces syntax; it will resolve before execution
       - echo AWS_PROFILE {AWS_PROFILE}
 ```
 
