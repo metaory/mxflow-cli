@@ -8,11 +8,9 @@
   <a href="#why">Why</a> |
   <a href="#installation">Installation</a> |
   <a href="#usage">Usage</a> |
-  <a href="#options">Options</a> |
   <a href="#config">Config</a> |
   <a href="#videos">Videos</a>
 </p>
-
 
 <div align="center">
   <a href="https://npmjs.org/package/mxflow">
@@ -29,11 +27,9 @@
   </a>
 </div>
 
-
 <p align="center">
   :zap: A Friendly, General purpose CLI task runner :rocket:
 </p>
-
 
 <p align="center">
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/screenshot.png">
@@ -52,17 +48,18 @@ It searches for a `.mxflow/config.yml` in the current directory and parent direc
 - Existing task-runners are too focused on a specific **use-case/environment** or have **complicated config** files or are just **not friendly**!
 
 ---
+
 <!-- Group commands under a workflow, write steps, use special commands like `confirm` -->
 
 <!-- The main goal of the mxflow project is to streamline and simplify complex processes -->
 
 ## Major Features
 
-* **Interactive first** - works with/without arguments; prompt missing args
-* **Extensive config** - group commands under a workflow, use arguments export value in commands
-* **Shell completion** - dynamic shell completion based on the closest config file
-* **Confirmation** - add `confirm` prefix to any **_step command_** to add confirmation prompt
-* **Project / System config** - searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up
+- **Interactive first** - works with/without arguments; prompt missing arguments
+- **Extensive config** - group commands under a workflow, use arguments export value in commands
+- **Shell completion** - dynamic shell completion based on the closest config file
+- **Confirmation** - add `confirm` prefix to any **_step command_** to add confirmation prompt
+- **Project / System config** - searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up
 
 <!-- ## a CICD for internal processes and workflows on local machines for teams -->
 
@@ -74,14 +71,14 @@ It searches for a `.mxflow/config.yml` in the current directory and parent direc
 
 ---
 
-Requirements
-============
+# Requirements
+
 - Node 16+
 
 ---
 
-Installation
-============
+# Installation
+
 Install the package, globally:
 
 ```bash
@@ -94,64 +91,54 @@ Setup shell tab completion:
 mxflow --setup-completion
 ```
 
-> make sure to run this command **once**, in case you have ran this multiple times, you can run the `mxflow --clean-completion` to clean and run setup again once.
+> make sure to run this command **once**, in case you have ran this multiple times, you can run the `mxflow --clean-completion` to clean.
 
-Usage
-=====
+# Usage
 
 ```bash
 mxflow [<action>] [<args>] [<flags>]
 ```
 
-CLI Options
-===========
+# CLI Options
 
 ```markdown
-init                    | init sample configuration
+init | init sample configuration
 trigger <workflow-name> | non-interactive workflow trigger
-version, --version      | show version
-help, --help            | help menu
--v, --verbose           | verbose logs
--F, --force             | bypass confirmation prompts
---no-catch-git          | bypass initial git checks
---setup-completion      | setup shell tab completion
---clean-completion      | cleanup tab completion
+version, --version | show version
+help, --help | help menu
+-v, --verbose | verbose logs
+-F, --force | bypass confirmation prompts
+--setup-completion | setup shell tab completion
+--clean-completion | cleanup tab completion
 ```
 
-Examples
-========
+# Examples
 
-for a fully interactive experience;
+For a fully interactive experience;
 
 ```bash
 mxflow # or mxf
 ```
 
-to bypass `git` checks;
-
-```bash
-mxflow --no-catch-git
-```
-
-to bypass *confirmation* prompts;
+To bypass _confirmation_ prompts;
 
 ```bash
 mxflow --force
 ```
 
-to interactively select a workflow to trigger;
+To interactively select a workflow to trigger;
 
 ```bash
 mxflow trigger
 ```
 
-to trigger a particular workflow interactively;
+To trigger a particular workflow interactively;
 
 ```bash
 mxflow trigger create-flight
 ```
 
-to trigger a particular workflow with arguments;
+To trigger a particular workflow with arguments;
 
 ```bash
 mxflow trigger create-flight --taskId my-tsk --description my-desc --force
@@ -159,33 +146,52 @@ mxflow trigger create-flight --taskId my-tsk --description my-desc --force
 
 ---
 
-<details>
-  <summary><h1>Config</h1></summary>
+# Config
 
 `.mxflow/config.yml`
 
 > `mxflow trigger foobar --foo fval --bar bar-xorg`
 
 ```yaml
+# The CLI version
 version: 0.60.0
+# Config workflows
 workflows:
+  # Workflow name
   foobar:
     description: example placeholder
+    # Checks to run before workflow. Possible checks are: [git-clean]
+    checks:
+      - git-clean
+    # Variables to collect to be used later on steps
     args:
+        # Variable name
       - name: foo
+        # Variable type. Possible types are: [string, number, boolean]
         type: string
       - name: bar
         type: string
+        # Regex to validate argument input
         regex: ^bar+\w
+        # The default value for the variable
         default: barxorg
+        # Set a different name for the variable
         export: barx
+    # Steps are list of commands to execute
     steps:
+        # Variable name or its export can be used with braces
       - echo {foo} world
+        # Variable export
       - echo goodbye {foo} {barx} cruel world
-      - confirm echo {barx} goodbye
+        # the `current-branch` is a special variable; always available
+      - echo git branch is {current-branch}
+        # Appending `confirm` will add a confirmation step before the following command
+      - confirm shutdown -h now
+        # Its possible to use system environment variable; resolved at runtime
       - echo AWS_PROFILE $AWS_PROFILE
+        # Or use braces syntax; it will resolve before execution
       - echo AWS_PROFILE {AWS_PROFILE}
-  ```
+```
 
 ---
 
@@ -207,6 +213,9 @@ workflows:
 
 `description` - workflow description
 
+`checks` - checks to run before workflow.
+Possible checks are: `[git-clean]`
+
 `args` - list of arguments
 
 `args[*].name` - what user inputs as argument
@@ -227,23 +236,23 @@ workflows:
 
 > note: you can add a `confirm` prefix to add confirmation prompt
 
-> note: currently there are few special git commands: `checkout-branch, list-logs, log-bugtracker`. check [wiki](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample) for usage example
+> note: currently there are few special git commands: `checkout-branch, list-logs, log-bugtracker`. Check [wiki](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample) for usage example
 
 </details>
 
 <details>
   <summary><h2>Config Variables</h2></summary>
 
-example: `echo foo {variable} bar`
+Example: `echo foo {variable} bar`
 
 - Argument variables
-    - `args` - `export` or `name`
+  - `args` - `export` or `name`
 - Environment variables
-    - `environment` - system environment variables
-    - `.env` - variables defined in the `.env` file
+  - `environment` - system environment variables
+  - `.env` - variables defined in the `.env` file
 - Special variables
-    - `{current-branch}` - current active branch
-    - `{workflow}` - current active workflow
+  - `{current-branch}` - current active branch
+  - `{workflow}` - current active workflow
 
 </details>
 
@@ -260,14 +269,13 @@ example: `echo foo {variable} bar`
 
 ---
 
-Roadmap
-=======
+# Roadmap
 
-- [X] project based config file
+- [x] project based config file
 - [ ] plugin system for dynamic lists
-- [X] aurgument mode
-- [X] argument autocomplete
-- [X] support `.env` file import
+- [x] argument mode
+- [x] argument autocomplete
+- [x] support `.env` file import
 
 ---
 
@@ -277,7 +285,6 @@ Roadmap
 ### Installation
 
 ![gifcast_221027184725.gif](https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/gifcast_221027184725.gif)
-
 
 ### Interactive Usage
 
@@ -293,7 +300,6 @@ Roadmap
 
 :warning: MXflow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
 
-License
--------
+## License
 
 [MIT](LICENSE)
