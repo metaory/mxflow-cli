@@ -12,15 +12,40 @@ export const multiselectInput = (name, choices, message, initial) =>
     choices,
   });
 
-export const autocompleteInput = (name, choices, message = `select ${C.bold(name)}`, initial = "") =>
-  enquirer.prompt({ type: "autocomplete", name, limit: 10, initial, message, choices });
+export const autocompleteInput = (
+  name,
+  choices,
+  message = `select ${C.bold(name)}`,
+  initial = "",
+) =>
+  enquirer.prompt({
+    type: "autocomplete",
+    name,
+    limit: 10,
+    initial,
+    message,
+    choices,
+  });
 
-export const confirmInput = (name, message = "Are you sure?", initial = false) =>
+export const confirmInput = (
+  name,
+  message = "Are you sure?",
+  initial = false,
+) =>
   argv.force ?? argv.F
     ? { [name]: true }
-    : enquirer.prompt({ type: "confirm", hint: `(${name})`, initial, name, message });
+    : enquirer.prompt({
+      type: "confirm",
+      hint: `(${name})`,
+      initial,
+      name,
+      message,
+    });
 
-export const numberInput = (name, { message = `enter ${C.bold(name)}`, hint = "", value = 0, min = 1 } = {}) =>
+export const numberInput = (
+  name,
+  { message = `enter ${C.bold(name)}`, hint = "", value = 0, min = 1 } = {},
+) =>
   enquirer.prompt({
     type: "input",
     name,
@@ -44,7 +69,12 @@ export const numberInput = (name, { message = `enter ${C.bold(name)}`, hint = ""
 
 export const stringInput = (
   name,
-  { message = `enter ${C.bold(name)}`, value = `${name}-placeholder`, hint, spaceReplacer = "-" } = {},
+  {
+    message = `enter ${C.bold(name)}`,
+    value = `${name}-placeholder`,
+    hint,
+    spaceReplacer = "-",
+  } = {},
 ) =>
   enquirer.prompt({
     type: "input",

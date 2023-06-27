@@ -4,7 +4,10 @@ import runChecks from "../opts/checks.js";
 export default async(argWorkflow) => {
   head(import.meta, argWorkflow);
 
-  const workflow = argWorkflow ?? (await promptWorkflow([...Object.keys(cfg.workflows).sort()]));
+  const workflow =
+    argWorkflow ??
+    (await promptWorkflow([...Object.keys(cfg.workflows).sort()]));
+
   if (!cfg.workflows[workflow]) {
     L.error(`workflow ${C.bold(workflow)} not found in config`);
   }

@@ -28,7 +28,12 @@ export async function checkDirty() {
 }
 
 export async function checkConflict(currentBranch, targetBranch) {
-  console.info(C.grey("comparing"), C.blue(currentBranch), C.grey("..."), C.cyan(targetBranch));
+  console.info(
+    C.grey("comparing"),
+    C.blue(currentBranch),
+    C.grey("..."),
+    C.cyan(targetBranch),
+  );
   try {
     await $`git reset --hard HEAD`;
     await $`git merge -Xignore-space-change --no-commit --no-ff origin/${targetBranch}`;

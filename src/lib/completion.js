@@ -13,16 +13,27 @@ const getConfig = () => {
   return fs.readFileSync(configPath, "utf8");
 };
 
-const workflows = () => (getConfig() ? Object.keys(YAML.parse(getConfig()).workflows).sort() : ["CONFIG_NOT_FOUND"]);
+const workflows = () =>
+  getConfig()
+    ? Object.keys(YAML.parse(getConfig()).workflows).sort()
+    : ["CONFIG_NOT_FOUND"];
 
 const args = (workflow) => {
   const args = YAML.parse(getConfig()).workflows[workflow].args ?? [];
-  return [...args.filter((x) => x.type === "string"), { name: "force" }, { name: "verbose" }].map((x) => {
+  return [
+    ...args.filter((x) => x.type === "string"),
+    { name: "force" },
+    { name: "verbose" },
+  ].map((x) => {
     return `--${x.name}`;
   });
 };
 
-const completion = omelette(`mxflow|mxf <action> <workflow> ${"<arg> <val> ".repeat(MXF_MAX_ARGS)} <flags> <flags>`);
+const completion = omelette(
+  `mxflow|mxf <action> <workflow> ${"<arg> <val> ".repeat(
+    MXF_MAX_ARGS,
+  )} <flags> <flags>`,
+);
 
 completion.on("action", ({ reply }) => {
   reply([

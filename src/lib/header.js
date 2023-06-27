@@ -18,9 +18,9 @@ const asci = () =>
 const text = await asci();
 process.stdout.write(gradient.passion(text) + "\n"); // mind, retro
 
-console.log(global.chalk.grey(`font: ${font} (${fontIndex}/${fonts.length})`));
+log.greyDim(`font: ${font} (${fontIndex}/${fonts.length})`);
 
-console.log(global.chalk.grey(`${PKG_NAME} : ${C.yellow(PKG_VERSION)}`));
+log.grey(`${PKG_NAME} : ${C.yellow(PKG_VERSION)}`);
 
 // log.grey(fillFrom('╸')) // █ ▓ ▒ ░ ╺╸━
 process.stdout.write(gradient.passion(fillFrom("━")) + "\n"); // mind, retro
