@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
-import "../lib/completion.js";
-import "../lib/globals.js";
-import "../lib/header.js";
+import "../src/lib/completion.js";
+import "../src/core/globals.js";
+import "../src/lib/header.js";
 
-import { autocompleteInput } from "../lib/steps/prompts.js";
-import * as operations from "../lib/operations/index.js";
+import Config from "../src/lib/config.js";
+import { autocompleteInput } from "../src/core/prompts.js";
+import * as operations from "../src/opts/index.js";
 import updateNotifier from "update-notifier";
 
 updateNotifier({
@@ -24,6 +25,8 @@ if (argv._.includes("trigger")) {
   await operations.workflows(workflow);
   process.exit();
 }
+
+if (argv.reset || argv._.includes("reset")) await Config.reset();
 
 const { operation } = await autocompleteInput("operation", operations.list);
 const { options } = operations.list().find((x) => x.name === operation);

@@ -1,5 +1,5 @@
-import { numberInput, confirmInput } from "./steps/prompts.js";
-import SampleConfig from "./steps/sample.js";
+import { numberInput, confirmInput } from "../core/prompts.js";
+import SampleConfig from "./sample.js";
 import findFile from "simple-find-file-recursively-up";
 
 const sampleBasic = {
@@ -54,7 +54,10 @@ export default class Config {
   }
 
   async sample() {
-    const { promptSamples } = await confirmInput("promptSamples", "add sample git-flow?");
+    const { promptSamples } = await confirmInput(
+      "promptSamples",
+      "add sample git-flow?",
+    );
     if (promptSamples) {
       return SampleConfig();
     }
@@ -124,12 +127,18 @@ export default class Config {
 
     spinner.succeed("finished.");
 
-    const { makeSystemCopy } = await confirmInput("makeSystemCopy", "make a system copy?");
+    const { makeSystemCopy } = await confirmInput(
+      "makeSystemCopy",
+      "make a system copy?",
+    );
     if (makeSystemCopy) {
       await this.commit(`${os.homedir()}/.mxflow/config.yml`, yamlConfig);
     }
 
-    const { makeLocalCopy } = await confirmInput("makeLocalCopy", "make a local copy?");
+    const { makeLocalCopy } = await confirmInput(
+      "makeLocalCopy",
+      "make a local copy?",
+    );
     if (makeLocalCopy) {
       await this.commit("./.mxflow/config.yml", yamlConfig);
     }

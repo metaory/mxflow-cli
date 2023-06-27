@@ -16,7 +16,11 @@ export async function catchNoGit() {
 export async function catchDirtyGit() {
   if ((await checkDirty()) === true) {
     await $`git status --short`;
-    L.error("worktree is dirty\n" + "stash your changes before continuing.\n" + C.yellow("git stash push"));
+    L.error(
+      "worktree is dirty\n" +
+        "stash your changes before continuing.\n" +
+        C.yellow("git stash push"),
+    );
   }
   log.pass(CWD, "directory is clean!");
   log.greyDim(fillFrom("━"));
@@ -26,12 +30,17 @@ export async function catchOldConfig(config) {
   const [, pkgMinorVersion] = PKG_VERSION.split(".");
   const [, cfgMinorVersion] = (config.version || "").split(".");
   const oldConfig = "version" in config === false;
-  const minorVersionMissmatch = cfgMinorVersion && pkgMinorVersion !== cfgMinorVersion;
+  const minorVersionMissmatch =
+    cfgMinorVersion && pkgMinorVersion !== cfgMinorVersion;
 
   if (oldConfig || minorVersionMissmatch) {
     await Config.remove();
     log.grey("you may run the cli again\n");
-    L.error(`different version\nminor ${PKG_VERSION} (${C.bold.yellow(config.version)})`);
+    L.error(
+      `different version\nminor ${PKG_VERSION} (${C.bold.yellow(
+        config.version,
+      )})`,
+    );
   }
 }
 
@@ -77,6 +86,10 @@ export function catchConfigSchema(config) {
         params: { additionalProperty = "" },
       },
     ] = ajv.errors;
-    L.error(`config ${C.dim(instancePath)} ${message} ${C.yellow(additionalProperty)}`);
+    L.error(
+      `config ${C.dim(instancePath)} ${message} ${C.yellow(
+        additionalProperty,
+      )}`,
+    );
   }
 }

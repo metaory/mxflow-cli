@@ -6,45 +6,19 @@ export const multiselectInput = (name, choices, message, initial) =>
     type: "multiselect",
     name,
     limit: 10,
-    // hint: '(Use <space> to select, <return> to submit)',
+    hint: "(Use <space> to select, <return> to submit)",
     initial,
     message,
     choices,
   });
 
 export const autocompleteInput = (name, choices, message = `select ${C.bold(name)}`, initial = "") =>
-  enquirer.prompt({
-    type: "autocomplete",
-    name,
-    limit: 10,
-    initial,
-    message,
-    choices,
-  });
-
-export const toggleInput = (name, { message = `select ${C.bold(name)}`, enabled, disabled, hint, initial }) =>
-  enquirer.prompt({
-    type: "toggle",
-    initial,
-    hint,
-    enabled,
-    disabled,
-    name,
-    message,
-  });
+  enquirer.prompt({ type: "autocomplete", name, limit: 10, initial, message, choices });
 
 export const confirmInput = (name, message = "Are you sure?", initial = false) =>
   argv.force ?? argv.F
-    ? {
-      [name]: true,
-    }
-    : enquirer.prompt({
-      type: "confirm",
-      hint: `(${name})`,
-      initial,
-      name,
-      message,
-    });
+    ? { [name]: true }
+    : enquirer.prompt({ type: "confirm", hint: `(${name})`, initial, name, message });
 
 export const numberInput = (name, { message = `enter ${C.bold(name)}`, hint = "", value = 0, min = 1 } = {}) =>
   enquirer.prompt({
@@ -80,15 +54,6 @@ export const stringInput = (
     message,
     default: value,
     validate: (val) => !!val || `${name} cant be empty!`,
-  });
-
-export const listInput = (name, choices, message = `select ${C.bold(name)}`) =>
-  enquirer.prompt({
-    type: "select",
-    name,
-    message,
-    limit: 7,
-    choices,
   });
 
 export const promptWorkflow = async(branchTypes) => {
@@ -138,3 +103,9 @@ export const promptArgs = async(workflow, args = []) => {
 
   return output;
 };
+
+// export const toggleInput = (name, { message = `select ${C.bold(name)}`, enabled, disabled, hint, initial }) =>
+//   enquirer.prompt({ type: "toggle", initial, hint, enabled, disabled, name, message });
+
+// export const listInput = (name, choices, message = `select ${C.bold(name)}`) =>
+//   enquirer.prompt({ type: "select", name, message, limit: 7, choices });

@@ -1,11 +1,11 @@
 import conflictDetection from "./conflictDetection.js";
-import workflows from "./workflows.js";
+import workflows from "../core/workflows.js";
 // import startWorkflow from './startWorkflow.js'
 import checkoutBranch from "./checkout.js";
 import cherryPick from "./cherryPick.js";
 import worktree from "./worktree.js";
-import Config from "../config.js";
-import { listLatestLogs } from "../git.js";
+import Config from "../lib/config.js";
+import { listLatestLogs } from "../lib/git.js";
 
 const list = () => [
   // {
@@ -20,16 +20,16 @@ const list = () => [
   // },
   {
     name: "workflows",
-    message: C.cyan("● trigger workflow"),
+    message: C.cyan(`${global.ICON.WORKFLOW} trigger workflow`),
   },
   {
     name: "checkoutBranch",
-    message: C.magenta("◀ checkout branch"),
+    message: C.magenta(`${global.ICON.CHECKOUT} checkout branch`),
     options: { base: "" },
   },
   {
     name: "conflictDetection",
-    message: C.blue("▲ conflict detection"),
+    message: C.blue(`${global.ICON.CONFLICT} conflict detection`),
   },
   // {
   //   name: 'cherryPick',
@@ -38,11 +38,11 @@ const list = () => [
   // },
   {
     name: "worktree",
-    message: C.green("⇄ worktree"), // ⭓
+    message: C.green(`${global.ICON.TREE} worktree`), // ⭓
   },
   {
     name: "reset",
-    message: C.red("✖ reset system config"),
+    message: C.red(`${global.ICON.FAIL} reset system config`),
   },
   // { name: 'cherryPick', message: 'interactive cherry pick', disabled: true },
   // { name: 'PR_toLanding', message: 'create pull request', disabled: true },
@@ -50,13 +50,4 @@ const list = () => [
 ];
 const reset = Config.reset;
 
-export {
-  conflictDetection,
-  workflows,
-  listLatestLogs,
-  checkoutBranch,
-  cherryPick,
-  worktree,
-  list,
-  reset,
-};
+export { conflictDetection, workflows, listLatestLogs, checkoutBranch, cherryPick, worktree, list, reset };

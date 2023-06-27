@@ -7,12 +7,15 @@ import { highlight } from "cli-highlight";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as dotenv from "dotenv";
-
-import { catchConfigSchema, catchOldConfig } from "./catch.js";
-import checkoutBranch from "./operations/checkout.js";
-import { confirmInput } from "./steps/prompts.js";
-import { getCurrentBranch, listLatestLogs, logBugTrackerUrl } from "./git.js";
-import Config from "./config.js";
+import { catchConfigSchema, catchOldConfig } from "../lib/catch.js";
+import checkoutBranch from "../opts/checkout.js";
+import { confirmInput } from "./prompts.js";
+import {
+  getCurrentBranch,
+  listLatestLogs,
+  logBugTrackerUrl,
+} from "../lib/git.js";
+import Config from "../lib/config.js";
 
 const {
   stdout: { columns },
@@ -36,11 +39,18 @@ global.ICON = {
   WARN: "⚠",
   VERT: "┃ ",
   HORZ: "╸",
+  TREE: "⇄",
+  WORKFLOW: "●",
+  CHECKOUT: "◀",
+  CONFLICT: "▲",
 };
 global.spinner = spinner;
 global.C = chalk;
 global.L = L;
-global.PKG_PATH = resolve(dirname(fileURLToPath(import.meta.url)), "../package.json");
+global.PKG_PATH = resolve(
+  dirname(fileURLToPath(import.meta.url)),
+  "../../package.json",
+);
 
 const { name, version } = await fs.readJson(PKG_PATH);
 
@@ -62,7 +72,10 @@ const getModuleName = (url) => {
 };
 
 global.head = ({ url }, etc = "-") =>
-  L.info(getModuleName(url), `module loaded  ⌜${C.yellow(replaceHome(String(etc)))}⌝`); // ⌞⌟ ⌜⌝
+  L.info(
+    getModuleName(url),
+    `module loaded  ⌜${C.yellow(replaceHome(String(etc)))}⌝`,
+  ); // ⌞⌟ ⌜⌝
 
 global.info = (msg, etc) => $.verbose && console.info(msg, etc);
 
@@ -101,7 +114,9 @@ global.$$ = async function ex(commands = [], data = {}) {
         logBugTrackerUrl(data, cmd[key]);
         break;
       case "checkout-branch":
-        globalContext[cmd[key].export ?? "branch"] = await checkoutBranch(cmd[key]);
+        globalContext[cmd[key].export ?? "branch"] = await checkoutBranch(
+          cmd[key],
+        );
         break;
       case "list-logs":
         await listLatestLogs(cmd[key]);
@@ -140,7 +155,9 @@ global.$$ = async function ex(commands = [], data = {}) {
 
     logTitle();
 
-    $.verbose ? console.log(cmd) : spinner.start(C.yellow(cmd) + C.grey(`\n$ ${parsedCmd}\n`));
+    $.verbose
+      ? console.log(cmd)
+      : spinner.start(C.yellow(cmd) + C.grey(`\n$ ${parsedCmd}\n`));
 
     try {
       if (!parsedCmd) throw new Error(`missing ${cmd}`);
@@ -175,7 +192,13 @@ process.on("exit", () => {
   process.stdout.write("\n\n");
   L.loading("history", history.length);
   history.forEach((_, i) =>
-    process.stdout.write(" ".repeat(4) + historyStatus[i] + " ".repeat(1) + C.blue(history[i]) + "\n"),
+    process.stdout.write(
+      " ".repeat(4) +
+        historyStatus[i] +
+        " ".repeat(1) +
+        C.blue(history[i]) +
+        "\n",
+    ),
   );
   process.stdout.write("\n");
   const took = ((Date.now() - startTime) / 1000).toFixed(1);
@@ -202,25 +225,44 @@ global.logYaml = (str, ignoreIllegals = true) => {
   global.newLine();
 };
 
-const _log = (txt, color, mode = "reset") => process.stdout.write(C[mode][color](txt) + "\n");
+const _log = (txt, color, mode = "reset") =>
+  process.stdout.write(C[mode][color](txt) + "\n");
 const _box = (txt, color, opt = {}) => _log(boxen(txt, opt), color);
 const _upp = (str) => str.charAt(0).toUpperCase() + str.substr(1, str.length);
-global.log = ["red", "green", "yellow", "blue", "magenta", "cyan", "grey"].reduce(
+global.log = [
+  "red",
+  "green",
+  "yellow",
+  "blue",
+  "magenta",
+  "cyan",
+  "grey",
+].reduce(
   (acc, cur) => {
     acc[cur] = (txt) => _log(txt, cur);
     acc[`${cur}Sat`] = (txt) => _log(txt, `${cur}Bright`);
     acc[`${cur}Dim`] = (txt) => _log(txt, cur, "dim");
     acc[`bg${_upp(cur)}`] = (txt) => _log(C.black.bold(txt), `bg${_upp(cur)}`);
-    acc[`${cur}Box`] = (txt, { title, padding = 1, borderStyle = cur === "red" ? "double" : "bold" } = {}) =>
-      _box(txt, cur, { title, padding, borderStyle });
+    acc[`${cur}Box`] = (
+      txt,
+      {
+        title,
+        padding = 1,
+        borderStyle = cur === "red" ? "double" : "bold",
+      } = {},
+    ) => _box(txt, cur, { title, padding, borderStyle });
 
     return acc;
   },
   {
-    pass: (txt, etc = "") => _log(`${global.ICON.PASS} ${C.blue(replaceHome(txt))} ${etc}`, "green"),
-    info: (txt, etc = "") => _log(`${global.ICON.INFO} ${C.magenta(txt)} ${etc}`, "cyan"),
-    warn: (txt, etc = "") => _log(`${global.ICON.WARN} ${C.yellowBright(txt)} ${etc}`, "yellow"),
-    fail: (txt, etc = "") => _log(`${global.ICON.FAIL} ${C.redBright(txt)} ${etc}`, "red"),
+    pass: (txt, etc = "") =>
+      _log(`${global.ICON.PASS} ${C.blue(replaceHome(txt))} ${etc}`, "green"),
+    info: (txt, etc = "") =>
+      _log(`${global.ICON.INFO} ${C.magenta(txt)} ${etc}`, "cyan"),
+    warn: (txt, etc = "") =>
+      _log(`${global.ICON.WARN} ${C.yellowBright(txt)} ${etc}`, "yellow"),
+    fail: (txt, etc = "") =>
+      _log(`${global.ICON.FAIL} ${C.redBright(txt)} ${etc}`, "red"),
     fatal: (txt, etc = "", title = CWD) => {
       const icon = C.redBright(global.ICON.FAIL);
       log.redBox(`${icon} ${txt} ${C.redBright(etc)}`, { title });
@@ -234,7 +276,12 @@ Object.defineProperty(global, "cfg", {
   get: () => _config,
   set: (val) => {
     val.sleep = Number(process.env.MXF_SLEEP ?? argv.sleep ?? val.sleep ?? 1000);
-    $.verbose && L.warn(`sleep ${C.yellow.dim("is set to")} ${C.bold((val.sleep / 1000).toFixed(1))}s`);
+    $.verbose &&
+      L.warn(
+        `sleep ${C.yellow.dim("is set to")} ${C.bold(
+          (val.sleep / 1000).toFixed(1),
+        )}s`,
+      );
     catchConfigSchema(val);
     catchOldConfig(val);
     info(JSON.stringify(val, null, 2), C.yellow(val.version));
