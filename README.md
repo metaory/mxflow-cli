@@ -28,7 +28,7 @@
 </div>
 
 <p align="center">
-  :zap: A Friendly, General purpose CLI task runner :rocket:
+  :zap: A Beautiful, Friendly, General purpose CLI task runner :rocket:
 </p>
 
 <p align="center">
