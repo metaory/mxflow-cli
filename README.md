@@ -35,7 +35,7 @@
   <img width="75%" src="https://raw.githubusercontent.com/wiki/metaory/mxflow-cli/assets/screenshot.png">
 </p>
 
-`mxflow` is a CLI task runner which is configured via a YAML config file.
+`mxflow` is a CLI task runner which configured via a YAML config file.
 
 It searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up which it then parses for commands and arguments
 
@@ -45,7 +45,7 @@ It searches for a `.mxflow/config.yml` in the current directory and parent direc
 
 - It's hard to **streamline** complex workflows across **teams**.
 
-- Existing task-runners are too focused on a specific **use-case/environment** or have **complicated config** files or are just **not friendly**!
+- Existing task-runners are too focused on a specific **use-case/environment** or have **complicated config** files or are **not friendly**!
 
 ---
 
@@ -91,7 +91,7 @@ Setup shell tab completion:
 mxflow --setup-completion
 ```
 
-> make sure to run this command **once**, in case you have ran this multiple times, you can run the `mxflow --clean-completion` to clean.
+> make sure to run this command **once**, in case you have ran this command more than once, you can run the `mxflow --clean-completion` to clean.
 
 # Usage
 
@@ -163,9 +163,9 @@ workflows:
     # Checks to run before workflow. Possible checks are: [git-clean]
     checks:
       - git-clean
-    # Variables to collect to be used later on steps
+    # Variables to collect to be available later on steps
     args:
-        # Variable name
+      # Variable name
       - name: foo
         # Variable type. Possible types are: [string, number]
         type: string
@@ -179,7 +179,7 @@ workflows:
         export: barx
     # Steps are list of commands to execute
     steps:
-        # Variable name or its export can be used with braces
+      # Variable name or its export are available with braces
       - echo {foo} world
         # Variable export
       - echo goodbye {foo} {barx} cruel world
@@ -230,13 +230,13 @@ Possible checks are: `[git-clean]`
 
 `steps` - list of commands to run
 
-`steps[*]` - the command to run, any shell command string, few specials commands
+`steps[*]` - the command to run, any shell command string, with some specials commands
 
 > note: you can write a `cd` pre-step to change `cwd` of the following command
 
 > note: you can add a `confirm` prefix to add confirmation prompt
 
-> note: currently there are few special git commands: `checkout-branch, list-logs, log-bugtracker`. Check [wiki](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample) for usage example
+> note: at the moment there are some git commands: `checkout-branch, list-logs, log-bugtracker`. Check [wiki](https://github.com/metaory/mxflow-cli/wiki/Git-Workflow-Sample) for usage example
 
 </details>
 
@@ -250,8 +250,9 @@ Example: `echo foo {variable} bar`
 - Environment variables
   - `environment` - system environment variables
   - `.env` - variables defined in the `.env` file
-- Special variables
+- git variables
   - `{current-branch}` - current active branch
+- workflow
   - `{workflow}` - current active workflow
 
 </details>
@@ -297,8 +298,6 @@ Example: `echo foo {variable} bar`
 </details>
 
 ---
-
-:warning: MXflow is in an early state of release. Breaking changes may be made to APIs/core structures as the tool matures.
 
 ## License
 
