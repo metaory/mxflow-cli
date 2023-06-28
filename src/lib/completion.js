@@ -20,13 +20,9 @@ const workflows = () =>
 
 const args = (workflow) => {
   const args = YAML.parse(getConfig()).workflows[workflow].args ?? [];
-  return [
-    ...args.filter((x) => x.type === "string"),
-    { name: "force" },
-    { name: "verbose" },
-  ].map((x) => {
-    return `--${x.name}`;
-  });
+  return [...args, { name: "force" }, { name: "verbose" }].map(
+    (x) => `--${x.name}`,
+  );
 };
 
 const completion = omelette(

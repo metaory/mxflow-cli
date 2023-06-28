@@ -1,4 +1,5 @@
 import Prompt from "enquirer";
+import CT from "chalk-template";
 const enquirer = new Prompt();
 
 export const multiselectInput = (name, choices, message, initial) =>
@@ -98,28 +99,41 @@ export const promptWorkflow = async(branchTypes) => {
   const { workflow } = await autocompleteInput("workflow", format);
   return workflow;
 };
-
+// Collect context variables from arguments or interactively
 export const promptArgs = async(workflow, args = []) => {
   const inputs = { string: stringInput, number: numberInput };
   const output = { workflow };
 
-  const test = (str, name, regex) =>
+  // Regex validate function
+  const test = (str, regex, name = "") =>
     new RegExp(regex).test(str) === false
-      ? `${name} validation failed ${C.yellow(regex)}`
+      ? CT`{yellow.bold ${name}} validation failed {yellow ${regex}}`
       : true;
 
+  // Loop over workflow arguments
   for (const arg of args) {
     const argValue = argv[arg.name];
 
-    if (argValue) {
-      const validated = test(argValue, arg.name, arg.regex);
+    // Argument Flow; Validate argument variables with config regex
+    if (argValue && arg.regex) {
+      const validated = test(argValue, arg.regex, arg.name);
       if (validated !== true) L.error(validated);
+    }
+
+    // Argument Flow; validate type number
+    if (argValue && arg.type === "number" && isNaN(argValue)) {
+      L.error(CT`{yellow ${arg.name}} expected a {bold Number}`);
+    }
+
+    // Argument Flow; set provided value
+    if (argValue) {
       output[arg.export ?? arg.name] = argValue;
       continue;
     }
 
+    // Interactive validate function
     const validate = arg.regex
-      ? (value) => test(value, arg.name, arg.regex)
+      ? (value) => test(value, arg.regex, arg.name)
       : null;
 
     // String and Number inputs
@@ -131,6 +145,7 @@ export const promptArgs = async(workflow, args = []) => {
       output[arg.export ?? arg.name] = res ?? arg.default;
     }
 
+    // Type env for system environment variables
     if (arg.type === "env") {
       output[arg.export ?? arg.name] = process.env[arg.name] ?? arg.default;
     }

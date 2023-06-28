@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 import "../src/lib/completion.js";
-import "../src/core/globals.js";
 import "../src/lib/header.js";
+import "../src/core/globals.js";
+import "../src/core/execution.js";
+import "../src/core/loggers.js";
 
 import Config from "../src/lib/config.js";
 import { autocompleteInput } from "../src/core/prompts.js";

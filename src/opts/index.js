@@ -36,7 +36,7 @@ const list = () => [
   // },
   {
     name: "worktree",
-    message: C.green(`${global.ICON.TREE} worktree`), // ⭓
+    message: C.green(`${global.ICON.WORKTREE} worktree`), // ⭓
   },
   {
     name: "reset",
