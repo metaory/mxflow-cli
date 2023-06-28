@@ -171,7 +171,7 @@ workflows:
         type: string
       - name: bar
         type: string
-        # Regex to validate argument input
+        # Regex to test argument input
         regex: ^bar+\w
         # The default value for the variable
         default: barxorg
