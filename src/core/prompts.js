@@ -73,6 +73,7 @@ export const stringInput = (
     message = `enter ${C.bold(name)}`,
     value = `${name}-placeholder`,
     hint,
+    validate,
     spaceReplacer = "-",
   } = {},
 ) =>
@@ -83,7 +84,7 @@ export const stringInput = (
     result: (val) => val.trim().replaceAll(" ", spaceReplacer),
     message,
     default: value,
-    validate: (val) => !!val || `${name} cant be empty!`,
+    validate: validate || ((val) => !!val || `${name} cant be empty!`),
   });
 
 export const promptWorkflow = async(branchTypes) => {
@@ -99,30 +100,34 @@ export const promptWorkflow = async(branchTypes) => {
 };
 
 export const promptArgs = async(workflow, args = []) => {
-  const inputs = {
-    string: stringInput,
-    number: numberInput,
-  };
-  const output = {
-    workflow,
-  };
+  const inputs = { string: stringInput, number: numberInput };
+  const output = { workflow };
+
+  const test = (str, name, regex) =>
+    new RegExp(regex).test(str) === false
+      ? `${name} validation failed ${C.yellow(regex)}`
+      : true;
 
   for (const arg of args) {
     const argValue = argv[arg.name];
-    if (argValue && arg.regex && !argv._.includes("trigger")) {
-      const re = new RegExp(arg.regex);
-      if (re.test(argValue) === false) {
-        L.error(`${argValue} validation failed ${C.yellow(arg.regex)}`);
-      }
-    }
 
     if (argValue) {
+      const validated = test(argValue, arg.name, arg.regex);
+      if (validated !== true) L.error(validated);
       output[arg.export ?? arg.name] = argValue;
       continue;
     }
 
-    if (arg.type === "string") {
-      const { [arg.name]: res } = await inputs[arg.type](arg.name);
+    const validate = arg.regex
+      ? (value) => test(value, arg.name, arg.regex)
+      : null;
+
+    // String and Number inputs
+    if (Object.keys(inputs).includes(arg.type)) {
+      const { [arg.name]: res } = await inputs[arg.type](arg.name, {
+        value: arg.default,
+        validate,
+      });
       output[arg.export ?? arg.name] = res ?? arg.default;
     }
 

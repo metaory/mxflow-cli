@@ -167,7 +167,7 @@ workflows:
     args:
         # Variable name
       - name: foo
-        # Variable type. Possible types are: [string, number, boolean]
+        # Variable type. Possible types are: [string, number]
         type: string
       - name: bar
         type: string
