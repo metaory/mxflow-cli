@@ -56,10 +56,10 @@ It searches for a `.mxflow/config.yml` in the current directory and parent direc
 ## Major Features
 
 - **Interactive first** - works with/without arguments; prompt missing arguments
-- **Extensive config** - group commands under a workflow, use arguments export value in commands
+- **Extensive config** - group commands under a workflow, use argument variables in commands
 - **Shell completion** - dynamic shell completion based on the closest config file
 - **Confirmation** - add `confirm` prefix to any **_step command_** to add confirmation prompt
-- **Project / System config** - searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up
+- **Project / System config** - searches for a `.mxflow/config.yml` in the current directory and parent directories recursively up, so you can have different configs based on the current directory
 
 <!-- ## a CICD for internal processes and workflows on local machines for teams -->
 
