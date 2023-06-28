@@ -1,11 +1,9 @@
 import conflictDetection from "./conflictDetection.js";
 import workflows from "../core/workflows.js";
-// import startWorkflow from './startWorkflow.js'
 import checkoutBranch from "./checkout.js";
 import cherryPick from "./cherryPick.js";
 import worktree from "./worktree.js";
 import Config from "../lib/config.js";
-import { listLatestLogs } from "../lib/git.js";
 
 const list = () => [
   // {
@@ -50,4 +48,12 @@ const list = () => [
 ];
 const reset = Config.reset;
 
-export { conflictDetection, workflows, listLatestLogs, checkoutBranch, cherryPick, worktree, list, reset };
+export {
+  conflictDetection,
+  workflows,
+  checkoutBranch,
+  cherryPick,
+  worktree,
+  list,
+  reset,
+};
