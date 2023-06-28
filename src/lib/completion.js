@@ -32,7 +32,7 @@ const args = (workflow) => {
 const completion = omelette(
   `mxflow|mxf <action> <workflow> ${"<arg> <val> ".repeat(
     MXF_MAX_ARGS,
-  )} <flags> <flags>`,
+  )}<flags>`,
 );
 
 completion.on("action", ({ reply }) => {
