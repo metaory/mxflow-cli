@@ -31,9 +31,10 @@ const logOutput = ({ stdout, stderr }) => {
   stdout && log.greenDim(formatOut(stdout, "green"));
   stderr && log.redDim(formatOut(stderr, "red"));
 };
-export async function exec(commands = [], data = {}) {
-  const currentBranch = await getCurrentBranch();
 
+const currentBranch = await getCurrentBranch();
+
+export async function exec(commands = [], data = {}) {
   const context = {
     ...globalContext,
     "current-branch": currentBranch,
@@ -44,17 +45,17 @@ export async function exec(commands = [], data = {}) {
     if (typeof cmd === "object") {
       const [key] = Object.keys(cmd);
       switch (key) {
-      case "log-bugtracker":
-        logBugTrackerUrl(data, cmd[key]);
-        break;
-      case "checkout-branch":
-        globalContext[cmd[key].export ?? "branch"] = await checkoutBranch(
-          cmd[key],
-        );
-        break;
-      case "list-logs":
-        await listLatestLogs(cmd[key]);
-        break;
+        case "log-bugtracker":
+          logBugTrackerUrl(data, cmd[key]);
+          break;
+        case "checkout-branch":
+          globalContext[cmd[key].export ?? "branch"] = await checkoutBranch(
+            cmd[key]
+          );
+          break;
+        case "list-logs":
+          await listLatestLogs(cmd[key]);
+          break;
       }
       historyStatus.push(C.yellow(global.ICON.INFO));
       history.push(key);
@@ -132,8 +133,8 @@ process.on("exit", () => {
         historyStatus[i] +
         " ".repeat(1) +
         C.blue(history[i]) +
-        "\n",
-    ),
+        "\n"
+    )
   );
   process.stdout.write("\n");
   const took = ((Date.now() - startTime) / 1000).toFixed(1);
