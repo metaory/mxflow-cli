@@ -70,6 +70,7 @@
   },
   "devDependencies": {
     "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.4",

@@ -1,4 +1,6 @@
 module.exports = {
+  // extends: "standard",
+  extends: ["eslint-recommended", "prettier"],
   env: {
     es2021: true,
     node: true,
@@ -35,7 +37,6 @@ module.exports = {
     LOCAL_CONFIG_PATH: "readonly",
     REL_CONFIG_PATH: "readonly",
   },
-  extends: "standard",
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",
