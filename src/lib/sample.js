@@ -1,6 +1,32 @@
 import { stringInput, multiselectInput } from "../core/prompts.js";
 
-export default async() => {
+export const basic = {
+  exit_on_error: false,
+  workflows: {
+    foobar: {
+      description: "example placeholder",
+      checks: ["git-clean"],
+      args: [
+        { name: "foo", type: "string" },
+        {
+          name: "bar",
+          type: "string",
+          regex: "^bar+\\w",
+          default: "bar bdef",
+          export: "barx",
+        },
+      ],
+      steps: [
+        "echo hello {current-branch} {foo} world",
+        "echo goodbye {foo} {barx} cruel world",
+        "confirm echo {barx} goodbye",
+        "echo 'AWS_PROFILE: {AWS_PROFILE}'",
+      ],
+    },
+  },
+};
+
+export default async () => {
   const { base } = await stringInput("base", {
     value: "flight",
     message: "enter Trunk Branch name",
@@ -47,7 +73,7 @@ export default async() => {
           ],
         },
       }),
-      {},
+      {}
     ),
   };
 }; // ^^^^^^^^ :(
@@ -63,7 +89,7 @@ async function getBranchTypes() {
     branchTypesStr
       .split(",")
       .map((x) => x.trim())
-      .map((x) => x.replaceAll(" ", "_")),
+      .map((x) => x.replaceAll(" ", "_"))
   );
 }
 
@@ -72,5 +98,5 @@ const getTrunkBased = (branchTypes, trunkBranchName) =>
     "trunkBasedBranches",
     [...branchTypes],
     `select ${C.bold("child branches")} for ${C.bold(trunkBranchName)}`,
-    branchTypes.length > 3 ? [0, 1, 2] : 0,
+    branchTypes.length > 3 ? [0, 1, 2] : 0
   );

@@ -1,32 +1,6 @@
 import { numberInput, confirmInput } from "../core/prompts.js";
-import SampleConfig from "./sample.js";
+import SampleConfig, { basic } from "./sample.js";
 import findFile from "simple-find-file-recursively-up";
-
-const sampleBasic = {
-  exit_on_error: false,
-  workflows: {
-    foobar: {
-      description: "example placeholder",
-      checks: ["git-clean"],
-      args: [
-        { name: "foo", type: "string" },
-        {
-          name: "bar",
-          type: "string",
-          regex: "^bar+\\w",
-          default: "bar bdef",
-          export: "barx",
-        },
-      ],
-      steps: [
-        "echo hello {current-branch} {foo} world",
-        "echo goodbye {foo} {barx} cruel world",
-        "confirm echo {barx} goodbye",
-        "echo 'AWS_PROFILE: {AWS_PROFILE}'",
-      ],
-    },
-  },
-};
 
 export default class Config {
   constructor() {
@@ -69,7 +43,7 @@ export default class Config {
       sleep: this.sleep,
       version: PKG_VERSION,
       exit_on_error: false,
-      ...sampleBasic,
+      ...basic,
       ...this.sampleConfig,
     };
   }
