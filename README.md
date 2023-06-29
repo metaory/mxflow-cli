@@ -163,6 +163,7 @@ exit_on_error: false
 workflows:
   # Workflow name
   foobar:
+    # Workflow description
     description: example placeholder
     # Checks to run before workflow. Possible checks are: [git-clean]
     checks:
