@@ -85,7 +85,7 @@ export const stringInput = (
     result: (val) => val.trim().replaceAll(" ", spaceReplacer),
     message,
     default: value,
-    validate: validate || ((val) => !!val || `${name} cant be empty!`),
+    validate: validate ?? ((val) => !!val.trim() || `${name} cant be empty!`),
   });
 
 export const promptWorkflow = async(branchTypes) => {
