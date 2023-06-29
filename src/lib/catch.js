@@ -1,4 +1,5 @@
 import Ajv from "ajv";
+import CT from "chalk-template";
 import { checkBranchExists, checkDirty } from "./git.js";
 import Config from "./config.js";
 const ajv = new Ajv({ allowUnionTypes: true });
@@ -19,7 +20,7 @@ export async function catchDirtyGit() {
     L.error(
       "worktree is dirty\n" +
         "stash your changes before continuing.\n" +
-        C.yellow("git stash push"),
+        C.yellow("git stash push")
     );
   }
   log.pass(CWD, "directory is clean!");
@@ -37,9 +38,7 @@ export async function catchOldConfig(config) {
     await Config.remove();
     log.grey("you may run the cli again\n");
     L.error(
-      `different version\nminor ${PKG_VERSION} (${C.bold.yellow(
-        config.version,
-      )})`,
+      CT`different version\nminor ${PKG_VERSION} ({bold.yellow ${config.version})`
     );
   }
 }
@@ -87,9 +86,7 @@ export function catchConfigSchema(config) {
       },
     ] = ajv.errors;
     L.error(
-      `config ${C.dim(instancePath)} ${message} ${C.yellow(
-        additionalProperty,
-      )}`,
+      `config ${C.dim(instancePath)} ${message} ${C.yellow(additionalProperty)}`
     );
   }
 }

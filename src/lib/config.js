@@ -56,7 +56,7 @@ export default class Config {
   async sample() {
     const { promptSamples } = await confirmInput(
       "promptSamples",
-      "add sample git-flow?",
+      "add sample git-flow?"
     );
     if (promptSamples) {
       return SampleConfig();
@@ -129,7 +129,7 @@ export default class Config {
 
     const { makeSystemCopy } = await confirmInput(
       "makeSystemCopy",
-      "make a system copy?",
+      "make a system copy?"
     );
     if (makeSystemCopy) {
       await this.commit(`${os.homedir()}/.mxflow/config.yml`, yamlConfig);
@@ -137,7 +137,7 @@ export default class Config {
 
     const { makeLocalCopy } = await confirmInput(
       "makeLocalCopy",
-      "make a local copy?",
+      "make a local copy?"
     );
     if (makeLocalCopy) {
       await this.commit("./.mxflow/config.yml", yamlConfig);

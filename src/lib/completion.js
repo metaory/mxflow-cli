@@ -21,14 +21,12 @@ const workflows = () =>
 const args = (workflow) => {
   const args = YAML.parse(getConfig()).workflows[workflow].args ?? [];
   return [...args, { name: "force" }, { name: "verbose" }].map(
-    (x) => `--${x.name}`,
+    (x) => `--${x.name}`
   );
 };
 
 const completion = omelette(
-  `mxflow|mxf <action> <workflow> ${"<arg> <val> ".repeat(
-    MXF_MAX_ARGS,
-  )}<flags>`,
+  `mxflow|mxf <action> <workflow> ${"<arg> <val> ".repeat(MXF_MAX_ARGS)}<flags>`
 );
 
 completion.on("action", ({ reply }) => {
@@ -63,12 +61,12 @@ completion.on("val", ({ reply }) => {
 completion.init();
 
 switch (process.argv[2]) {
-case "--setup-completion":
-  L.warn("setting up shell completion");
-  completion.setupShellInitFile();
-  break;
-case "--clean-completion":
-  L.warn("cleaning up up shell completion");
-  completion.cleanupShellInitFile();
-  break;
+  case "--setup-completion":
+    L.warn("setting up shell completion");
+    completion.setupShellInitFile();
+    break;
+  case "--clean-completion":
+    L.warn("cleaning up up shell completion");
+    completion.cleanupShellInitFile();
+    break;
 }

@@ -33,7 +33,7 @@ global.C = chalk;
 global.L = L;
 global.PKG_PATH = resolve(
   dirname(fileURLToPath(import.meta.url)),
-  "../../package.json",
+  "../../package.json"
 );
 
 const { name, version } = await fs.readJson(PKG_PATH);
@@ -51,7 +51,9 @@ let _config;
 Object.defineProperty(global, "cfg", {
   get: () => _config,
   set: (val) => {
-    val.sleep = Number(process.env.MXF_SLEEP ?? argv.sleep ?? val.sleep ?? 1000);
+    val.sleep = Number(
+      process.env.MXF_SLEEP ?? argv.sleep ?? val.sleep ?? 1000
+    );
     L.warn(CT`sleep {yellow.dim is set to} {bold ${val.sleep}ms}`);
     catchConfigSchema(val);
     catchOldConfig(val);
