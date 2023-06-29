@@ -153,9 +153,13 @@ mxflow trigger create-flight --taskId my-tsk --description my-desc --force
 > `mxflow trigger foobar --foo fval --bar bar-xorg`
 
 ```yaml
-# The CLI version
+# The CLI Version
 version: 0.60.0
-# Config workflows
+# The milliseconds to wait between commands
+sleep: 1000
+# Should exit upon first error code faced
+exit_on_error: false
+# Config Workflows
 workflows:
   # Workflow name
   foobar:
