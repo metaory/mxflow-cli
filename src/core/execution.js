@@ -1,4 +1,5 @@
 import pupa from "pupa";
+import CT from "chalk-template";
 import checkoutBranch from "../opts/checkout.js";
 import { confirmInput } from "./prompts.js";
 import {
@@ -10,16 +11,15 @@ import {
 const startTime = Date.now();
 const history = [];
 const historyStatus = [];
-const {
-  stdout: { columns },
-} = process;
-
-const logTitle = () => {
-  const title = `${C.blue.dim("STEP")} ${C.blue(history.length)}\n`;
-  process.stdout.write(fillFrom(" ", columns / 3) + title);
-};
-
 const globalContext = { ...process.env };
+const currentBranch = await getCurrentBranch();
+
+const logTitle = () =>
+  process.stdout.write(
+    CT`${fillFrom(" ", process.stdout.columns / 4)}{blue.dim [{cyan.bold ${
+      history.length
+    }}]}\n`
+  );
 
 const logOutput = ({ stdout, stderr }) => {
   const formatOut = (str, color) =>
@@ -31,8 +31,6 @@ const logOutput = ({ stdout, stderr }) => {
   stdout && log.greenDim(formatOut(stdout, "green"));
   stderr && log.redDim(formatOut(stderr, "red"));
 };
-
-const currentBranch = await getCurrentBranch();
 
 export async function exec(commands = [], data = {}) {
   const context = {
@@ -92,7 +90,7 @@ export async function exec(commands = [], data = {}) {
 
     $.verbose
       ? console.log(cmd)
-      : spinner.start(C.yellow(cmd) + C.grey(`\n$ ${parsedCmd}\n`));
+      : spinner.start(CT`{yellow ${cmd} \n{grey ${parsedCmd}}}\n`);
 
     try {
       if (!parsedCmd) throw new Error(`missing ${cmd}`);
@@ -116,6 +114,7 @@ export async function exec(commands = [], data = {}) {
       logOutput(err);
 
       if (err.exitCode !== 0 && cfg.exit_on_error) {
+        L.warn("exit_on_error is true.\nexiting..");
         L.error(err.stderr || err.stdout);
       }
     } finally {
