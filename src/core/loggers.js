@@ -18,7 +18,7 @@ const getModuleName = (url) => {
 global.head = ({ url }, etc = "-") =>
   L.info(
     getModuleName(url),
-    `module loaded  ⌜${C.yellow(replaceHome(String(etc)))}⌝`,
+    `module loaded  ⌜${C.yellow(replaceHome(String(etc)))}⌝`
   ); // ⌞⌟ ⌜⌝
 
 global.info = (msg, etc) => $.verbose && console.info(msg, etc);
@@ -67,7 +67,7 @@ global.log = [
         title,
         padding = 1,
         borderStyle = cur === "red" ? "double" : "bold",
-      } = {},
+      } = {}
     ) => _box(txt, cur, { title, padding, borderStyle });
 
     return acc;
@@ -86,5 +86,5 @@ global.log = [
       log.redBox(`${icon} ${txt} ${C.redBright(etc)}`, { title });
       process.exit(1);
     },
-  },
+  }
 );

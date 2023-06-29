@@ -1,7 +1,7 @@
 import { promptWorkflow, promptArgs } from "./prompts.js";
 import runChecks from "../opts/checks.js";
 
-export default async(argWorkflow) => {
+export default async (argWorkflow) => {
   head(import.meta, argWorkflow);
 
   const workflow =

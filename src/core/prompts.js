@@ -17,7 +17,7 @@ export const autocompleteInput = (
   name,
   choices,
   message = `select ${C.bold(name)}`,
-  initial = "",
+  initial = ""
 ) =>
   enquirer.prompt({
     type: "autocomplete",
@@ -31,21 +31,21 @@ export const autocompleteInput = (
 export const confirmInput = (
   name,
   message = "Are you sure?",
-  initial = false,
+  initial = false
 ) =>
   argv.force ?? argv.F
     ? { [name]: true }
     : enquirer.prompt({
-      type: "confirm",
-      hint: `(${name})`,
-      initial,
-      name,
-      message,
-    });
+        type: "confirm",
+        hint: `(${name})`,
+        initial,
+        name,
+        message,
+      });
 
 export const numberInput = (
   name,
-  { message = `enter ${C.bold(name)}`, hint = "", value = 0, min = 1 } = {},
+  { message = `enter ${C.bold(name)}`, hint = "", value = 0, min = 1 } = {}
 ) =>
   enquirer.prompt({
     type: "input",
@@ -76,7 +76,7 @@ export const stringInput = (
     hint,
     validate,
     spaceReplacer = "-",
-  } = {},
+  } = {}
 ) =>
   enquirer.prompt({
     type: "input",
@@ -88,7 +88,7 @@ export const stringInput = (
     validate: validate ?? ((val) => !!val.trim() || `${name} cant be empty!`),
   });
 
-export const promptWorkflow = async(branchTypes) => {
+export const promptWorkflow = async (branchTypes) => {
   const format = branchTypes.map((name) => {
     const message = `${C.blue.bold(name)} - ${cfg.workflows[name].description}`;
     return {
@@ -99,8 +99,8 @@ export const promptWorkflow = async(branchTypes) => {
   const { workflow } = await autocompleteInput("workflow", format);
   return workflow;
 };
-// Collect context variables from arguments or interactively
-export const promptArgs = async(workflow, args = []) => {
+// Collect and validate context variables from arguments or interactively
+export const promptArgs = async (workflow, args = []) => {
   const inputs = { string: stringInput, number: numberInput };
   const output = { workflow };
 
