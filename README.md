@@ -102,14 +102,14 @@ mxflow [<action>] [<args>] [<flags>]
 # CLI Options
 
 ```markdown
-init | init sample configuration
+init                    | init sample configuration
 trigger <workflow-name> | non-interactive workflow trigger
-version, --version | show version
-help, --help | help menu
--v, --verbose | verbose logs
--F, --force | bypass confirmation prompts
---setup-completion | setup shell tab completion
---clean-completion | cleanup tab completion
+version, --version      | show version
+help, --help            | help menu
+-v, --verbose           | verbose logs
+-F, --force             | bypass confirmation prompts
+--setup-completion      | setup shell tab completion
+--clean-completion      | cleanup tab completion
 ```
 
 # Examples
