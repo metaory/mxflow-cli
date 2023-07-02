@@ -1,6 +1,8 @@
+import { spawn } from "node:child_process";
 import { numberInput, confirmInput } from "../core/prompts.js";
 import SampleConfig, { basic } from "./sample.js";
 import findFile from "simple-find-file-recursively-up";
+import { spawnInteractively } from "../core/execution.js";
 
 export default class Config {
   constructor() {
@@ -135,6 +137,22 @@ export default class Config {
     if (resetSystemConfig === false) return;
 
     return Config.remove();
+  }
+
+  static async view() {
+    const path = findFile(".mxflow/config.yml");
+    const { stdout } = await $`cat ${path}`;
+    logYaml(stdout);
+    await spawnInteractively("less", [path]);
+    process.exit();
+  }
+
+  static async edit() {
+    const path = findFile(".mxflow/config.yml");
+    await spawnInteractively(process.env.EDITOR, [path]);
+    const { stdout } = await $`cat ${path}`;
+    logYaml(stdout);
+    process.exit();
   }
 
   static async remove() {

@@ -34,13 +34,16 @@ if (argv.help || argv._.includes("help")) {
     `
   init                    | init sample configuration
   trigger <workflow-name> | non-interactive workflow trigger
+  view                    | view config
+  edit                    | edit config
+  reset                   | reset config
   version, --version      | show version
   help, --help            | help menu
   -v, --verbose           | verbose logs
   -F, --force             | force bypass confirmation prompts
   --no-catch-git          | bypass initial git checks
   --setup-completion      | setup shell tab completion
-  --clean-completion      | cleanup tab completion`,
+  --clean-completion      | cleanup tab completion`
   );
   process.exit();
 }

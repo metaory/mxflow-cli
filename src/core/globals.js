@@ -23,6 +23,9 @@ global.ICON = {
   WARN: "⚠",
   VERT: "┃ ",
   HORZ: "╸",
+  EDIT: "",
+  VIEW: "",
+  EXIT: "",
   WORKTREE: "⇄", // 𑂻
   WORKFLOW: "🗲", // ●
   CHECKOUT: "◀",

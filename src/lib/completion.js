@@ -34,6 +34,8 @@ completion.on("action", ({ reply }) => {
     "trigger",
     "init",
     "version",
+    "view",
+    "edit",
     "reset",
     "help",
     "--force",

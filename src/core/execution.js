@@ -1,3 +1,4 @@
+import { spawn } from "node:child_process";
 import pupa from "pupa";
 import CT from "chalk-template";
 import checkoutBranch from "../opts/checkout.js";
@@ -31,6 +32,13 @@ const logOutput = ({ stdout, stderr }) => {
   stdout && log.greenDim(formatOut(stdout, "green"));
   stderr && log.redDim(formatOut(stderr, "red"));
 };
+
+export const spawnInteractively = (cmd, args) =>
+  new Promise((resolve) => {
+    spawn(cmd, args, {
+      stdio: [process.stdin, process.stdout, process.stderr],
+    }).on("close", resolve);
+  });
 
 export async function exec(commands = [], data = {}) {
   const context = {
@@ -122,7 +130,6 @@ export async function exec(commands = [], data = {}) {
     }
   }
 }
-
 process.on("exit", () => {
   process.stdout.write("\n\n");
   L.loading("history", history.length);
@@ -139,5 +146,4 @@ process.on("exit", () => {
   const took = ((Date.now() - startTime) / 1000).toFixed(1);
   L.info("done", `took ${took}s`);
 });
-
 global.$$ = exec;

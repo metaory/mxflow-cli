@@ -1,6 +1,6 @@
 import pupa from "pupa";
 import clipboard from "clipboardy";
-import { spawn } from "node:child_process";
+import { spawnInteractively } from "../core/execution.js";
 
 export async function getCurrentBranch() {
   const { stdout } = await $`git rev-parse --abbrev-ref HEAD || true`;
@@ -32,7 +32,7 @@ export async function checkConflict(currentBranch, targetBranch) {
     C.grey("comparing"),
     C.blue(currentBranch),
     C.grey("..."),
-    C.cyan(targetBranch),
+    C.cyan(targetBranch)
   );
   try {
     await $`git reset --hard HEAD`;
@@ -59,18 +59,14 @@ export async function listLatestLogs({ limit }) {
   head(import.meta, limit);
   log.info(`press ${C.bold.red("(q)")} to quit logs\n`);
   await sleep(2000);
-  return new Promise((resolve) => {
-    spawn(
-      "git",
-      [
-        "log",
-        "--graph",
-        "--pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'",
-        `-${limit}`,
-      ],
-      { stdio: [process.stdin, process.stdout, process.stderr] },
-    ).on("close", resolve);
-  });
+
+  return spawnInteractively("git", [
+    "log",
+    "--graph",
+    "--pretty='%Cred%h%Creset " +
+      "-%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'",
+    `-${limit}`,
+  ]);
 }
 
 export function logBugTrackerUrl(data) {
@@ -78,12 +74,12 @@ export function logBugTrackerUrl(data) {
 
   function getUrl() {
     switch (data.bugTrackerName) {
-    case "jira":
-      return `https://${data.bugTrackerTenant}.atlassian.net/browse/{taskId}`;
-    case "clickup":
-      return `https://app.clickup.com/t/${data.bugTrackerTenant}/{taskId}`;
-    default:
-      return "NA";
+      case "jira":
+        return `https://${data.bugTrackerTenant}.atlassian.net/browse/{taskId}`;
+      case "clickup":
+        return `https://app.clickup.com/t/${data.bugTrackerTenant}/{taskId}`;
+      default:
+        return "NA";
     }
   }
   if (data.taskId) {
