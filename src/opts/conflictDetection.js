@@ -1,11 +1,18 @@
-import { getCurrentBranch, checkConflict, listRemoteBranches } from "../lib/git.js";
+import {
+  getCurrentBranch,
+  checkConflict,
+  listRemoteBranches,
+} from "../lib/git.js";
 import { stringInput, autocompleteInput } from "../core/prompts.js";
 import { getBranchFormat } from "./checkout.js";
 
 import { spawn } from "node:child_process";
 const memoize = {};
 
-export default async function conflictDetection(_trunkBranchName, fetch = true) {
+export default async function conflictDetection(
+  _trunkBranchName,
+  fetch = true
+) {
   head(import.meta, _trunkBranchName);
   L.warn("exprimental");
 
@@ -15,7 +22,7 @@ export default async function conflictDetection(_trunkBranchName, fetch = true) 
 
   fetch && (await $$`git fetch origin`);
 
-  const { trunk_branch_name: trunkBranchName } = await getTrunkBranchName(_trunkBranchName);
+  const { trunkBranchName } = await getTrunkBranchName(_trunkBranchName);
 
   const branches = await listRemoteBranches();
 
@@ -40,15 +47,18 @@ export default async function conflictDetection(_trunkBranchName, fetch = true) 
 // ------------
 
 const getTrunkBranchName = (value = "flight") =>
-  stringInput("trunk_branch_name", {
+  stringInput("trunkBranchName", {
     message: "enter search pattern",
     value,
   });
 
-const cache = async(branches, trunkBranchName) => {
+const cache = async (branches, trunkBranchName) => {
   const currentBranch = await getCurrentBranch();
 
-  const trunks = branches.filter((x) => x.includes(trunkBranchName)).filter((x) => x !== currentBranch);
+  const trunks = branches
+    .filter((x) => x.includes(trunkBranchName))
+    .filter((x) => x !== currentBranch);
+
   info({ trunks });
 
   if (!memoize[trunkBranchName]) {
@@ -61,10 +71,18 @@ const cache = async(branches, trunkBranchName) => {
 };
 
 const getBranch = (trunkBranchName) => {
-  const conflictingBranches = memoize[trunkBranchName].filter((x) => x.conflict === true).map((x) => x.targetBranch);
-  const conflictingBranchesFormat = getBranchFormat(conflictingBranches, trunkBranchName);
+  const conflictingBranches = memoize[trunkBranchName]
+    .filter((x) => x.conflict === true)
+    .map((x) => x.targetBranch);
+  const conflictingBranchesFormat = getBranchFormat(
+    conflictingBranches,
+    trunkBranchName
+  );
 
   log.yellowBox(`${conflictingBranches.length} Conflicting Branch Found!`);
 
-  return autocompleteInput("branch", [...conflictingBranchesFormat, "[Scan Again]"]);
+  return autocompleteInput("branch", [
+    ...conflictingBranchesFormat,
+    "[Scan Again]",
+  ]);
 };

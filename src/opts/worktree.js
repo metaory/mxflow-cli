@@ -34,12 +34,16 @@ class Worktree {
   }
 }
 
-export default async() => {
+export default async () => {
   head(import.meta);
 
   const worktree = new Worktree();
 
-  const { action } = await autocompleteInput("action", ["list", "add", "remove"]);
+  const { action } = await autocompleteInput("action", [
+    "list",
+    "add",
+    "remove",
+  ]);
 
   await worktree[action]();
 };

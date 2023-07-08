@@ -2,7 +2,7 @@ import { catchNoGit, catchDirtyGit } from "../lib/catch.js";
 
 const Checks = { catchNoGit, catchDirtyGit };
 
-export default async(checks) => {
+export default async (checks) => {
   const checkMap = { "git-clean": ["catchNoGit", "catchDirtyGit"] };
   const possibleChecks = Object.keys(checkMap);
   for (const check of checks) {

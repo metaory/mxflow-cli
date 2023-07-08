@@ -47,7 +47,7 @@ module.exports = {
     quotes: ["error", "double"],
     semi: ["error", "always"],
     "comma-dangle": ["error", "only-multiline"],
-    "max-len": ["error", { code: 120, ignoreTemplateLiterals: true }],
+    "max-len": ["error", { code: 80, ignoreTemplateLiterals: true }],
     "max-lines": ["error", 300],
     "space-before-function-paren": ["error", "never"],
     camelcase: ["error", { properties: "never", ignoreDestructuring: true }],
