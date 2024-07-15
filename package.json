@@ -65,7 +65,7 @@
     "ora": "^6.1.2",
     "prettycli": "^1.4.3",
     "simple-find-file-recursively-up": "^1.0.1-4",
-    "update-notifier": "^6.0.2",
+    "update-notifier": "^7.1.0",
     "zx": "^7.0.8"
   },
   "devDependencies": {
