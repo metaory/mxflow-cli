@@ -62,7 +62,7 @@
     "figlet": "^1.5.2",
     "gradient-string": "^3.0.0",
     "omelette": "^0.4.17",
-    "ora": "^6.1.2",
+    "ora": "^9.0.0",
     "prettycli": "^1.4.3",
     "simple-find-file-recursively-up": "^1.0.1-4",
     "update-notifier": "^6.0.2",
