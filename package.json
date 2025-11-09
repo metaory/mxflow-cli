@@ -60,7 +60,7 @@
     "dotenv": "^16.0.3",
     "enquirer": "^2.3.6",
     "figlet": "^1.5.2",
-    "gradient-string": "^2.0.1",
+    "gradient-string": "^3.0.0",
     "omelette": "^0.4.17",
     "ora": "^6.1.2",
     "prettycli": "^1.4.3",
